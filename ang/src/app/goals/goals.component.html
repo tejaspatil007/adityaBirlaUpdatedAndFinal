@@ -1,0 +1,149 @@
+	
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <title>Aditya Birla</title>
+    </head>
+    
+    <body>
+            
+            
+             
+            
+        <!-- <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="#"></a>
+        </nav>
+        </section> -->
+        <section id="nav-bar">
+            <a class="navbar-brand" href="#"></a>
+            <img src="../../assets/img/aditybilacapital logo.png">
+          </section>
+        <!---nav-bar end----->
+         <section class="cover">
+          <div class="container back">
+    
+                 <div class="row heading">
+                        <div class="col-md-12 head mt-15">
+                           <h3><strong>Life Goal Calculator</strong></h3>
+                        </div>
+                </div>
+    
+                <div class="container progressbars">
+                    <div class="row">
+                <div class="col-md-12 text-center">
+            <ul class="progressbar">
+                <li class="active"><strong>Enter <br>Details</strong></li>
+                <li class="active"><strong>Select & <br>Prioritize Goals</strong></li>
+                <li class="active"><strong>Calculate Goal <br>Values</strong></li>
+            </ul>
+        </div>
+        </div>
+        </div>
+         
+                <!-------start form------------->
+                <div class="row goals">
+                    <div class="col-md-12 goals-style">
+                        <ul>
+                        <li *ngFor="let goal of img; let goalIndex = index"> <a (click)="onGoalClick(goal.goals)"><span class="notify-badge">{{goalIndex + 1}}</span><img src="../../assets/img/{{goal.goals}}.png"></a><p>{{goal.goals}}</p></li> 
+
+                    </ul>
+                    </div>
+                    
+                </div>
+     
+                <div class="hr">
+                <hr>
+            </div>
+                
+                <div class="dropdown-style">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6  dropdowns" *ngFor="let questions of questions; let questionIndex = index">   <!--que1=list of questions of 1 goal-->
+                        <!-- <p>At what age you plan to retire?</p> -->
+                        <p>{{questions.name}}</p>
+                        <div class="dropdown" >
+                            <!-- <select *ngIf="questions.options" ngmodel="modeljson['question.flag']'" class="dropdown-toggle" type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                                
+                                <!-- <option>Enter amount</option> -->
+                                <!-- <option *ngFor="let field of que1">{{field.fname}}</option> -->
+                            <select *ngIf="questions.options" class="dropdown-toggle" type="text" (change)="optionSelect(questions.variableName, $event.target.value)" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">    
+                            <option value="{{options.value}}" *ngFor="let options of questions.options; ">
+                                {{options.name}}
+                            </option>
+                            </select>
+                            <p *ngIf="!questions.options"><input (input)="inputChanged( questions.variableName, $event.target.value)"style="width:210px; border:none; color:coral;height:35px; border-radius:50px; padding:0px 10px"  type="text" ></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+           
+            <div class="row lastbtns">
+                <div class="twobtn col-md-12">
+                    {{errMsg}}
+                    <button type="button" class="btn nextbtn" (click)="calculateFunction()"><b>Calculate</b></button>
+               </div>
+           </div>
+    
+    
+                <div *ngIf="!description == 0" class="row offer">
+                    <div class="subscribe" [innerHTML]="description">
+                        <!-- <P>{{description}}</P> -->
+                     </div>
+                 </div>
+            
+                
+                <div class="row lastbtns">
+                    <div class="twobtn col-md-12">
+                       <a><button type="button" class="btn nextbtn" (click)="Replan()"><b>REPLAN</b></button></a>
+                        <a href="term_goals.html" routerLink="/termgoals" ><button type="button" class="btn nextbtn" (click)="SubmitGoalsData()"><b>NEXT</b></button></a>
+                   </div>
+               </div>
+    
+          </div>
+    </section>
+      <!----footer start----------->
+    
+    <section id="footer">
+        <div class="container">
+          <div class="row">
+    
+                 <div class="col-md-8">
+            <!--<img src="img/demo.png">-->
+                     <div class="footer">
+                        <p><b>@ 2019 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
+                            <ul>
+                                <li><a href="#">Terms and Conditions</a></li>
+                                <li><a href="#">LEARN MORE</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                       </div>
+                 </div>
+    
+                <div class="col-md-4">
+                     <div class="footer-icons">
+                         <i class="fa fa-facebook"></i>
+                         <i class="fa fa-twitter"></i>
+                         <i class="fa fa-instagram"></i>
+                         <i class="fa fa-youtube-play"></i>
+                         <i class="fa fa-linkedin"></i>
+                     </div>
+                </div>
+    
+         </div>
+       </div>
+    </section>
+    
+    </body>
+    </html>

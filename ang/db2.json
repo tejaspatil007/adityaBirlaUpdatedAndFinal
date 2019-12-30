@@ -1,0 +1,69 @@
+{
+    "goals": [
+        {
+          "goalId": "1",
+          "goal": "Retirement"
+        },
+        {
+            "goalId": "2",
+            "goal": "Holiday"
+        },
+        {
+            "goalId": "3",
+            "goal": "Honeymoon" 
+        },
+        {
+            "goalId": "4",
+            "goal": "Marriage"
+        },
+        {
+            "goalId": "5",
+            "goal": "Car"
+        },
+        {
+            "goalId": "6",
+            "goal": "Bike"
+        },
+        {
+            "goalId": "7",
+            "goal": "Luxury Car"
+        },
+        {
+            "goalId": "8",
+            "goal": "Starting Business"
+        },
+        {
+            "goalId": "9",
+            "goal": "Self Development"
+        },
+        {
+            "goalId": "10",
+            "goal": "Child's Education"
+        },
+        {
+            "goalId": "11",
+            "goal": "Child's marriage"
+        },
+        {
+            "goalId": "12",
+            "goal": "World Tour"
+        },
+        {
+            "goalId": "13",
+            "goal": "Wealth Creation "
+        },
+        {
+            "goalId": "14",
+            "goal": "Follow passion"
+        },
+        {
+            "goalId": "15",
+            "goal": "Philanthropy"
+        }
+    
+    
+
+
+    ]
+
+}    

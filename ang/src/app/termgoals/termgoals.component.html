@@ -1,0 +1,217 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Aditya Birla</title>
+</head>
+
+<body>
+
+	<!-- <section id="nav-bar">
+		<nav class="navbar navbar-expand-lg navbar-light ">
+			<a class="navbar-brand" href="#"></a>
+		</nav>
+	</section> -->
+
+	<section id="nav-bar">
+		<a class="navbar-brand" href="#"></a>
+		<img src="../../assets/img/aditybilacapital logo.png">
+	</section>
+	
+	<section class="cover">
+		<div class="container back">
+			<div class="row heading">
+				<div class="col-md-12 head mt-15">
+					<h3>Life Goal Calculator</h3>
+				</div>
+				<div class="col-md-12 head-style">
+					<p>Hi {{username}}, to reach your life goals, you would need to start SIPs of <span
+							style="color: #8B0000"> ₹{{amount}}</span>Here’s<br>
+						the break-up of your goals based on the goal timeline.</p>
+				</div>
+
+				<!-- <div *ngIf="shortGoal.length > 0"> -->
+				 <div *ngIf="shortGoal.length > 0" class="col-md-12 short">
+					<div *ngFor="let short of shortGoal">
+						<h1>Short Term Goals</h1>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="testimonials clearfix">
+									<div class="img-style">
+
+										<img src="../../assets/img/{{short.goals}}color.png" class="img-fluid">
+										{{short.goals}}
+									</div>
+
+									<div class="short-details">
+										<p>To achieve this goal you need<br>to start a monthly SIP of</p>
+										<button type="button" class="btns"><b>₹ {{getGoalAmt(short.result)}}
+											</b></button>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 testimonials_style">
+								<p>Indicative Asset Allocation</p>
+								<img src="../../assets/img/pie chart 1.png">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="hr">
+					<hr>
+				</div>
+
+				<div *ngIf="midGoal.length > 0" class="col-md-12 short">
+					<div *ngFor="let goal of midGoal">
+						<h1>Mid Term Goals</h1>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="testimonials clearfix">
+									<div class="img-style">
+										<img src="../../assets/img/{{goal.goals}}color.png" class="img-fluid">
+										{{goal.goals}}
+									</div>
+									<div class="short-details">
+										<p>To achieve this goal you need<br>to start a monthly SIP of</p>
+										<button type="button" class="btns"><b>₹ {{getGoalAmt(goal.result)}}</b></button>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 testimonials_style">
+								<p>Indicative Asset Allocation</p>
+								<img src="../../assets/img/pie chart 2.png">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="hr">
+					<hr>
+				</div>
+
+				<div *ngIf="longGoal.length > 0" class="col-md-12 short">
+					<div *ngFor="let goal of longGoal">
+						<h1>Long Term Goals</h1>
+						<div class="row">
+
+							<div class="col-md-6">
+								<div class="testimonials clearfix">
+									<div class="img-style">
+										<img src="../../assets/img/{{goal.goals}}color.png" class="img-fluid">
+										{{goal.goals}}
+									</div>
+									<div class="short-details">
+										<p>To achieve this goal you need<br>to start a monthly SIP of</p>
+										<button type="button" class="btns"><b>₹ {{getGoalAmt(goal.result)}}</b></button>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 testimonials_style">
+								<p>Indicative Asset Allocation</p>
+								<img class="img-fluid" style="margin-top: 0px !important;" src="../../assets/img/pie chart 3.png">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="row">
+					</hr>
+					</div> -->
+
+				
+					<div class="buttons_style col-md-12 text-center">
+						<a><button type="button" class="btn allbtn" (click)="Replan()">REPLAN</button></a>
+						<a><button type="button" class="btn allbtn" (click)="download()">DOWNLOAD</button></a>
+						<a><button type="button" class="btn allbtn" (click)="share()">SHARE</button></a>
+						<a><button type="button" class="btn allbtn" (click)="email()">EMAIL</button></a>
+						<a><button type="button" class="btn allbtn" (click)="printPage()">PRINT</button></a>
+					</div>
+			
+				
+					<div class="offer">
+						<div class="col-md-12 Disclaimer ">
+							<P><span>Disclaimer:</span><br>
+								*For more details on the CSIP facility please refer to the SID or KIM of the Plan.
+								The
+								calculator is based on assumed rate of returns and is meant for illustration
+								purposes only
+								and takes a<br>
+								time frame of upto 30 years . The calculations are not based on any judgments of
+								future
+								returns and should not be construed as a promise on minimum returns and/or safeguard
+								of
+								capital.<br>
+								Calculations made are approximations, meant as guidelines only. The calculator alone
+								is not
+								sufficient and shouldn’t be used for the development or implementation of an
+								investment<br>
+								strategy. The statements contained herein are based on our current views and involve
+								known
+								and unknown risks and uncertainties that could cause actual results, performance or
+								events<br>
+								to differ materially from those expressed or implied herein. Past Performance may or
+								may not
+								be sustained in future. Aditya Birla Sun Life Mutual Fund / Aditya Birla Sun Life
+								AMC<br>
+								Limited makes no warranty about the accuracy of the calculator and data and will not
+								accept
+								any liability/responsibility/loss incurred<br>
+								on any investment decision taken on the basis of this information. Investment in
+								Mutual Fund
+								Schemes carry high risk and any investment decision needs to be taken only are
+								consulting<br>
+								the Tax Consultant or Financial Advisor. Mutual Fund investments are subject to
+								market
+								risks, read all scheme related documents carefully.</P>
+						</div>
+					</div>
+				
+				
+			</div>
+		</div>
+	</section>
+
+
+
+	<section id="footer">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-8">
+					<div class="footer">
+						<p><b>@ 2019 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
+						<ul>
+							<li><a href="#">Terms and Conditions</a></li>
+							<li><a href="#">LEARN MORE</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">Blog</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="footer-icons">
+						<i class="fa fa-facebook"></i>
+						<i class="fa fa-twitter"></i>
+						<i class="fa fa-instagram"></i>
+						<i class="fa fa-youtube-play"></i>
+						<i class="fa fa-linkedin"></i>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+</body>

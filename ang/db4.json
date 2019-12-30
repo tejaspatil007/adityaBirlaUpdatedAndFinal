@@ -1,0 +1,25 @@
+{
+    "getgoals": [
+        {
+            "user_id": "fkfhmjhcmhgc",
+            "name": "tejas",
+            "age": 23,
+            "goalId": 1,
+            "goal": "Honeymoon"
+        },
+        {
+            "user_id": "fkfhmjhcmhgc",
+            "name": "tejas",
+            "age": 23,
+            "goalId": 2,
+            "goal": "Marriege" 
+        },
+        {
+            "user_id": "fkfhmjhcmhgc",
+            "name": "tejas",
+            "age": 23,
+            "goalId": 1,
+            "goal": "Self Development"
+        }
+    ]
+}

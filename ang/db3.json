@@ -1,0 +1,25 @@
+{
+    "resul": [
+        {
+            "user_id": "fkfhmjhcmhgc",
+            "name": "tejas",
+            "age": 23,
+            "goalId": 1,
+            "goal": "Retirement"
+        },
+        {
+            "user_id": "fkfhmjhcmhgc",
+            "name": "tejas",
+            "age": 23,
+            "goalId": 2,
+            "goal": "Holiday"
+        },
+        {
+            "user_id": "fkfhmjhcmhgc",
+            "name": "tejas",
+            "age": 23,
+            "goalId": 3,
+            "goal": "Car"
+        }
+    ]
+}

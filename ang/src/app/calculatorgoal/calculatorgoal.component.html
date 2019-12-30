@@ -1,0 +1,220 @@
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+  <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Aditya Birla</title>
+</head>
+
+<body>
+  <!-- <section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#"></a>
+    </nav>
+  </section> -->
+  <section id="nav-bar">
+    <a class="navbar-brand" href="#"></a>
+    <img src="../../assets/img/aditybilacapital logo.png">
+  </section>
+  <!---nav-bar end----->
+  <section class="cover">
+    <div class="container back">
+      <div class="row heading">
+        <div class="col-md-12 head mt-15">
+          <h3><strong>Life Goal Calculator</strong></h3>
+        </div>
+      </div>
+      <div class="container progressbars">
+        <div class="row">
+          <!--  <div class="col-md-12 text-center"> -->
+          <ul class="progressbar text-center">
+            <li class="active"><strong>Enter <br>Details</strong></li>
+            <li><strong>Select & <br>Prioritize Goals</strong></li>
+            <li><strong>Calculate Goal <br>Values</strong></li>
+          </ul>
+        </div>
+      </div>
+      <!-- <div class="selectmenu mt-15">
+			         <div class="row">
+			        <div class="col-md-4 col-sm-4 col-4 col-4-css">
+			          		<button type="button" class="btn selectbtn"><b>Step 1</b></button>
+			          		<p><strong>Enter <br>Details</strong></p>
+			        </div>
+			        <div class="col-md-4 col-sm-4 col-4 col-4-css">
+			          		<button type="button" class="btn selectbtn"><b>Step 2</b></button>
+			          		<p><strong>Select & <br>Prioritize Goals</strong></p>
+			         </div>
+			         <div class="col-md-4 col-sm-4 col-4 col-4-css">
+			          		<button type="button" class="btn selectbtn"><b>Step 3</b></button>
+			          		<p><strong>Calculate Goal <br>Values</strong></p>
+			         </div>
+                     <div class="clearfix">
+                        <div class="line"></div>
+                     </div>
+			         </div>
+			     </div> -->
+      <!-------start form------------->
+      <form [formGroup]="userForm" class="form-horizontal" role="form" (ngSubmit)="Save()">
+        <div class="form-details">
+          <div class="row">
+            <div class="col-md-6 text-right d-flex align-content-center flex-wrap form-group">
+               <input type="text" id="ip2" placeholder="ENTER NAME" formControlName="name" autocomplete="off" (keypress)="forValidation($event)" >
+
+              <!--Validation for name-->
+              <span class=" validation-name" *ngIf="userForm.get('name').hasError('required') &&  submitted">
+                *name is required*
+              </span>
+              <!-- <span class="alert"
+                  *ngIf="!userForm.get('name').valid && !userForm.get('name').hasError('required') && submitted">
+                  *valid name is required*
+              </span> -->
+            </div>
+            <div class="col-md-6 users">
+              <div class="form">
+                <!--	<img src= "../../assets/img/2nd page images/male single icon.png" (click)="gender()" class="img-fluid"> -->
+                <img src="{{gender}}" class="img-fluid">
+                <p><strong>SELECT GENDER</strong></p>
+                <span class="switcher switcher-1">
+                  <input type="checkbox" formControlName="gender" (change)="genderImg()" id="switcher-1">
+                  <label for="switcher-1"></label>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  <div id="cust-age">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <p>SELECT AGE <input type="text" id="ip4" placeholder="ENTER AGE"/> </p>              </div>
+            </div> -->
+        <div class="age col-md-12">
+         
+          <!-- <div class="row">
+           <div class='range'>
+              <input class='range__slider' id='slider' max='72' formControlName='age' min='18'
+                oninput='amount.value=slider.value' type='range'>
+              <input class='range__amount' formControlName='age' id='amount' oninput='slider.value=amount.value'
+                type='text'>
+            </div> 
+             <div class="number-css">
+              <span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span><span>49</span><span>50</span><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span><span>56</span><span>57</span><span>58</span><span>59</span><span>60</span><span>61</span><span>62</span><span>63</span><span>64</span><span>65</span><span>66</span><span>67</span><span>68</span><span>69</span><span>70</span>
+            </div>
+          </div> -->
+          <div class="mob text-center">
+            <label>Select Age</label>
+            <input type='number' formControlName="age"  value={{formJson.age}} class='amount' placeholder="" autocomplete="off">
+          </div>
+        </div>
+        <div class="marrial text-center">
+          <div class="row">
+            <div class="col-md-6 user d-flex">
+              <div class="form1">
+                <!-- <img src="../../assets/img/2nd page images/male single icon.png" class="img-fluid"> -->
+                <img src="{{marriedImg}}" class="img-fluid">
+                <p><strong>MARITAL STATUS</strong></p>
+                <span class="switcher switcher-2">
+                  <input type="checkbox" name="maritalStatus" formControlName="maritalStatus"
+                    (change)="maritalStatusImg()" id="switcher-2">
+                  <label for="switcher-2"></label>
+                </span>
+              </div>
+            </div>
+            <div *ngIf="userForm.value.maritalStatus==true" class="col-md-6 kids form-group">
+              <div class="form2 ">
+                <p><strong>KIDS</strong></p>
+                <span class="switcher switcher-3">
+                  <input type="checkbox" formControlName="child" id="switcher-3">
+                  <label for="switcher-3">
+                     <span><input *ngIf="userForm.value.child == true" value="{{formJson}}" class=form-control type="number"
+                    id="ip3" placeholder="" value="{{formJson.kids}}" formControlName="kids" autocomplete="off" /></span></label> 
+                  
+                </span>
+              </div>
+              <div *ngIf="userForm.value.child ==  true" class="kidselect">
+                <ul class="baby-style">
+                  <li><img src="../../assets/img/1 baby icon.png" (click)="kid1()"></li>
+                  <li><img src="../../assets/img/2 baby icon.png" (click)="kid2()"></li>
+                  <li><img src="../../assets/img/3 baby icon.png" (click)="kid3()" style="width: 40px;"></li>
+                  <li style="border-right:none;"><img src="../../assets/img/4 baby.png" style="width: 50px;"
+                      (click)="kid4()"></li>
+                <!--  <input *ngIf="userForm.value.child == true" value="{{formJson}}" class=form-control type="number"
+                    id="ip3" placeholder="" value="{{formJson.kids}}" formControlName="kids" autocomplete="off" />-->
+
+                  <!-- <span class=" validation-name" *ngIf="userForm.get('kids').hasError('required') &&  submitted">
+                    *KIDS is required*
+                  </span> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="profession">
+          <div class="row">
+            <div class="col-md-12 text-right d-flex align-content-center flex-wrap">
+              <div class="form3">
+                <!-- <img src="../../assets/img/male salaried.png" class="img-fluid"> -->
+                <img src="{{profImg}}" class="img-fluid">
+                <p><strong>PROFESSION</strong></p>
+                <span class="switcher switcher-4">
+                  <input type="checkbox" formControlName="profession" id="switcher-4" (change)="professionImg()">
+                  <label for="switcher-4 "></label>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div>
+          <input type="number" formControlName="age" placeholder="enter age">
+        </div> -->
+        <div class="row">
+          <div class=" col-md-12 lastbtns form-group">
+            <a><button type="submit" class="btn nextbtn"><b>Next</b></button></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!----footer start----------->
+  <section id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <!--<img src="img/demo.png">-->
+          <div class="footer">
+            <p><b>@ 2019 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
+            <ul>
+              <li><a href="#">Terms and Conditions</a></li>
+              <li><a href="#">LEARN MORE</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="footer-icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-youtube-play"></i>
+            <i class="fa fa-linkedin"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
