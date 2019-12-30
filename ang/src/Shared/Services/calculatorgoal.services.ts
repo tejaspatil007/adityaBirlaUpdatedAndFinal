@@ -27,6 +27,10 @@ export class AdityaBirlaServices{
         return this.http.post<Igoal[]>(this.url+routename,data,{headers:this.headers});
     }
 
+    addCustomGoal(goalName){
+        return this.http.post<Icalculatorgoal>(`${this.url}addCustomGoal`,{goalName: goalName},{headers:this.headers});
+    }
+
     getdata(id){
         console.log("route",`${this.url}/getusergoal/${id}`);
         return this.http.get(`${this.url}getusergoal/${id}`);  

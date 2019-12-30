@@ -72,7 +72,7 @@
 					</div>
 					<!-- onblur="addvalue(goal.value)" -->
 					<div *ngIf='selectedGoal.length < 3'>
-						<li><a (click)="addothergoal(goalValue)">
+						<li><a (click)="addCustomGoal(goalValue)">
 								<div class="img-div-style"><img src="{{othergoalImg}}"></div>
 							</a><input *ngIf="showInput" type="text" class="adding-goals" name="goalValue" [(ngModel)]='goalValue'
 								placeholder="AddOtherGoal" autocomplete="off"></li>

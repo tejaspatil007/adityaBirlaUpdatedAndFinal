@@ -1089,8 +1089,9 @@ color: #fff;
 }
 .buttons_style .allbtn{
 	box-shadow: 0 4px 5px 0 rgba(0,0,50,0.5);
-	padding: 4px  40px;
-	border:none;
+	/* padding: 4px  40px; */
+  text-align: center;
+  border:none;
 	border-radius: 20px;
 	background:#FFF;
 	color: #8B0000;

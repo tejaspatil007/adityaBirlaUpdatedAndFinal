@@ -17,17 +17,18 @@ export class GoalsComponent implements OnInit {
 
   // public Img:any;
   public images = [];
-  public response;
+  // public response;
   public goalsInputValue: Object = [];
 
   public goals: Igoal;
   public goalData: Array<string> = [];
-  public Data;
+  // public Data;
   public data: any;
-  public img: any;
-  public img1: any;
-  public img2: any;
+  // public img: any;
+  // public img1: any;
+  // public img2: any;
   public userName: any;
+  public currentAge : any;
   public selectGoal: any;
   public questions: any;
   public questionType: string;
@@ -36,11 +37,11 @@ export class GoalsComponent implements OnInit {
   public goalQuestion = [];
   public goalInputValueJson;
 
+  public colorImage:string;
   public uid: any;
   // public percent:any;
   public ival: any;
 
-  public abc = [];
   public number = [];
   public percent = []
   public percent5 = [];
@@ -76,6 +77,7 @@ export class GoalsComponent implements OnInit {
   public corpusAmount: number;
   public lifeInsurance: number;
 
+  public Image : string;
   // public show:boolean;
 
   constructor(private router: Router, private route: ActivatedRoute, private abs: AdityaBirlaServices) { }
@@ -101,12 +103,13 @@ export class GoalsComponent implements OnInit {
 
       console.log("result ->", res);
       this.selectGoal = res;
-      console.log(this.selectGoal);
+      // console.log("selectGoal=>",this.selectGoal);
       this.userName = this.selectGoal[0].name;
-      console.log(this.userName);
-      this.img = this.selectGoal;
-      console.log("goals", this.img[0].goals);
-
+      // console.log(this.userName);
+      this.currentAge = this.selectGoal[0].age;
+      console.log("current Age",this.currentAge)
+       
+      // console.log("Images array is -->>> ", this.images);
 
       this.goalQuestion = [
         {
@@ -151,15 +154,10 @@ export class GoalsComponent implements OnInit {
               'validation': 'required'
             }
           ],
-          // "description": `Hi <span style="color:red !important"><span style="color:red !important">${this.userName}</span>  for Self Development after <span style="color:red !important"><span style="color:red !important">${this.goalsInputValue['enterNumberOfYears']}</span> years 	
-          // you would require ₹<span style="color:red !important"> <span style="color:red !important">${this.futureValueOfSelfDevelopmentGoal}</span>. To fund the same, you need to start a monthly SIP of ₹ <span style="color:red !important"> <span style="color:red !important">${this.sipNoLumpsum}</span> 	
-          // over next <span style="color:red !important">${this.goalsInputValue['enterNumberOfYears']}</span> years As you are investing <span style="color:red !important">${this.goalsInputValue['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of 	₹<span style="color:red !important"> ${this.sipWithLumpsum}</span> 	
-          // What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto ₹ <span style="color:red !important">${this.lifeInsurance}</span> at no additional cost.	`,
-          "description": `Hi ${this.userName}  for Self Development after ${this.goalsInputValue['enterNumberOfYears']} years 	
-          you would require ₹<${this.futureValueOfSelfDevelopmentGoal}</span>. To fund the same, you need to start a monthly SIP of ₹ <span style="color:red !important"> <span style="color:red !important">${this.sipNoLumpsum}</span> 	
-          over next ${this.goalsInputValue['enterNumberOfYears']} years As you are investing <span style="color:red !important">${this.goalsInputValue['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of 	₹<span style="color:red !important"> ${this.sipWithLumpsum}</span> 	
-          What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto ₹ <span style="color:red !important">${this.lifeInsurance}</span> at no additional cost.	`,
-
+          "description": `Hi <span style="color:red !important">${this.userName}</span>  for Self Development after <span style="color:red !important">${this.goalsInputValue['enterNumberOfYears']}</span> years 	
+          you would require ₹<span style="color:red !important"> ${this.futureValueOfSelfDevelopmentGoal}</span>. To fund the same, you need to start a monthly SIP of ₹ <span style="color:red !important">${this.sipNoLumpsum}</span> 	
+          over next <span style="color:red !important">${this.goalsInputValue['enterNumberOfYears']}</span> years As you are investing <span style="color:red !important">${this.goalsInputValue['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of 	₹<span style="color:red !important"> ${this.sipWithLumpsum}</span> 	
+          What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto ₹ <span style="color:red !important">${this.lifeInsurance}</span> at no additional cost.`
         },
         {
           "type": "Starting Business",
@@ -884,7 +882,7 @@ export class GoalsComponent implements OnInit {
 
         },
         {
-          "type": "AddOtherGoal",
+          "type": "customGoal",
           "questions": [
             {
               "questionId": "1",
@@ -942,7 +940,7 @@ export class GoalsComponent implements OnInit {
       ]
 
       if (res[0].goals) {
-        this.onGoalClick(res[0].goals)
+        this.onGoalClick(res[0].goals, 0);
       }
       this.goalInputValueJson = {};
       // this.goalQuestion.forEach(items=>{
@@ -954,20 +952,15 @@ export class GoalsComponent implements OnInit {
       this.goalQuestion[0].questions.forEach(async goal => {
         this.goalInputValueJson[goal.variableName] = '';
       });
-     
-      
-
     });
 
-
-
     for (let i = 5; i <= 25; i++) {
-      let ival = { "name": `<span style="color:red !important">${i}%`, "value": i };
+      let ival = { "name": `${i}%`, "value": i };
       // console.log(ival);
       this.percent5.push(ival);
     }
     for (let i = 1; i <= 10; i++) {
-      let ival = { "name": `<span style="color:red !important">${i}%`, "value": i };
+      let ival = { "name": `${i}%`, "value": i };
       // console.log(ival);
       this.percent.push(ival);
     }
@@ -978,39 +971,68 @@ export class GoalsComponent implements OnInit {
     }
 
     for (let i = 5; i <= 100; i++) {
-      let ival = { "name": `<span style="color:red !important">${i}%`, "value": i };
+      let ival = { "name": `${i}%`, "value": i };
       // console.log(ival);
       this.five.push(ival);
     }
 
     for (let i = 30; i <= 80; i++) {
-      let ival = { "name": `<span style="color:red !important">${i}`, "value": i };
+      let ival = { "name": `${i}`, "value": i };
       // console.log(ival);
       this.age.push(ival);
     }
 
-
-
   }
-
-
   Replan() {
     this.router.navigateByUrl("");
     localStorage.removeItem('id');
   }
 
+  goalTypes = ["Self Development", "Starting Business", "Bike", "Marriage", "Honeymoon", "Wealth Creation", "Holiday",
+              "Car", "Childs Education", "Childs Marriage", "Follow Passion", "World Tour", "Dream Home", "Retirement", 
+              "Philanthropy"];
+
+  setImages(){
+    this.images = [];
+    let goalsLength = this.selectGoal.length;
+    for(let i = 0; i < goalsLength; i++){
+      let currentGoalName = this.selectGoal[i].goals;
+      if(this.goalTypes.includes(currentGoalName)){
+        let imgUrl = `../../assets/img/${currentGoalName}.png`;
+        this.images.push(imgUrl);
+      }else{
+        let customImgUrl = `../../assets/img/AddOtherGoal.png`;
+        this.images.push(customImgUrl);
+      }
+      
+    }
+  }
+
   ques: any;
-  onGoalClick(data) {
-    console.log("=>", this.img);
+  onGoalClick(data, index) {
+    // console.log("=>", this.img);
+    this.setImages();
+    if(this.goalTypes.includes(data)){
+      let selectedGoalImgUrl = `../../assets/img/${data}color.png`;
+      this.images[index] = selectedGoalImgUrl;
+    }else{
+      let customColorImg = `../../assets/img/AddOtherGoalcolor.png`
+      this.images[index] = customColorImg;
+    }
+    
+    // this.Image = `../../assets/img/${data}color.png`;
     this.goalsInputValue = [];
     this.goalInputValueJson = {};
     this.ques = this.goalQuestion.find((res) => res.type === data);
+    console.log("this.ques is -->> ", this.ques);
+    if(this.ques == undefined){
+      this.ques = this.goalQuestion.find((res) => res.type === "customGoal");
+    }
     console.log(this.ques);
     this.description = this.ques.description;
     this.questions = this.ques.questions;
     this.singleSelectedQuestion = data;
     console.log("this is the value of data variable", data);
-
     this.goalQuestion.forEach(async goal => {
       if (goal.type == this.singleSelectedQuestion) {                               //data= bike    (assume we clicked on bike goals)
 
@@ -1022,42 +1044,7 @@ export class GoalsComponent implements OnInit {
     })
 
     console.log(this.goalInputValueJson)
-
-
-
-
-    // for(let i=0;i<this.goalQuestion.length;i++){
-    //   // console.log(this.goalQuestion);
-    //   // console.log(this.goalQuestion[i].type);  
-    //    this.questionType = this.goalQuestion[i].type;
-    //   // console.log(quetype);
-    //   if(this.questionType === data){        //data=retirement
-    //     console.log(data);
-    //      this.singleSelectedQuestion=data;
-    //     console.log(this.questionType);
-    //     this.questions = this.goalQuestion[i].questions;   //questions=list of questions of retirement goal        console.log(this.goalQuestion[i].questions);
-    //     console.log("ang",this.questions);
-
-    //   }
-    // }
   }
-
-  // let answers = {
-  //   amountForGoal : 1000,
-  //   inflation : 10%,
-  // }
-
-  // let answers = {};
-  // answered(answer, index?, variableName?){
-  //   if(variableName){
-
-  //   }
-  // }
-
-
-
-
-
 
   //Fetching input values from dropdown
   optionSelect(goalInputField, inputValue) {
@@ -1124,17 +1111,17 @@ export class GoalsComponent implements OnInit {
     Object.keys(this.goalInputValueJson).forEach(i => {
       console.log(this.goalsInputValue[i])
       if (this.goalInputValueJson[i].length == 0) {
-        this.errMsg = `<span style="color:red !important">${i} is required!`
+        this.errMsg = `${i} is required!`
         alert(this.errMsg);
       }
       else if (i == 'enterAmount' || i == '') {
         if (!parseInt(this.goalsInputValue[i])) {
-          this.errMsg = `<span style="color:red !important">${i} should be a number!!`
+          this.errMsg = `${i} should be a number!!`
           alert(this.errMsg);
         }
         else {
           if (this.goalsInputValue[i] % 1000 > 0) {
-            this.errMsg = '<span style="color:red !important">${i} should be multiple of 1000s'
+            this.errMsg = `${i} should be multiple of 1000s`
             alert(this.errMsg);
           }
         }

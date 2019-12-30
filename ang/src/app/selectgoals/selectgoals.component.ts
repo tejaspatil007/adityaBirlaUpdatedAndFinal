@@ -47,21 +47,7 @@ export class SelectgoalsComponent implements OnInit {
   { "id": 14, "type": "Childs Marriage", "src": "assets/img/Childs Marriage.png" },
   { "id": 15, "type": "Retirement", "src": "assets/img/Retirement.png" }
   ]
-  //  public retirementImg="assets/img/Retirement.png";
-  //  public holidayImg="assets/img/Holiday.png";
-  //  public honeyMoonImg="assets/img/Honeymoon.png";
-  //  public marriageImg="assets/img/Marriage.png";
-  //  public carImg="assets/img/Car.png";
-  //  public bikeImg="assets/img/Bike.png";
-  //  public DreamHomeImg="assets/img/Dream Home.png";
-  //  public startingBusinessImg="assets/img/Starting Business.png";
-  //  public selfDevelopmentImg="assets/img/Self Development.png";
-  //  public childsEducationImg="assets/img/Childs Education.png";
-  //  public childsMarriageImg="assets/img/Childs Marriage.png";
-  //  public worldTourImg="assets/img/World Tour.png";
-  //  public wealthCreationImg="assets/img/Wealth Creation.png";
-  //  public followPassionImg="assets/img/Follow Passion.png";
-  //  public philanthropyImg="assets/img/Philanthropy.png";
+
   public othergoalImg = "assets/img/AddOtherGoal.png";
   public uid: any;
   public flag: any;
@@ -298,7 +284,7 @@ export class SelectgoalsComponent implements OnInit {
       this.selectedGoal.push(Philanthropy);
       this.isPhilanthropyPresent = true;
       console.log(this.selectedGoal)
-      this.goals[8].src = "assets/img/Philanthrophycolor.png"
+      this.goals[8].src = "assets/img/Philanthropycolor.png"
     }
     else if (this.selectedGoal.length <= 3 && this.isPhilanthropyPresent == true) {
       let data = "Philanthropy";
@@ -430,34 +416,44 @@ export class SelectgoalsComponent implements OnInit {
       this.goals[14].src = "assets/img/Retirement.png";
     }
   }
-
-  addothergoal(newgoal) {
-    console.log(newgoal);
-    if (!this.showInput) {
-      this.showInput = true
-    } else {
-      if (this.selectedGoal.length < 3 && this.isOtherGoalPresent == false && this.otherGoalsCount < 3) {
-        var othergoal = { "id": this.selectedGoal.length, "type": newgoal, "src": "assets/img/AddOtherGoalcolor.png" } as Igoal;
-        this.goals.push(othergoal);
-        console.log("othergoal", othergoal);
-        this.selectedGoal.push(othergoal);
-        this.othergoalImg = "assets/img/AddOtherGoalcolor.png"
-
-        this.otherGoalsCount += 1;
-        this.othergoalImg = "assets/img/AddOtherGoal.png"
-
-        this.isOtherGoalPresent = true;
-        this.showInput = false;
-        this.goalValue = null
-        console.log(this.selectedGoal)
-      }
-      else if (this.selectedGoal.length <= 3 && this.isOtherGoalPresent == true && this.otherGoalsCount <= 3) {
-        let data = newgoal;
-        this.isOtherGoalPresent = false
-        this.removeData(data);
-        this.othergoalImg = "assets/img/AddOtherGoal.png"
-      }
+  
+  addCustomGoal(newGoal){
+    this.showInput = !this.showInput;
+    
+    console.log("new goal is ",newGoal );
+    if(newGoal == undefined || newGoal == '' || newGoal == null){
+      return;
     }
+    else{
+      this.abs.addCustomGoal(newGoal).subscribe((value)=>{
+        console.log("Value after database insert is ", value);
+        if(value['success'] == true){
+          console.log("Inside success");
+          if (this.selectedGoal.length < 3 && this.otherGoalsCount < 3) {
+            var othergoal = { "id": value['goalId'], "type": newGoal, "src": "assets/img/AddOtherGoalcolor.png" } as Igoal;
+            this.goals.push(othergoal);
+            console.log("othergoal", othergoal);
+            this.selectedGoal.push(othergoal);
+            this.othergoalImg = "assets/img/AddOtherGoalcolor.png"
+    
+            this.otherGoalsCount += 1;
+            this.othergoalImg = "assets/img/AddOtherGoal.png"
+    
+            this.isOtherGoalPresent = true;
+            this.showInput = false;
+            this.goalValue = null
+            console.log(this.selectedGoal)
+          }
+          else if (this.selectedGoal.length <= 3 && this.otherGoalsCount <= 3) {
+            let data = newGoal;
+            this.isOtherGoalPresent = false
+            this.removeData(data);
+            this.othergoalImg = "assets/img/AddOtherGoal.png"
+          }
+        }
+      });
+    }
+
   }
   /////new goals added ////////// 
 

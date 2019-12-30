@@ -19,6 +19,7 @@ export class GoalsGuard implements CanActivate {
           // this.router.navigate(['/goals']);
         }else {
           false
+          this.router.navigate(['']);
         }
       })
     return true;
