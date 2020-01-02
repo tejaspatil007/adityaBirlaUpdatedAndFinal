@@ -242,7 +242,7 @@ export class CalculatorgoalComponent implements OnInit {
     this.userForm = this.fb.group({
       name: ["", [Validators.required, Validators.pattern(alphabetsWithSpaceDot)]],
       gender: [true],
-      age:[18],
+      age:[18, [Validators.required]],
       maritalStatus: [true],
       child: [false],
       kids: [1],
@@ -326,19 +326,16 @@ export class CalculatorgoalComponent implements OnInit {
     this.userForm.value.kids = 1
     this.formJson.kids = this.userForm.value.kids;
     console.log(this.numberOfKids);
-    this.validator="";
   }
   kid2() {
     this.userForm.value.kids = 2
     this.formJson.kids = this.userForm.value.kids;
     console.log(this.numberOfKids);
-    this.validator="";
   }
   kid3() {
     this.userForm.value.kids = 3
     this.formJson.kids = this.userForm.value.kids;
     console.log(this.numberOfKids);
-    this.validator="";
   }
   kid4() {
     this.userForm.value.kids = 4
@@ -346,7 +343,6 @@ export class CalculatorgoalComponent implements OnInit {
     console.log("=>",this.formJson.kids)
     console.log(this.numberOfKids);
     console.log(this.userForm.value.kids);
-    this.validator="";
   }
 
 
@@ -393,7 +389,7 @@ export class CalculatorgoalComponent implements OnInit {
     }
 
     //Validation for no. of kids
-    if (this.formJson.child == "None") {
+    if (this.formJson.child == "None" || this.userForm.value.child == false) {
       this.userForm.value.kids=0
       this.formJson.kids = 0;
     } 
@@ -410,15 +406,16 @@ export class CalculatorgoalComponent implements OnInit {
         this.uid= res['userid'];
         //Setting uid in Local Storage
         localStorage.setItem('id',this.uid);
+        this.router.navigateByUrl("/selectgoals");
         console.log(this.uid);
       },(err)=>{});
     }
 
-    if (this.userForm.valid) {
-      this.router.navigateByUrl("/selectgoals");
-    } else {
-      this.router.navigateByUrl("/calculatorgoal");
-    }
+    // if (this.userForm.valid) {
+    //   this.router.navigateByUrl("/selectgoals");
+    // } else {
+    //   this.router.navigateByUrl("/calculatorgoal");
+    // }
     console.log("Json",this.formJson)
 
 

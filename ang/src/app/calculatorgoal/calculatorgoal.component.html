@@ -76,7 +76,7 @@
 
               <!--Validation for name-->
               <span class=" validation-name" *ngIf="userForm.get('name').hasError('required') &&  submitted">
-                *name is required*
+                Name is required
               </span>
               <!-- <span class="alert"
                   *ngIf="!userForm.get('name').valid && !userForm.get('name').hasError('required') && submitted">
@@ -115,10 +115,13 @@
             </div>
           </div> -->
           <div class="mob text-center">
-            <label>Select Age</label>
+            <label>Enter Age</label>
             <input type='number' formControlName="age"  value={{formJson.age}} class='amount' placeholder="" autocomplete="off">
           </div>
         </div>
+        <span class="validation-Age" *ngIf="userForm.get('age').hasError('required') &&  submitted">
+          Age is required
+        </span>
         <div class="marrial text-center">
           <div class="row">
             <div class="col-md-6 user d-flex">
@@ -195,7 +198,7 @@
         <div class="col-md-8">
           <!--<img src="img/demo.png">-->
           <div class="footer">
-            <p><b>@ 2019 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
+            <p><b>@ 2020 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
             <ul>
               <li><a href="#">Terms and Conditions</a></li>
               <li><a href="#">LEARN MORE</a></li>

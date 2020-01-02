@@ -5,8 +5,8 @@ import { SelectgoalsComponent } from './selectgoals/selectgoals.component';
 import { GoalsComponent } from './goals/goals.component';
 import { TermgoalsComponent } from './termgoals/termgoals.component';
 import { GoalsGuard } from './goals.guard';
-
-
+​
+​
 export const routes : Route[] = [
 {
     path:"",
@@ -19,7 +19,7 @@ export const routes : Route[] = [
 },
 {
     path:'selectgoals',
-    component:SelectgoalsComponent
+    component:SelectgoalsComponent,  canActivate : [GoalsGuard]
 },
 {
     path:'goals',
@@ -28,11 +28,6 @@ export const routes : Route[] = [
    
 },
 {
-    path:'goal',
-    component: GoalsComponent
-   
-},
-{
     path: 'termgoals',
-    component: TermgoalsComponent
+    component: TermgoalsComponent,  canActivate : [GoalsGuard]
 }]

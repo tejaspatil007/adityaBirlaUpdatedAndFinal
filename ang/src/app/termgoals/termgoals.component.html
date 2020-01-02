@@ -28,7 +28,7 @@
 		<a class="navbar-brand" href="#"></a>
 		<img src="../../assets/img/aditybilacapital logo.png">
 	</section>
-	
+
 	<section class="cover">
 		<div class="container back">
 			<div class="row heading">
@@ -42,15 +42,15 @@
 				</div>
 
 				<!-- <div *ngIf="shortGoal.length > 0"> -->
-				 <div *ngIf="shortGoal.length > 0" class="col-md-12 short">
-					<div *ngFor="let short of shortGoal">
+				<div *ngIf="shortGoal.length > 0" class="col-md-12 short">
+					<div *ngFor="let short of shortGoal; let i=index">
 						<h1>Short Term Goals</h1>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="testimonials clearfix">
 									<div class="img-style">
 
-										<img src="../../assets/img/{{short.goals}}color.png" class="img-fluid">
+										<img [src]="shortGoalImages[i]" class="img-fluid">
 										{{short.goals}}
 									</div>
 
@@ -73,14 +73,18 @@
 					<hr>
 				</div>
 
+				<div *ngIf="shortGoal.length < 3 && !shortGoal.length == 0" class="col-md-12">
+					<hr color="white" style="width: auto;height: 1px;margin:0px 20px;">
+				</div>
+
 				<div *ngIf="midGoal.length > 0" class="col-md-12 short">
-					<div *ngFor="let goal of midGoal">
+					<div *ngFor="let goal of midGoal; let i=index">
 						<h1>Mid Term Goals</h1>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="testimonials clearfix">
 									<div class="img-style">
-										<img src="../../assets/img/{{goal.goals}}color.png" class="img-fluid">
+										<img [src]="midGoalImages[i]" class="img-fluid">
 										{{goal.goals}}
 									</div>
 									<div class="short-details">
@@ -97,19 +101,19 @@
 					</div>
 				</div>
 
-				<div class="hr">
-					<hr>
+				<div *ngIf="longGoal.length > 0 && !longGoal.length == 0 && !shortGoal.length == 0" class="col-md-12">
+					<hr color="white" style="width: auto;height: 1px;margin:0px 20px;">
 				</div>
 
 				<div *ngIf="longGoal.length > 0" class="col-md-12 short">
-					<div *ngFor="let goal of longGoal">
+					<div *ngFor="let goal of longGoal; let i = index">
 						<h1>Long Term Goals</h1>
 						<div class="row">
 
 							<div class="col-md-6">
 								<div class="testimonials clearfix">
 									<div class="img-style">
-										<img src="../../assets/img/{{goal.goals}}color.png" class="img-fluid">
+										<img [src]="longGoalImages[i]" class="img-fluid">
 										{{goal.goals}}
 									</div>
 									<div class="short-details">
@@ -120,7 +124,8 @@
 							</div>
 							<div class="col-md-6 testimonials_style">
 								<p>Indicative Asset Allocation</p>
-								<img class="img-fluid" style="margin-top: 0px !important;" src="../../assets/img/pie chart 3.png">
+								<img class="img-fluid" style="margin-top: 0px !important;"
+									src="../../assets/img/pie chart 3.png">
 							</div>
 						</div>
 					</div>
@@ -129,55 +134,55 @@
 					</hr>
 					</div> -->
 
-				
-					<div class="buttons_style col-md-12 text-center">
-						<a><button type="button" class="btn allbtn" (click)="Replan()">REPLAN</button></a>
-						<a><button type="button" class="btn allbtn" (click)="download()">DOWNLOAD</button></a>
-						<a><button type="button" class="btn allbtn" (click)="share()">SHARE</button></a>
-						<a><button type="button" class="btn allbtn" (click)="email()">EMAIL</button></a>
-						<a><button type="button" class="btn allbtn" (click)="printPage()">PRINT</button></a>
+
+				<div class="buttons_style col-md-12 text-center">
+					<a><button type="button" class="btn allbtn" (click)="Replan()">REPLAN</button></a>
+					<!-- <a><button type="button" class="btn allbtn" (click)="download()">DOWNLOAD</button></a> -->
+					<a><button type="button" class="btn allbtn" (click)="share()">SHARE</button></a>
+					<a><button type="button" class="btn allbtn" (click)="email()">EMAIL</button></a>
+					<a><button type="button" class="btn allbtn" (click)="printPage()">DOWNLOAD/PRINT</button></a>
+				</div>
+
+
+				<div class="offer">
+					<div class="col-md-12 Disclaimer ">
+						<P><span>Disclaimer:</span><br>
+							*For more details on the CSIP facility please refer to the SID or KIM of the Plan.
+							The
+							calculator is based on assumed rate of returns and is meant for illustration
+							purposes only
+							and takes a<br>
+							time frame of upto 30 years . The calculations are not based on any judgments of
+							future
+							returns and should not be construed as a promise on minimum returns and/or safeguard
+							of
+							capital.<br>
+							Calculations made are approximations, meant as guidelines only. The calculator alone
+							is not
+							sufficient and shouldn’t be used for the development or implementation of an
+							investment<br>
+							strategy. The statements contained herein are based on our current views and involve
+							known
+							and unknown risks and uncertainties that could cause actual results, performance or
+							events<br>
+							to differ materially from those expressed or implied herein. Past Performance may or
+							may not
+							be sustained in future. Aditya Birla Sun Life Mutual Fund / Aditya Birla Sun Life
+							AMC<br>
+							Limited makes no warranty about the accuracy of the calculator and data and will not
+							accept
+							any liability/responsibility/loss incurred<br>
+							on any investment decision taken on the basis of this information. Investment in
+							Mutual Fund
+							Schemes carry high risk and any investment decision needs to be taken only are
+							consulting<br>
+							the Tax Consultant or Financial Advisor. Mutual Fund investments are subject to
+							market
+							risks, read all scheme related documents carefully.</P>
 					</div>
-			
-				
-					<div class="offer">
-						<div class="col-md-12 Disclaimer ">
-							<P><span>Disclaimer:</span><br>
-								*For more details on the CSIP facility please refer to the SID or KIM of the Plan.
-								The
-								calculator is based on assumed rate of returns and is meant for illustration
-								purposes only
-								and takes a<br>
-								time frame of upto 30 years . The calculations are not based on any judgments of
-								future
-								returns and should not be construed as a promise on minimum returns and/or safeguard
-								of
-								capital.<br>
-								Calculations made are approximations, meant as guidelines only. The calculator alone
-								is not
-								sufficient and shouldn’t be used for the development or implementation of an
-								investment<br>
-								strategy. The statements contained herein are based on our current views and involve
-								known
-								and unknown risks and uncertainties that could cause actual results, performance or
-								events<br>
-								to differ materially from those expressed or implied herein. Past Performance may or
-								may not
-								be sustained in future. Aditya Birla Sun Life Mutual Fund / Aditya Birla Sun Life
-								AMC<br>
-								Limited makes no warranty about the accuracy of the calculator and data and will not
-								accept
-								any liability/responsibility/loss incurred<br>
-								on any investment decision taken on the basis of this information. Investment in
-								Mutual Fund
-								Schemes carry high risk and any investment decision needs to be taken only are
-								consulting<br>
-								the Tax Consultant or Financial Advisor. Mutual Fund investments are subject to
-								market
-								risks, read all scheme related documents carefully.</P>
-						</div>
-					</div>
-				
-				
+				</div>
+
+
 			</div>
 		</div>
 	</section>
@@ -190,7 +195,7 @@
 
 				<div class="col-md-8">
 					<div class="footer">
-						<p><b>@ 2019 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
+						<p><b>@ 2020 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
 						<ul>
 							<li><a href="#">Terms and Conditions</a></li>
 							<li><a href="#">LEARN MORE</a></li>

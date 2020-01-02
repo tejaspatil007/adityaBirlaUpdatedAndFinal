@@ -104,7 +104,6 @@ connection.query(answertable, function (err, results, fields) {
         console.log("4nd table created")
     }
 })
-
 //////////// create tables /////////////////////
 
 /////  store user details and send uuid ///////////////
@@ -127,12 +126,9 @@ app.post("/details", function (req, res) {
                     VALUES (?)`,
         [obj], function (error, rows, field) {
             if (error) {
-                // console.log(error);
-                // throw(error);
                 throw (error)
             }
             else {
-                // console.log(row[0].user_id);
                 console.log(uid);
                 res.send({ userid: uid });
             }
@@ -168,7 +164,6 @@ connection.query("INSERT IGNORE INTO tablegoal(goal) Values ?", [ugoal], functio
         console.log(rows);
     }
 })
-
 ////////// strore goals ///////////////
 
 ///////// get goals ////////////////////
@@ -192,6 +187,32 @@ app.get("/getgoals", function (req, res) {
 })
 ///////// get goals ////////////////////
 
+app.post('/addCustomGoal', function (req, res) {
+    let goalName = req.body.goalName;
+
+    connection.query('SELECT goal, goal_id FROM tablegoal WHERE goal = ?', [goalName],
+        (err, rows, field) => {
+            if (err) {
+                console.log("Error is ", error);
+                res.send({ "success": false });
+            } else {
+                if (rows.length != 0) {
+                    res.send({ "success": true, "goalId": rows[0].goal_id });
+                } else {
+                    connection.query(`INSERT IGNORE INTO tablegoal SET goal = ?`,
+                        [goalName], function (error, rows, field) {
+                            if (error) {
+                                console.log("Error is ", error);
+                                res.send({ "success": false });
+                            }
+                            else {
+                                res.send({ "success": true, "goalId": rows.insertId });
+                            }
+                        })
+                }
+            }
+        });
+});
 
 ////////// strore user goals //////////////////////
 app.post("/usergoals", function (req, res) {
@@ -201,45 +222,17 @@ app.post("/usergoals", function (req, res) {
     let user_goal = req.body.selectedgoals;
     // console.log(user_goal);
     let sqldata = [];
-    // let othergoal = [];
     console.log("*", user_goal.length);
     for (let i = 0; i < user_goal.length; i++) {
         let add = [userid, user_goal[i].id, user_goal[i].type, user_goal[i].src];
-        // let dataObj = {
-        //     user_id: userid,
-        //     goals: user_goal[i].type,
-        //     goal_id: user_goal[i].id,
-        //     src: user_goal[i].src
-        // }
-        // sqldata.push(dataObj);
-        // let goal = [user_goal[i].type];
-        // console.log(goal);
-        console.log("usergoal", user_goal[i]);
-        console.log("goalid", user_goal[i].id);
-        console.log("=", add);
+        let otherGoal = [user_goal[i].type];
         sqldata.push(add);
-        // othergoal.push(goal);
     }
     console.log("=>", sqldata);
-    // connection.query(`INSERT INTO 
-    //                     userGoals(user_id,goal_id,goals,src) 
-    //                 VALUES ?`,
-    //     [sqldata], function (error, rows, field) {
-    //         if (error) {
-    //             throw (error);
-    //         }
-    //         else {
-    //             // console.log({userid:uid});
-    //             console.log(rows);
-    //             res.send({ rows });
-    //         }
-    //     })
-
     connection.query(`DELETE FROM userGoals
-                        WHERE EXISTS (SELECT * FROM userGoals WHERE user_id = ?)`,[userid],
+                        WHERE EXISTS (SELECT * FROM userGoals WHERE user_id = ?)`, [userid],
         function (error, rows, field) {
-            console.log("sqlquer1",this.sql);
-
+            console.log("sqlquer1", this.sql);
             if (error) {
                 throw (error)
             }
@@ -249,7 +242,7 @@ app.post("/usergoals", function (req, res) {
                         userGoals(user_id,goal_id,goals,src) 
                     VALUES ?`,
                     [sqldata], function (error, rows, field) {
-                        console.log("sqlquer2",this.sql);
+                        console.log("sqlquer2", this.sql);
                         if (error) {
                             throw (error);
                         }
@@ -262,23 +255,6 @@ app.post("/usergoals", function (req, res) {
             }
         }
     )
-
-    // connection.query(`REPLACE INTO 
-    //                       userGoals SET  ?`,
-    //     sqldata, function (error, rows, field) {
-    //         if (error) {
-    //             throw (error);
-    //         }
-    //         else {
-    //             res.send({ rows });
-    //         }
-    //     })
-
-    // connection.end();    
-    //         // console.log({userid:uid});
-    //         console.log(rows);
-    //         // res.send({rows});
-    // }
 })
 // connection.end();
 
@@ -358,20 +334,12 @@ app.post("/goalsanswer", function (req, res) {
                 throw (error);
             }
             else {
-                res.send({ data: userid });
+                // res.send({ data: userid });
+                res.send({success:true});
+
             }
             // connection.end();
         })
-    //          connection.query(`UPDATE INTO 
-    //                             userGoals SET result = ? 
-    //                             `,[resultdata],function(error, rows, field){
-    //                                 if(error){
-    //                                     throw (error);
-    //                                 }
-    //                                 else{
-    //                                     console.log("send result")
-    //                                 }
-    //                             })   
 })
 /////////////store user answers //////////////////////
 
@@ -392,45 +360,43 @@ app.get("/getanswers/:id", function (req, res) {
             else {
                 // connection.end();
                 let formGoals = {};
-                let midGoals =[];
-                let longGoals=[];
-                let shortGoals=[];
+                let midGoals = [];
+                let longGoals = [];
+                let shortGoals = [];
                 let totalAmount = 0
                 rows.forEach(element => {
-                    console.log("element",element);
+                    console.log("element", element);
                     const data = JSON.parse(element.result);
-                    console.log("data",data.age);
-                    totalAmount += parseInt(data.amt)
-                    if(data.age < 3){
+                    console.log("data", data.afterYears);
+                    totalAmount += parseInt(data.sipWithLumpsum)
+                    console.log("sip->>",data.sipWithLumpsum)
+                    if (data.afterYears < 3) {
                         shortGoals.push(element)
                     }
-                    else if(data.age > 2 && data.age <= 5){
+                    else if (data.age > 2 && data.afterYears <= 5) {
                         midGoals.push(element);
                     }
-                    else if(data.age > 5){
+                    else if (data.afterYears > 5) {
                         longGoals.push(element);
                     }
-                    
-                   
-                });
-                
-                console.log('shortGoals',shortGoals)
 
-                formGoals =  {
-                    "shortGoals" : shortGoals,
-                    "midGoal" :midGoals,
-                    "longGoals" : longGoals,
-                    "totalAmount" : totalAmount
+
+                });
+
+                console.log('shortGoals', shortGoals)
+
+                formGoals = {
+                    "shortGoals": shortGoals,
+                    "midGoal": midGoals,
+                    "longGoals": longGoals,
+                    "totalAmount": totalAmount
                 }
-                // formGoals.push({"shortGoal":shortGoals},
-                // {"midGoal":midGoals},
-                // {"longGoals":longGoals})
-                console.log("formGoals",JSON.stringify(formGoals));
+
+                console.log("formGoals", JSON.stringify(formGoals));
                 // connection.end();
-                res.send({ result:formGoals });
+                res.send({ result: formGoals });
             }
         })
-    
 })
 //////////// get answers //////////////////
 

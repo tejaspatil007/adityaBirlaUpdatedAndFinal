@@ -28,6 +28,7 @@ export class SelectgoalsComponent implements OnInit {
   public isPhilanthropyPresent: boolean = false;
   public isOtherGoalPresent: boolean = false;
   public errorMsg:string;
+  public msg:String;
 
 
   //Images
@@ -47,21 +48,7 @@ export class SelectgoalsComponent implements OnInit {
   { "id": 14, "type": "Childs Marriage", "src": "assets/img/Childs Marriage.png" },
   { "id": 15, "type": "Retirement", "src": "assets/img/Retirement.png" }
   ]
-  //  public retirementImg="assets/img/Retirement.png";
-  //  public holidayImg="assets/img/Holiday.png";
-  //  public honeyMoonImg="assets/img/Honeymoon.png";
-  //  public marriageImg="assets/img/Marriage.png";
-  //  public carImg="assets/img/Car.png";
-  //  public bikeImg="assets/img/Bike.png";
-  //  public DreamHomeImg="assets/img/Dream Home.png";
-  //  public startingBusinessImg="assets/img/Starting Business.png";
-  //  public selfDevelopmentImg="assets/img/Self Development.png";
-  //  public childsEducationImg="assets/img/Childs Education.png";
-  //  public childsMarriageImg="assets/img/Childs Marriage.png";
-  //  public worldTourImg="assets/img/World Tour.png";
-  //  public wealthCreationImg="assets/img/Wealth Creation.png";
-  //  public followPassionImg="assets/img/Follow Passion.png";
-  //  public philanthropyImg="assets/img/Philanthropy.png";
+
   public othergoalImg = "assets/img/AddOtherGoal.png";
   public uid: any;
   public flag: any;
@@ -119,6 +106,18 @@ export class SelectgoalsComponent implements OnInit {
     else if (type == 'Retirement') {
       this.addRetirement()
     }
+
+    // else{
+    //   let goalsLength = this.goals.length;
+    //   for(let i = 0; i < goalsLength; i++){
+    //     let currentGoal = this.goals[i];
+    //     if(currentGoal.type == type){
+    //       this.goals.splice(i,1);
+    //     }
+    //   }
+    //   this.removeData(type);
+    // }
+  
   }
 
   /////new goals added ////////// 
@@ -127,7 +126,7 @@ export class SelectgoalsComponent implements OnInit {
       var SelfDevelopment = {
         id: 1,
         type: "Self Development",
-        src: ''
+        src: 'assets/img/Self Developmentcolor.png'
       }
       this.selectedGoal.push(SelfDevelopment);
       this.isSelfDevelopmentPresent = true;
@@ -140,6 +139,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[0].src = "assets/img/Self Development.png"
     }
+    this.checkMaxGoalInput();
   }
 
   addStartingBusiness() {
@@ -147,7 +147,7 @@ export class SelectgoalsComponent implements OnInit {
       var StartingBusines = {
         id: 2,
         type: "Starting Business",
-        src: ''
+        src: 'assets/img/Starting Businesscolor.png'
       }
       this.selectedGoal.push(StartingBusines);
       this.isStartingBusinessPresent = true;
@@ -160,7 +160,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[1].src = "assets/img/Starting Business.png"
     }
-
+    this.checkMaxGoalInput();
   }
 
   addMarriage() {
@@ -168,7 +168,7 @@ export class SelectgoalsComponent implements OnInit {
       var Marriage = {
         id: 3,
         type: "Marriage",
-        src: ''
+        src: 'assets/img/Marriagecolor.png'
       }
       this.selectedGoal.push(Marriage);
       this.isMarriagePresent = true;
@@ -181,6 +181,7 @@ export class SelectgoalsComponent implements OnInit {
       this.goals[2].src = "assets/img/Marriage.png";
       this.removeData(data);
     }
+    this.checkMaxGoalInput();
 
   }
 
@@ -189,7 +190,7 @@ export class SelectgoalsComponent implements OnInit {
       var Honeymoon = {
         id: 4,
         type: "Honeymoon",
-        src: ''
+        src: 'assets/img/Honeymooncolor.png'
       }
       this.selectedGoal.push(Honeymoon);
       this.isHoneymoonPresent = true;
@@ -202,7 +203,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[3].src = "assets/img/Honeymoon.png";
     }
-
+    this.checkMaxGoalInput();
   }
 
   addWealthCreation() {
@@ -210,7 +211,7 @@ export class SelectgoalsComponent implements OnInit {
       var WealthCreation = {
         id: 5,
         type: "Wealth Creation",
-        src: ''
+        src: 'assets/img/Wealth Creationcolor.png'
       }
       this.selectedGoal.push(WealthCreation);
       this.isWealthCreationPresent = true;
@@ -223,7 +224,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[4].src = "assets/img/Wealth Creation.png"
     }
-
+    this.checkMaxGoalInput();
   }
 
   addHoliday() {
@@ -231,7 +232,7 @@ export class SelectgoalsComponent implements OnInit {
       var Holiday = {
         id: 6,
         type: "Holiday",
-        src: ''
+        src: 'assets/img/Holidaycolor.png'
       }
       this.selectedGoal.push(Holiday);
       this.isHolidayPresent = true;
@@ -245,6 +246,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[5].src = "assets/img/Holiday.png";
     }
+    this.checkMaxGoalInput();
   }
 
   addWorldTour() {
@@ -252,7 +254,7 @@ export class SelectgoalsComponent implements OnInit {
       var WorldTour = {
         id: 7,
         type: "World Tour",
-        src: ''
+        src: 'assets/img/World Tourcolor.png'
       }
       this.selectedGoal.push(WorldTour);
       this.isWorldTourPresent = true;
@@ -265,7 +267,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[6].src = "assets/img/World Tour.png"
     }
-
+    this.checkMaxGoalInput();
   }
 
   addFollowPassion() {
@@ -273,7 +275,7 @@ export class SelectgoalsComponent implements OnInit {
       var FollowPassion = {
         id: 8,
         type: "Follow Passion",
-        src: ''
+        src: 'assets/img/Follow Passioncolor.png'
       }
       this.selectedGoal.push(FollowPassion);
       this.isFollowPassionPresent = true;
@@ -286,6 +288,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[7].src = "assets/img/Follow Passion.png"
     }
+    this.checkMaxGoalInput();
   }
 
   addPhilantropy() {
@@ -293,12 +296,12 @@ export class SelectgoalsComponent implements OnInit {
       var Philanthropy = {
         id: 9,
         type: "Philanthropy",
-        src: ''
+        src: 'assets/img/Philanthropycolor.png'
       }
       this.selectedGoal.push(Philanthropy);
       this.isPhilanthropyPresent = true;
       console.log(this.selectedGoal)
-      this.goals[8].src = "assets/img/Philanthrophycolor.png"
+      this.goals[8].src = "assets/img/Philanthropycolor.png"
     }
     else if (this.selectedGoal.length <= 3 && this.isPhilanthropyPresent == true) {
       let data = "Philanthropy";
@@ -306,6 +309,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[8].src = "assets/img/Philanthropy.png"
     }
+    this.checkMaxGoalInput();
   }
 
   addBike() {
@@ -313,7 +317,7 @@ export class SelectgoalsComponent implements OnInit {
       var Bike = {
         id: 10,
         type: "Bike",
-        src: ''
+        src: 'assets/img/Bikecolor.png'
       }
       this.selectedGoal.push(Bike);
       this.isBikePresent = true;
@@ -326,7 +330,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[9].src = "assets/img/Bike.png"
     }
-
+    this.checkMaxGoalInput();
   }
 
   addCar() {
@@ -334,7 +338,7 @@ export class SelectgoalsComponent implements OnInit {
       var Car = {
         id: 11,
         type: "Car",
-        src: ''
+        src: 'assets/img/Carcolor.png'
       }
       this.selectedGoal.push(Car);
       this.isCarPresent = true;
@@ -347,7 +351,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[10].src = "assets/img/Car.png"
     }
-
+    this.checkMaxGoalInput();
   }
 
   addDreamHome() {
@@ -355,7 +359,7 @@ export class SelectgoalsComponent implements OnInit {
       var DreamHome = {
         id: 12,
         type: "Dream Home",
-        src: ''
+        src: 'assets/img/Dream Homecolor.png'
       }
       this.selectedGoal.push(DreamHome);
       this.isDreamHomePresent = true;
@@ -368,6 +372,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[11].src = "assets/img/Dream Home.png"
     }
+    this.checkMaxGoalInput();
   }
 
   addChildsEducation() {
@@ -375,7 +380,7 @@ export class SelectgoalsComponent implements OnInit {
       var ChildsEducation = {
         id: 13,
         type: "Childs Education",
-        src: ''
+        src: 'assets/img/Childs Educationcolor.png'
       }
       this.selectedGoal.push(ChildsEducation);
       this.isChildsEducationPresent = true;
@@ -388,6 +393,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[12].src = "assets/img/Childs Education.png"
     }
+    this.checkMaxGoalInput();
   }
 
   addChildsMarriage() {
@@ -395,7 +401,7 @@ export class SelectgoalsComponent implements OnInit {
       var ChildsMarriage = {
         id: 14,
         type: "Childs Marriage",
-        src: ''
+        src: 'assets/img/Childs Marriagecolor.png'
       }
       this.selectedGoal.push(ChildsMarriage);
       this.isChildsMarriagePresent = true;
@@ -408,6 +414,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[13].src = "assets/img/Childs Marriage.png"
     }
+    this.checkMaxGoalInput();
   }
 
   addRetirement() {
@@ -415,7 +422,7 @@ export class SelectgoalsComponent implements OnInit {
       var Retirement = {
         id: 15,
         type: "Retirement",
-        src: ''
+        src: 'assets/img/Retirementcolor.png'
       }
       this.selectedGoal.push(Retirement);
       this.isRetirementPresent = true;
@@ -429,35 +436,48 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[14].src = "assets/img/Retirement.png";
     }
+    this.checkMaxGoalInput();
   }
-
-  addothergoal(newgoal) {
-    console.log(newgoal);
-    if (!this.showInput) {
-      this.showInput = true
-    } else {
-      if (this.selectedGoal.length < 3 && this.isOtherGoalPresent == false && this.otherGoalsCount < 3) {
-        var othergoal = { "id": this.selectedGoal.length, "type": newgoal, "src": "assets/img/AddOtherGoalcolor.png" } as Igoal;
-        this.goals.push(othergoal);
-        console.log("othergoal", othergoal);
-        this.selectedGoal.push(othergoal);
-        this.othergoalImg = "assets/img/AddOtherGoalcolor.png"
-
-        this.otherGoalsCount += 1;
-        this.othergoalImg = "assets/img/AddOtherGoal.png"
-
-        this.isOtherGoalPresent = true;
-        this.showInput = false;
-        this.goalValue = null
-        console.log(this.selectedGoal)
-      }
-      else if (this.selectedGoal.length <= 3 && this.isOtherGoalPresent == true && this.otherGoalsCount <= 3) {
-        let data = newgoal;
-        this.isOtherGoalPresent = false
-        this.removeData(data);
-        this.othergoalImg = "assets/img/AddOtherGoal.png"
-      }
+  
+  addCustomGoal(newGoal){
+    this.showInput = !this.showInput;
+    
+    console.log("new goal is ",newGoal );
+    if(newGoal == undefined || newGoal == '' || newGoal == null){
+      return;
     }
+    else{
+      this.abs.addCustomGoal(newGoal).subscribe((value)=>{
+        console.log("Value after database insert is ", value);
+        if(value['success'] == true){
+          console.log("Inside success");
+          if (this.selectedGoal.length < 3 && this.otherGoalsCount < 3) {
+            var othergoal = { "id": value['goalId'], "type": newGoal, "src": "assets/img/AddOtherGoalcolor.png" } as Igoal;
+            this.goals.push(othergoal);
+            console.log("othergoal", othergoal);
+            this.selectedGoal.push(othergoal);
+            this.othergoalImg = "assets/img/AddOtherGoalcolor.png"
+    
+            this.otherGoalsCount += 1;
+            this.othergoalImg = "assets/img/AddOtherGoal.png"
+    
+            this.isOtherGoalPresent = true;
+            this.showInput = false;
+            this.goalValue = null
+            console.log(this.selectedGoal)
+          }
+          else if (this.selectedGoal.length <= 3 && this.otherGoalsCount <= 3) {
+            let data = newGoal;
+            this.isOtherGoalPresent = false
+            this.removeData(data);
+            this.othergoalImg = "assets/img/AddOtherGoal.png"
+          }
+        }
+      });
+    }
+
+    this.checkMaxGoalInput();
+
   }
   /////new goals added ////////// 
 
@@ -475,13 +495,21 @@ export class SelectgoalsComponent implements OnInit {
     }
   }
 
+  checkMaxGoalInput(){
+    if(this.selectedGoal.length === 3 ){
+      this.msg='You can select maximum 3 goals'
+    }
+    else{
+      this.msg=''
+    }
+  }
+
   data() {
     let userGoals = {
       user_id: localStorage.getItem('id'),
       selectedgoals: this.selectedGoal
     }
     console.log("usergoal", userGoals);
-
 
     if(this.selectedGoal.length > 0){
 
@@ -498,6 +526,11 @@ export class SelectgoalsComponent implements OnInit {
     else(this.errorMsg='Please select goals')
   }
 }
+
+
+
+
+
 
 
 

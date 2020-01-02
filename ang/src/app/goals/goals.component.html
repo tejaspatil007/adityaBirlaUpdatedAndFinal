@@ -54,7 +54,9 @@
                 <div class="row goals">
                     <div class="col-md-12 goals-style">
                         <ul>
-                        <li *ngFor="let goal of img; let goalIndex = index"> <a (click)="onGoalClick(goal.goals)"><span class="notify-badge">{{goalIndex + 1}}</span><img src="../../assets/img/{{goal.goals}}.png"></a><p>{{goal.goals}}</p></li> 
+                        <li *ngFor="let goal of selectGoal; let goalIndex = index"> <a (click)="onGoalClick(goal.goals, goalIndex, goal.goal_id, goal.age)">
+                            <span class="notify-badge">{{goalIndex + 1}}</span>
+                            <img [src]="images[goalIndex]"></a><p>{{goal.goals}}</p></li> 
 
                     </ul>
                     </div>
@@ -65,16 +67,12 @@
                 <hr>
             </div>
                 
-                <div class="dropdown-style">
+            <!-- <div class="dropdown-style">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6  dropdowns" *ngFor="let questions of questions; let questionIndex = index">   <!--que1=list of questions of 1 goal-->
-                        <!-- <p>At what age you plan to retire?</p> -->
+                    <div class="col-md-4 col-sm-6  dropdowns" *ngFor="let questions of questions; let questionIndex = index">   
+                       
                         <p>{{questions.name}}</p>
                         <div class="dropdown" >
-                            <!-- <select *ngIf="questions.options" ngmodel="modeljson['question.flag']'" class="dropdown-toggle" type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-                                
-                                <!-- <option>Enter amount</option> -->
-                                <!-- <option *ngFor="let field of que1">{{field.fname}}</option> -->
                             <select *ngIf="questions.options" class="dropdown-toggle" type="text" (change)="optionSelect(questions.variableName, $event.target.value)" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">    
                             <option value="{{options.value}}" *ngFor="let options of questions.options; ">
                                 {{options.name}}
@@ -84,6 +82,70 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+
+            <div class="dropdown-style" *ngIf="isFormReady">
+                <form [formGroup]="dynamicGoalForm" (ngSubmit)="calculateFunction()" >
+                    
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6  dropdowns" *ngFor="let ques of questions; let questionIndex = index">
+                            <!-- <p>{{ques.name}}</p> -->
+                            <div [ngSwitch]="ques.controlType">
+
+                                <div *ngSwitchCase="'text'" >
+                                    <p>{{ques.name}}</p>
+                                    <div class="dropdown" >
+                                        <!-- <p> -->
+                                            <input formControlName="{{ques.variableName}}"  name = "{{ques.variableName}}"
+                                                style="width:210px; border:none; color:coral;height:35px; border-radius:50px; padding:0px 10px"  type="text" placeholder="{{ques.placeholder}}" autocomplete="off" >
+
+                                            <div *ngIf="dynamicGoalForm.controls[ques.variableName].invalid" style="color:red">
+                                                <div *ngIf="dynamicGoalForm.controls[ques.variableName].touched && 
+                                                    dynamicGoalForm.controls[ques.variableName].errors.required">
+                                                    value is required
+                                                   
+                                                </div>
+                                                <div *ngIf="dynamicGoalForm.controls[ques.variableName].touched && 
+                                                                dynamicGoalForm.controls[ques.variableName].hasError('pattern')">
+                                                                {{ques.patternError}}
+                                                </div>
+                                            </div>
+                                        <!-- </p> -->
+                                    </div>
+                                    
+                                </div>
+
+
+                                <div *ngSwitchCase="'dropdown'" >
+                                    <p>{{ques.name}}</p>
+                                    <div class="dropdown" >
+                                        <select *ngIf="ques.options" formControlName="{{ques.variableName}}"  class="dropdown-toggle" type="text"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">    
+                                            <option value="" disabled>{{ques.placeholder}}</option>
+                                            <option value="{{option.value}}"  *ngFor="let option of ques.options; " >
+                                            {{option.name}}
+                                        </option>
+                                        </select>
+                                        <div *ngIf="dynamicGoalForm.controls[ques.variableName].invalid">
+                                            <div style="color:red" *ngIf="dynamicGoalForm.controls[ques.variableName].touched && 
+                                                        dynamicGoalForm.controls[ques.variableName].errors.required">
+                                                        value is required
+                                                       
+                                            </div>
+                                        </div>
+    
+
+                                    </div>
+
+                                    
+                                </div>
+
+                                
+
+                            </div>   
+
+                        </div>
+                    </div>
+                </form>
             </div>
 
             
@@ -96,8 +158,8 @@
            </div>
     
     
-                <div *ngIf="!description == 0" class="row offer">
-                    <div class="subscribe" [innerHTML]="description">
+                <div *ngIf="showDesc" class="row offer">
+                    <div class="subscribe" [innerHTML]="desc">
                         <!-- <P>{{description}}</P> -->
                      </div>
                  </div>
@@ -106,7 +168,7 @@
                 <div class="row lastbtns">
                     <div class="twobtn col-md-12">
                        <a><button type="button" class="btn nextbtn" (click)="Replan()"><b>REPLAN</b></button></a>
-                        <a href="term_goals.html" routerLink="/termgoals" ><button type="button" class="btn nextbtn" (click)="SubmitGoalsData()"><b>NEXT</b></button></a>
+                        <a ><button type="button" class="btn nextbtn" (click)="SubmitGoalsData()"><b>NEXT</b></button></a>
                    </div>
                </div>
     
@@ -121,7 +183,7 @@
                  <div class="col-md-8">
             <!--<img src="img/demo.png">-->
                      <div class="footer">
-                        <p><b>@ 2019 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
+                        <p><b>@ 2020 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
                             <ul>
                                 <li><a href="#">Terms and Conditions</a></li>
                                 <li><a href="#">LEARN MORE</a></li>
