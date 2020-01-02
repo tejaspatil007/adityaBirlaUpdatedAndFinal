@@ -579,7 +579,7 @@ margin-right: 40px;
 .baby-style li:hover{
   cursor: pointer;
   border-right:none;
-    background-color: #FF8C00;
+    /* background-color: #FF8C00; */
     border-radius: 10px;}
 
 .baby-style li{
@@ -863,7 +863,7 @@ font-size: 22px;}
   text-align: left;
 }
 .gallary img{
-
+  cursor: pointer;
 	width: 78px;
 	margin:15px;}
 .gallary p	{

@@ -107,16 +107,16 @@ export class SelectgoalsComponent implements OnInit {
       this.addRetirement()
     }
 
-    // else{
-    //   let goalsLength = this.goals.length;
-    //   for(let i = 0; i < goalsLength; i++){
-    //     let currentGoal = this.goals[i];
-    //     if(currentGoal.type == type){
-    //       this.goals.splice(i,1);
-    //     }
-    //   }
-    //   this.removeData(type);
-    // }
+    else{
+      let goalsLength = this.goals.length;
+      for(let i = 0; i < goalsLength; i++){
+        let currentGoal = this.goals[i];
+        if(currentGoal.type == type){
+          this.goals.splice(i,1);
+        }
+      }
+      this.removeData(type);
+    }
   
   }
 

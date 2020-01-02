@@ -63,7 +63,7 @@
 						
 						<div *ngFor="let goal of goals">
 						
-							<li><a [routerLink]="" (click)="addgoal(goal.type)">
+							<li><a (click)="addgoal(goal.type)">
 									<div class="img-div"> <img src="{{goal.src}}"></div>
 								</a>
 								<p>{{goal.type}}</p>
