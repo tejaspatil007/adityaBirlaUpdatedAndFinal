@@ -75,8 +75,10 @@
 					<div *ngIf='selectedGoal.length < 3'>
 						<li><a (click)="addCustomGoal(goalValue)">
 								<div class="img-div-style"><img src="{{othergoalImg}}"></div>
-							</a><input *ngIf="showInput" type="text" class="adding-goals" name="goalValue" [(ngModel)]='goalValue'
-								placeholder="AddOtherGoal" autocomplete="off"></li>
+							</a>
+							<span *ngIf="!showInput" style="color: #ffff">Add CustomGoal</span>
+							<input *ngIf="showInput" type="text" class="adding-goals" name="goalValue" [(ngModel)]='goalValue'
+								placeholder="Add CustomGoal" autocomplete="off"></li>
 					</div >
 				</div>
 

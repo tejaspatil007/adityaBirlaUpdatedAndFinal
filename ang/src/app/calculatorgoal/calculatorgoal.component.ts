@@ -263,13 +263,25 @@ export class CalculatorgoalComponent implements OnInit {
   genderImg() {
     if (this.userForm.value.gender == true) {
       this.gender = "../../assets/img/2nd page images/male single icon.png";
-      this.marriedImg ="../../assets/img/2nd page images/married male icon.png";
+      if(this.userForm.value.maritalStatus == true){
+        this.marriedImg ="../../assets/img/2nd page images/married male icon.png";
+      }
+      else if(this.userForm.value.maritalStatus == false){
+        this.marriedImg='../../assets/img/2nd page images/male single icon.png'
+      }
+      // this.marriedImg ="../../assets/img/2nd page images/married male icon.png";
       this.profImg="../../assets/img/2nd page images/male self employeed.png"
       console.log(this.gender);
       console.log(this.userForm.value.gender);
     } else {
       this.gender = "../../assets/img/2nd page images/female single icon.png";
-      this.marriedImg ="../../assets/img/2nd page images/married female icon.png";
+      if(this.userForm.value.maritalStatus == true){
+        this.marriedImg ="../../assets/img/2nd page images/married female icon.png";
+      }
+      else if(this.userForm.value.maritalStatus == false){
+        this.marriedImg='../../assets/img/2nd page images/female single icon.png'
+      }
+      // this.marriedImg ="../../assets/img/2nd page images/married female icon.png";
       this.profImg="../../assets/img/2nd page images/female self employeed.png";
       console.log(this.gender);
       console.log(this.userForm.value.gender);
