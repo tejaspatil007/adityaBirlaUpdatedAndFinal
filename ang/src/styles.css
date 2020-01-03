@@ -19,8 +19,13 @@
   padding-right: 0px !important;
   padding-left: 0px !important;
 }
-body{
-	font-family: handbookPro !important;  min-height: 100vh;
+body, html{
+  font-family: handbookPro !important; 
+   min-height: 100vh;
+   position: relative;
+}
+.cover{
+  height: 100vh;
 }
 /* .flex-grow {
    flex: 1;
@@ -99,6 +104,13 @@ button:hover, button:focus {
   z-index: 1;
 
 }
+#cust-age {
+    margin-top: 20px;
+    margin-bottom: -20px;
+    color: #fff;
+  
+    font-size: 20px;
+}
 /*.line{
   background: #fff;
     width: 50%; 
@@ -124,6 +136,9 @@ button:hover, button:focus {
   margin-right:70px;*/
   min-height: 671px;
     position: relative;
+}
+.fix{
+  height:100vh;
 }
 #nav-bar{
 	top: 0; text-align: right;
@@ -239,10 +254,10 @@ outline:none !important;
 .form-details{
   max-width: 824px;
   margin: 0 auto;
-  margin-left: 142px;
+  
    
    
-    margin-top: 30px;
+    margin-top: 50px;
 }
 input{
     overflow: visible;
@@ -264,9 +279,9 @@ input::-webkit-inner-spin-button {
 }
 .validation-name{
   position: absolute;
-  margin-top: 65px;
-  margin-left: 70px;
+  text-align: center;
   color: #8B0000;
+  margin-top: 50px;
 }
 
 
@@ -284,7 +299,7 @@ input::-webkit-inner-spin-button {
     padding: 20px; 
     width: 320px;
     height: 20px;  
-    margin-left: 70px;
+    
     box-shadow: 0 4px 5px 0 rgba(0,0,50,0.5);
     text-align: center;
     position: relative;
@@ -301,7 +316,7 @@ input::-webkit-inner-spin-button {
 color:#fff;
 margin-top:-90px;
 font-size:20px;
-margin-right: 30px;
+margin-right: 50px;
 margin-bottom: 5px;
 }
 .form {
@@ -319,6 +334,7 @@ margin-bottom: 5px;
   position: relative;
   width: 200px;
   height: 50px;
+      margin-right: 10px;
   border-radius: 25px;
   margin-bottom: 10px;
  }
@@ -412,10 +428,11 @@ margin-bottom: 5px;
 
 /*------------------------select age-----------------------------*/
 .age{
-	margin-top: 30px;
+
 	font-size: 20px;
     text-transform: uppercase;
 	color: #fff;
+  margin-top: -10px;
 	text-align: center;
 }
 /*-------------------------------2nd form---------------------------*/
@@ -444,7 +461,7 @@ color:#fff;
 margin-top:-100px;
 font-size:20px;
 margin-bottom: 5px;
-margin-right: 40px;
+margin-right: 30px;
 }
 #switcher-2{
   	height: 39px;
@@ -574,13 +591,13 @@ margin-right: 40px;
 .baby-style img{
   width:25px;
   height: 25px;
-  margin: 5px 13px;}
+  margin: 5px 13px;
+  cursor: pointer;}
 
 .baby-style li:hover{
-  cursor: pointer;
-  border-right:none;
+  /* border-bottom: 1px solid #FF8C00; */
     /* background-color: #FF8C00; */
-    border-radius: 10px;}
+    }
 
 .baby-style li{
   border-right: 1px solid #fff;
@@ -611,7 +628,7 @@ display: inline-block;
   align-items: center;
   justify-content: center;
   
-  margin-right:82px;
+  margin-right:90px;
   }
 .form2 span.switcher {
   position: relative;
@@ -889,8 +906,15 @@ font-size: 22px;}
 	font:bold;
 }
 .dropdown{
-	height: 65px;
+	margin-bottom: 20px;
 }
+.dropdown-validation
+{color: #8B0000;
+   
+    font-family: sans-serif;
+    margin: 5px 0px;
+    font-size: 14px;
+    font-weight: 200 !important;}
 .goals-style img{
 	width: 75px;
 	margin-left: 50px;
@@ -938,7 +962,7 @@ background-color: #fff;
 .dropdowns p{
 	text-align: left;
 	font-size: 17px;
-	height: 60px;
+	height: 50px;
 	line-height: 19px;
 }
 
@@ -1259,11 +1283,12 @@ input[type="range"] {
     display: none;
 }
 #amount, .amount{
-  height: 37px;
+  height: 39px;
     text-align: center;
     font-size: 18px;
-    width: 150px;
-    margin:auto ;
+    width: 186px;
+   margin-right: 10px;
+    margin-left: auto;
     border-radius: 20px;
     border: 0;
     box-shadow: 4px 4px 5px 0 rgba(0,0,50,0.5);
@@ -1292,6 +1317,10 @@ input[type="range"] {
 	background:#696969;
   color: #fff;
   width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 .footer{
 	padding-top: 5px;
@@ -1323,8 +1352,6 @@ margin-bottom:5px;
 	cursor: pointer;
 	color: #fff;
 }
-
-
 
 
 @media screen and (max-width: 1028px) {
@@ -1395,6 +1422,16 @@ margin-bottom:5px;
 
 
 @media screen and (max-width: 768px) {
+  #amount, .amount{
+ margin: auto;
+  margin-bottom: 20px;
+    }
+    .form p{
+      margin-right: 0px;
+    }
+    .mob label{
+      margin-left: 0px !important;
+    }
   #nav-bar {
     text-align: center;
   }
@@ -1403,6 +1440,9 @@ margin-bottom:5px;
     font-size: 16px;
     line-height: 20px;
   }
+  .age{
+    margin-bottom: 20px;
+  }
   /*------------2nd page -------------*/
   #switcher-1 {
     
@@ -1410,6 +1450,7 @@ margin-bottom:5px;
 }
 .form-details {
      margin-left: 0px;
+     margin-top: 30px;
     
 }
 .line{
@@ -1613,3 +1654,16 @@ width: 115PX;
   .form3{margin-left: 84px;}  */
   }
   
+  /*-------------end page-----------------------*/
+/*-----------strat 4rd page----------------*/
+ ::placeholder {
+  color:#bbb;
+  font-weight: 200;
+} 
+
+
+
+/* .dropdowns::-moz-placeholder{
+  color:#ccc;
+  font-weight: 400;
+} */

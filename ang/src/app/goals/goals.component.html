@@ -1,73 +1,82 @@
-	
 <html lang="en">
 
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    
-    <title>Aditya Birla</title>
-    </head>
-    
-    <body>
-            
-            
-             
-            
-        <!-- <section id="nav-bar">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<title>Aditya Birla</title>
+</head>
+
+<body>
+
+
+
+
+	<!-- <section id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="#"></a>
         </nav>
         </section> -->
-        <section id="nav-bar">
-            <a class="navbar-brand" href="#"></a>
-            <img src="../../assets/img/aditybilacapital logo.png">
-          </section>
-        <!---nav-bar end----->
-         <section class="cover">
-          <div class="container back">
-    
-                 <div class="row heading">
-                        <div class="col-md-12 head mt-15">
-                           <h3><strong>Life Goal Calculator</strong></h3>
-                        </div>
-                </div>
-    
-                <div class="container progressbars">
-                    <div class="row">
-                <div class="col-md-12 text-center">
-            <ul class="progressbar">
-                <li class="active"><strong>Enter <br>Details</strong></li>
-                <li class="active"><strong>Select & <br>Prioritize Goals</strong></li>
-                <li class="active"><strong>Calculate Goal <br>Values</strong></li>
-            </ul>
-        </div>
-        </div>
-        </div>
-         
-                <!-------start form------------->
-                <div class="row goals">
-                    <div class="col-md-12 goals-style">
-                        <ul>
-                        <li *ngFor="let goal of selectGoal; let goalIndex = index"> <a (click)="onGoalClick(goal.goals, goalIndex, goal.goal_id, goal.age)">
-                            <span class="notify-badge">{{goalIndex + 1}}</span>
-                            <img [src]="images[goalIndex]"></a><p>{{goal.goals}}</p></li> 
+	<section id="nav-bar">
+		<a class="navbar-brand" href="#"></a>
+		<img src="../../assets/img/aditybilacapital logo.png">
+	</section>
+	<!---nav-bar end----->
+	<section class="cover">
+		<div class="container back">
 
-                    </ul>
-                    </div>
-                    
-                </div>
-     
-                <div class="hr">
-                <hr>
-            </div>
-                
-            <!-- <div class="dropdown-style">
+			<div class="row heading">
+				<div class="col-md-12 head mt-15">
+					<h3><strong>Life Goal Calculator</strong></h3>
+				</div>
+			</div>
+
+			<div class="container progressbars">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="progressbar">
+							<li class="active"><strong>Enter <br>Details</strong></li>
+							<li class="active"><strong>Select & <br>Prioritize Goals</strong></li>
+							<li class="active"><strong>Calculate Goal <br>Values</strong></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-------start form------------->
+			<div class="row goals">
+				<div class="col-md-12 goals-style">
+					<ul>
+						<li *ngFor="let goal of selectGoal; let goalIndex = index"> <a
+								(click)="onGoalClick(goal.goals, goalIndex, goal.goal_id, goal.age)">
+								<span class="notify-badge">{{goalIndex + 1}}</span>
+								<img [src]="images[goalIndex]"></a>
+							<p>{{goal.goals}}</p>
+						</li>
+
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="hr">
+				<hr>
+			</div>
+
+			<!-- <div class="dropdown-style">
                 <div class="row">
                     <div class="col-md-4 col-sm-6  dropdowns" *ngFor="let questions of questions; let questionIndex = index">   
                        
@@ -84,128 +93,151 @@
                 </div>
             </div> -->
 
-            <div class="dropdown-style" *ngIf="isFormReady">
-                <form [formGroup]="dynamicGoalForm" (ngSubmit)="calculateFunction()" >
-                    
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6  dropdowns" *ngFor="let ques of questions; let questionIndex = index">
-                            <!-- <p>{{ques.name}}</p> -->
-                            <div [ngSwitch]="ques.controlType">
+			<div class="dropdown-style" *ngIf="isFormReady">
+				<form [formGroup]="dynamicGoalForm" (ngSubmit)="calculateFunction()">
 
-                                <div *ngSwitchCase="'text'" >
-                                    <p>{{ques.name}}</p>
-                                    <div class="dropdown" >
-                                        <!-- <p> -->
-                                            <input formControlName="{{ques.variableName}}"  name = "{{ques.variableName}}"
-                                                style="width:210px; border:none; color:coral;height:35px; border-radius:50px; padding:0px 10px"  type="text" placeholder="{{ques.placeholder}}" autocomplete="off" >
-
-                                            <div *ngIf="dynamicGoalForm.controls[ques.variableName].invalid" style="color:red">
-                                                <div *ngIf="dynamicGoalForm.controls[ques.variableName].touched && 
-                                                    dynamicGoalForm.controls[ques.variableName].errors.required">
-                                                    value is required
-                                                   
-                                                </div>
-                                                <div *ngIf="dynamicGoalForm.controls[ques.variableName].touched && 
-                                                                dynamicGoalForm.controls[ques.variableName].hasError('pattern')">
-                                                                {{ques.patternError}}
-                                                </div>
-                                            </div>
-                                        <!-- </p> -->
-                                    </div>
-                                    
-                                </div>
+					<div class="row">
+						<ng-container *ngFor="let ques of questions; let questionIndex = index">
 
 
-                                <div *ngSwitchCase="'dropdown'" >
-                                    <p>{{ques.name}}</p>
-                                    <div class="dropdown" >
-                                        <select *ngIf="ques.options" formControlName="{{ques.variableName}}"  class="dropdown-toggle" type="text"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">    
-                                            <option value="" disabled>{{ques.placeholder}}</option>
-                                            <option value="{{option.value}}"  *ngFor="let option of ques.options; " >
-                                            {{option.name}}
-                                        </option>
-                                        </select>
-                                        <div *ngIf="dynamicGoalForm.controls[ques.variableName].invalid">
-                                            <div style="color:red" *ngIf="dynamicGoalForm.controls[ques.variableName].touched && 
-                                                        dynamicGoalForm.controls[ques.variableName].errors.required">
-                                                        value is required
-                                                       
-                                            </div>
-                                        </div>
-    
+							<div class="col-md-4 col-sm-6  dropdowns" *ngIf="ques.flag == 'display'">
+								<!-- <p>{{ques.name}}</p> -->
+								<div>
+									<div [ngSwitch]="ques.controlType">
 
-                                    </div>
+										<div *ngSwitchCase="'text'">
+											<p>{{ques.name}}</p>
+											<div class="dropdown">
+												<!-- <p> -->
+												<input formControlName="{{ques.variableName}}" name="{{ques.variableName}}"
+													style="width:210px; border:none; color:coral;height:35px; border-radius:50px; padding:0px 10px"
+													type="text" placeholder="{{ques.placeholder}}" autocomplete="off">
 
-                                    
-                                </div>
+												<div *ngIf="ques.hasOtherInput">
+													<div
+														*ngIf="dynamicGoalForm.controls[questions[index+1]['variableName']].errors && (dynamicGoalForm.controls[ques.variableName].touched)">
+														<div class="err-msg" *ngIf="dynamicGoalForm.controls[questions[index+1]['variableName']].errors.required"> Please
+															enter minimum amount
+														</div>
+														<div class="err-msg mrgBtn-0" *ngIf="dynamicGoalForm.controls[questions[index+1]['variableName']].errors?.pattern">
+															Amount should be in the multiple of Rs. 1000</div>
+													</div>
 
-                                
+												</div>
+												<div *ngIf="!ques.hasOtherInput">
 
-                            </div>   
+													<div
+														*ngIf="dynamicGoalForm.controls[ques.variableName].errors && (dynamicGoalForm.controls[ques.variableName].touched)">
+														<div class="err-msg" *ngIf="dynamicGoalForm.controls[ques.variableName].errors.required"> Please
+															enter minimum amount
+														</div>
+														<div class="err-msg mrgBtn-0" *ngIf="dynamicGoalForm.controls[ques.variableName].errors?.pattern">
+															Amount should be in the multiple of Rs. 1000</div>
+													</div>
 
-                        </div>
-                    </div>
-                </form>
-            </div>
+												</div>
+												<!-- </p> -->
+											</div>
 
-            
-           
-            <div class="row lastbtns">
-                <div class="twobtn col-md-12">
-                    {{errMsg}}
-                    <button type="button" class="btn nextbtn" (click)="calculateFunction()"><b>Calculate</b></button>
-               </div>
-           </div>
-    
-    
-                <div *ngIf="showDesc" class="row offer">
-                    <div class="subscribe" [innerHTML]="desc">
-                        <!-- <P>{{description}}</P> -->
-                     </div>
-                 </div>
-            
-                
-                <div class="row lastbtns">
-                    <div class="twobtn col-md-12">
-                       <a><button type="button" class="btn nextbtn" (click)="Replan()"><b>REPLAN</b></button></a>
-                        <a ><button type="button" class="btn nextbtn" (click)="SubmitGoalsData()"><b>NEXT</b></button></a>
-                   </div>
-               </div>
-    
-          </div>
-    </section>
-      <!----footer start----------->
-    
-    <section id="footer">
-        <div class="container">
-          <div class="row">
-    
-                 <div class="col-md-8">
-            <!--<img src="img/demo.png">-->
-                     <div class="footer">
-                        <p><b>@ 2020 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
-                            <ul>
-                                <li><a href="#">Terms and Conditions</a></li>
-                                <li><a href="#">LEARN MORE</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Blog</a></li>
-                            </ul>
-                       </div>
-                 </div>
-    
-                <div class="col-md-4">
-                     <div class="footer-icons">
-                         <i class="fa fa-facebook"></i>
-                         <i class="fa fa-twitter"></i>
-                         <i class="fa fa-instagram"></i>
-                         <i class="fa fa-youtube-play"></i>
-                         <i class="fa fa-linkedin"></i>
-                     </div>
-                </div>
-    
-         </div>
-       </div>
-    </section>
-    
-    </body>
-    </html>
+										</div>
+
+
+										<div *ngSwitchCase="'dropdown'">
+											<p>{{ques.name}}</p>
+											<div class="dropdown">
+												<select *ngIf="ques.options" formControlName="{{ques.variableName}}" class="dropdown-toggle"
+													type="text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													<option value="" disabled>{{ques.placeholder}}</option>
+													<option value="{{option.value}}" *ngFor="let option of ques.options; ">
+														{{option.name}}
+													</option>
+												</select>
+												<div *ngIf="dynamicGoalForm.controls[ques.variableName].invalid">
+													<div class="dropdown-validation"
+														*ngIf="dynamicGoalForm.controls[ques.variableName].touched && 
+                                                            dynamicGoalForm.controls[ques.variableName].errors.required">
+														value is required
+
+													</div>
+												</div>
+
+
+											</div>
+
+
+										</div>
+
+
+
+									</div>
+								</div>
+
+
+							</div>
+						</ng-container>
+					</div>
+				</form>
+			</div>
+
+
+
+			<div class="row lastbtns">
+				<div class="twobtn col-md-12">
+					{{errMsg}}
+					<button type="button" class="btn nextbtn" (click)="calculateFunction()"><b>Calculate</b></button>
+				</div>
+			</div>
+
+
+			<div *ngIf="showDesc" class="row offer">
+				<div class="subscribe" [innerHTML]="desc">
+					<!-- <P>{{description}}</P> -->
+				</div>
+			</div>
+
+
+			<div class="row lastbtns">
+				<div class="twobtn col-md-12">
+					<a><button type="button" class="btn nextbtn" (click)="Replan()"><b>REPLAN</b></button></a>
+					<a><button type="button" class="btn nextbtn" (click)="SubmitGoalsData()"><b>NEXT</b></button></a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<!----footer start----------->
+
+	<section id="footer">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-8">
+					<!--<img src="img/demo.png">-->
+					<div class="footer">
+						<p><b>@ 2020 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
+						<ul>
+							<li><a href="#">Terms and Conditions</a></li>
+							<li><a href="#">LEARN MORE</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">Blog</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="footer-icons">
+						<i class="fa fa-facebook"></i>
+						<i class="fa fa-twitter"></i>
+						<i class="fa fa-instagram"></i>
+						<i class="fa fa-youtube-play"></i>
+						<i class="fa fa-linkedin"></i>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>
