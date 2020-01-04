@@ -36,15 +36,15 @@
 					<h3>Life Goal Calculator</h3>
 				</div>
 				<div class="col-md-12 head-style">
-					<p>Hi {{username}}, to reach your life goals, you would need to start SIPs of <span
+					<p>Hi <span style="color: #8B0000">{{username}}</span>, to reach your life goals, you would need to start SIPs of <span
 							style="color: #8B0000"> ₹{{amount}}</span>Here’s<br>
 						the break-up of your goals based on the goal timeline.</p>
 				</div>
 
 				<!-- <div *ngIf="shortGoal.length > 0"> -->
 				<div *ngIf="shortGoal.length > 0" class="col-md-12 short">
-					<div *ngFor="let short of shortGoal; let i=index">
-						<h1>Short Term Goals</h1>
+					<h1>Short Term Goals</h1>
+					<div *ngFor="let short of shortGoal; first as isFirst; let i=index">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="testimonials clearfix">
@@ -61,7 +61,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6 testimonials_style">
+							<div *ngIf="isFirst" class="col-md-6 testimonials_style">
 								<p>Indicative Asset Allocation</p>
 								<img src="../../assets/img/pie chart 1.png">
 							</div>
@@ -78,8 +78,9 @@
 				</div>
 
 				<div *ngIf="midGoal.length > 0" class="col-md-12 short">
-					<div *ngFor="let goal of midGoal; let i=index">
-						<h1>Mid Term Goals</h1>
+					<h1>Mid Term Goals</h1>
+
+					<div *ngFor="let goal of midGoal; first as isFirst; let i=index">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="testimonials clearfix">
@@ -93,7 +94,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6 testimonials_style">
+							<div *ngIf="isFirst" class="col-md-6 testimonials_style">
 								<p>Indicative Asset Allocation</p>
 								<img src="../../assets/img/pie chart 2.png">
 							</div>
@@ -106,8 +107,8 @@
 				</div>
 
 				<div *ngIf="longGoal.length > 0" class="col-md-12 short">
-					<div *ngFor="let goal of longGoal; let i = index">
-						<h1>Long Term Goals</h1>
+					<h1>Long Term Goals</h1>
+					<div *ngFor="let goal of longGoal; first as isFirst; let i = index">
 						<div class="row">
 
 							<div class="col-md-6">
@@ -122,7 +123,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6 testimonials_style">
+							<div *ngIf="isFirst" class="col-md-6 testimonials_style">
 								<p>Indicative Asset Allocation</p>
 								<img class="img-fluid" style="margin-top: 0px !important;"
 									src="../../assets/img/pie chart 3.png">

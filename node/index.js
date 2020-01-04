@@ -373,7 +373,7 @@ app.get("/getanswers/:id", function (req, res) {
                     if (data.afterYears < 3) {
                         shortGoals.push(element)
                     }
-                    else if (data.age > 2 && data.afterYears <= 5) {
+                    else if (data.afterYears > 2 && data.afterYears <= 5) {
                         midGoals.push(element);
                     }
                     else if (data.afterYears > 5) {

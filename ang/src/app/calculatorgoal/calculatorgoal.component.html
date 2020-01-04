@@ -97,13 +97,16 @@
 
               <div class="mob text-center">
                 <label style="margin-left: 133px;">Enter Age</label>
-                <input type='number' formControlName="age" value={{formJson.age}} class='amount' placeholder=""
-                  autocomplete="off">
+                <input type='number' formControlName="age" value={{formJson.age}} class='amount' placeholder="Enter Age eg:18"
+                  autocomplete="off" min="18" max="99">
               </div>
 
-              <span class="validation-Age" *ngIf="userForm.get('age').hasError('required') &&  submitted">
-                Age is required
-              </span>
+              <div *ngIf="userForm.controls['age'].errors && submitted">
+                <span class="validation-Age" *ngIf="userForm.controls['age'].errors.required"> Age is required
+                </span>
+                <span class="validation-Age" *ngIf="userForm.controls['age'].errors?.min">Minimum age 18 yrs</span>
+                <span class="validation-Age" *ngIf="userForm.controls['age'].errors?.max">Maximum age 99 yrs</span>
+              </div>
 
             </div>
             <div class="col-md-6 users">

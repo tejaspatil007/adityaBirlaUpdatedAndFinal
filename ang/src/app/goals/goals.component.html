@@ -115,11 +115,17 @@
 
 												<div *ngIf="ques.hasOtherInput">
 													<div
-														*ngIf="dynamicGoalForm.controls[questions[index+1]['variableName']].errors && (dynamicGoalForm.controls[ques.variableName].touched)">
-														<div class="err-msg" *ngIf="dynamicGoalForm.controls[questions[index+1]['variableName']].errors.required"> Please
-															enter minimum amount
+														*ngIf="dynamicGoalForm.controls[questions[questionIndex+1]['variableName']].errors && (dynamicGoalForm.controls[ques.variableName].touched)">
+														<div *ngIf="ques.hasRequired">
+																<div  class="dropdown-validation"
+																*ngIf="dynamicGoalForm.controls[questions[questionIndex+1]['variableName']].errors?.required">
+																Please
+																enter minimum amount
+															</div>
 														</div>
-														<div class="err-msg mrgBtn-0" *ngIf="dynamicGoalForm.controls[questions[index+1]['variableName']].errors?.pattern">
+														
+														<div class="dropdown-validation mrgBtn-0"
+															*ngIf="dynamicGoalForm.controls[questions[questionIndex+1]['variableName']].errors?.pattern">
 															Amount should be in the multiple of Rs. 1000</div>
 													</div>
 
@@ -128,10 +134,12 @@
 
 													<div
 														*ngIf="dynamicGoalForm.controls[ques.variableName].errors && (dynamicGoalForm.controls[ques.variableName].touched)">
-														<div class="err-msg" *ngIf="dynamicGoalForm.controls[ques.variableName].errors.required"> Please
+														<div class="dropdown-validation" *ngIf="dynamicGoalForm.controls[ques.variableName].errors.required">
+															Please
 															enter minimum amount
 														</div>
-														<div class="err-msg mrgBtn-0" *ngIf="dynamicGoalForm.controls[ques.variableName].errors?.pattern">
+														<div class="dropdown-validation mrgBtn-0"
+															*ngIf="dynamicGoalForm.controls[ques.variableName].errors?.pattern">
 															Amount should be in the multiple of Rs. 1000</div>
 													</div>
 

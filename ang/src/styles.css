@@ -287,10 +287,18 @@ input::-webkit-inner-spin-button {
 
 
 .validation-Age{
-  position: absolute;
+  /* position: absolute;
   margin-top: 65px;
   margin-left: 70px;
-  color: #FFF;
+  color: #FFF; */
+  
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 17px;
+    color: #8B0000;
+    font-size: 1rem;
+    text-transform: none;
+
 }
 #ip2 {
     border-radius: 45px;
@@ -874,6 +882,12 @@ font-size: 22px;}
 	color: #fff;
 	font-size: 20px;
 }
+.goals .goals-style ul {
+  margin-bottom: 0;
+}
+.goals .goals-style ul li p {
+  margin-bottom: 0px;
+}
 .gallary ul{
 	margin-left: 170px;
   margin-right: 140px;
@@ -1321,6 +1335,7 @@ input[type="range"] {
   bottom: 0;
   right: 0;
   left: 0;
+  display: none;
 }
 .footer{
 	padding-top: 5px;
@@ -1667,3 +1682,27 @@ width: 115PX;
   color:#ccc;
   font-weight: 400;
 } */
+
+#adding-goals{
+  border-radius: 45px;
+ border: none;
+ padding: 20px;
+ width: 200px;
+ margin-left: 20px;
+ height: 20px;
+ box-shadow: 0 4px 5px 0 rgba(0,0,50,0.5);
+ text-align: center;
+ margin-left : 20px;
+}
+ .btn-default{
+   box-shadow: 0 4px 5px 0 rgba(0,0,50,0.5);
+padding: 8px  25px;
+border:none;
+border-radius: 45px;
+background-image: linear-gradient(to right, #FF8C00
+
+,#FF8C00
+
+);
+margin-bottom: 30px;
+ }

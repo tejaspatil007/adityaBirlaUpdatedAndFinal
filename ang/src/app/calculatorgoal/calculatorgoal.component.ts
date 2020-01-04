@@ -242,7 +242,7 @@ export class CalculatorgoalComponent implements OnInit {
     this.userForm = this.fb.group({
       name: ["", [Validators.required, Validators.pattern(alphabetsWithSpaceDot)]],
       gender: [true],
-      age:[18, [Validators.required]],
+      age:[18,[Validators.required,Validators.min(18),Validators.max(99)]],
       maritalStatus: [true],
       child: [false],
       kids: [1],

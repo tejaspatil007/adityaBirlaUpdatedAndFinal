@@ -73,16 +73,19 @@
 					</div>
 					<!-- onblur="addvalue(goal.value)" -->
 					<div *ngIf='selectedGoal.length < 3'>
-						<li><a (click)="addCustomGoal(goalValue)">
+						<li><a (click)="openGoal()">
 								<div class="img-div-style"><img src="{{othergoalImg}}">
 									
 								</div>
 								
 							</a>
-							<p style="margin-top: -8px;"><span *ngIf="!showInput" style="color: #ffff">Add Custom Goal</span></p>
-							
-							<input *ngIf="showInput" type="text" class="adding-goals" name="goalValue" [(ngModel)]='goalValue'
-								placeholder="Add Custom Goal" autocomplete="off"></li>
+							<p style="margin-top: -8px;"><span *ngIf="!showInput" style="color: #ffff">Add Custom Goal</span>
+                            </p>                            <div *ngIf="showInput" class="input-group">
+                                    <input *ngIf="showInput" type="text"  id="adding-goals" class=" form-control" name="goalValue" [(ngModel)]='goalValue' placeholder="Add Custom Goal" autocomplete="off">
+                                    <span class="input-group-btn" style="margin-left:20px;">
+                                            <button type="button" class="btn-default" *ngIf="showInput" (click)="addCustomGoal(goalValue)">Add Goal</button>
+                                    </span>
+                                 </div></li>
 					</div >
 				</div>
 

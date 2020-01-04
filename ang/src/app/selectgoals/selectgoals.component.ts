@@ -438,9 +438,11 @@ export class SelectgoalsComponent implements OnInit {
     }
     this.checkMaxGoalInput();
   }
-  
-  addCustomGoal(newGoal){
+  openGoal(){
     this.showInput = !this.showInput;
+  }
+  addCustomGoal(newGoal){
+    //this.showInput = !this.showInput;
     
     console.log("new goal is ",newGoal );
     if(newGoal == undefined || newGoal == '' || newGoal == null){
