@@ -1648,7 +1648,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required','required': true }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required','required': true }, { key: 'pattern', value: 'value must be in multiple of 1000' }],
               'placeholder': "Enter lumpsum  investment amount",
               'flag': 'display',
               'hasOtherInput': true,
@@ -1661,7 +1661,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000',  }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum  investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1968,24 +1968,37 @@ export class GoalsComponent implements OnInit {
       console.log('custom goal', this.customGoal);
       console.log(data)
       this.ques = this.goalQuestion.find((res) => res.type === 'customGoal');
+
+      ///// change/////
+      console.log("this.ques-->>",this.ques)
+      /////change/////
+
       this.ques['questions'][0].value = this.customGoal;
+    } else{
+      this.ques = this.goalQuestion.find((res) => res.type === data);
+      console.log('testing',data)
+  
     }
+
+    
     this.ques['goalId'] = goalId;
     this.ques['age'] = age;
 
-    this.ques = this.goalQuestion.find((res) => res.type === data);
-
-
-
+   
     // console.log(this.ques);
-    this.description = this.ques.description;
+    // console.log("this.description->>",this.ques.description)
+
+    // this.description = this.ques.description;
     // this.questions = this.ques.questions;
 
     this.questions = [];
+    console.log('testing', this.ques.questions )
     let questionsArray = this.ques.questions;
+   
     let questionsArrayLength = questionsArray.length;
     for (let i = 0; i < questionsArrayLength; i++) {
       let currentQuestion = questionsArray[i];
+      console.log("currentQuestion",currentQuestion)
       // if(currentQuestion.flag == 'display'){
       this.questions.push(currentQuestion);
       // }
