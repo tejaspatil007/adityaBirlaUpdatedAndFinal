@@ -1,26 +1,4 @@
-<html lang="en">
 
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css"
-		href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-	<title>Aditya Birla</title>
-</head>
-
-<body>
 
 
 
@@ -30,13 +8,13 @@
         <a class="navbar-brand" href="#"></a>
         </nav>
         </section> -->
-	<section id="nav-bar">
+	<!-- <section id="nav-bar">
 		<a class="navbar-brand" href="#"></a>
 		<img src="../../assets/img/aditybilacapital logo.png">
-	</section>
+	</section> -->
 	<!---nav-bar end----->
 	<section class="cover">
-		<div class="container back">
+		<div class="container back fix">
 
 			<div class="row heading">
 				<div class="col-md-12 head mt-15">
@@ -110,8 +88,8 @@
 											<div class="dropdown">
 												<!-- <p> -->
 												<input formControlName="{{ques.variableName}}" name="{{ques.variableName}}"
-													style="width:210px; border:none; color:coral;height:35px; border-radius:50px; padding:0px 10px"
-													type="text" placeholder="{{ques.placeholder}}" autocomplete="off">
+													style="width:210px; border:none; color:coral;height:35px; border-radius:50px; padding:0px 10px; margin:0px"
+													type="text" placeholder="{{ques.placeholder}}" autocomplete="off" [readonly]='ques.disabled'>
 
 												<div *ngIf="ques.hasOtherInput">
 													<div
@@ -119,21 +97,22 @@
 														<div *ngIf="ques.hasRequired">
 																<div  class="dropdown-validation"
 																*ngIf="dynamicGoalForm.controls[questions[questionIndex+1]['variableName']].errors?.required">
-																Please
-																enter minimum amount
+																{{validation(questions[questionIndex+1]['validation'], 'required' )}}
 															</div>
 														</div>
 														
 														<div class="dropdown-validation mrgBtn-0"
 															*ngIf="dynamicGoalForm.controls[questions[questionIndex+1]['variableName']].errors?.pattern">
-															Amount should be in the multiple of Rs. 1000</div>
+															{{validation(questions[questionIndex+1]['validation'], 'pattern' )}}</div>
 													</div>
 
 												</div>
 												<div *ngIf="!ques.hasOtherInput">
 
-													<div
+													<!-- <div
 														*ngIf="dynamicGoalForm.controls[ques.variableName].errors && (dynamicGoalForm.controls[ques.variableName].touched)">
+												
+
 														<div class="dropdown-validation" *ngIf="dynamicGoalForm.controls[ques.variableName].errors.required">
 															Please
 															enter minimum amount
@@ -141,7 +120,22 @@
 														<div class="dropdown-validation mrgBtn-0"
 															*ngIf="dynamicGoalForm.controls[ques.variableName].errors?.pattern">
 															Amount should be in the multiple of Rs. 1000</div>
-													</div>
+													</div> -->
+
+													
+												<div *ngIf="dynamicGoalForm.controls[ques.variableName].errors && (dynamicGoalForm.controls [ques.variableName].touched)">
+														<div>
+															<div class="dropdown-validation" *ngIf="dynamicGoalForm.controls[ques.variableName].errors.required">
+														<p>{{validation(ques.validation, 'required' )}}</p>	
+								
+															</div>
+															<div class="dropdown-validation mrgBtn-0"
+																*ngIf="dynamicGoalForm.controls[ques.variableName].errors?.pattern">
+																{{validation(ques.validation, 'pattern' )}}
+															</div>
+														</div>
+													
+												</div>
 
 												</div>
 												<!-- </p> -->
@@ -164,7 +158,7 @@
 													<div class="dropdown-validation"
 														*ngIf="dynamicGoalForm.controls[ques.variableName].touched && 
                                                             dynamicGoalForm.controls[ques.variableName].errors.required">
-														value is required
+															{{validation(ques.validation, 'required' )}}
 
 													</div>
 												</div>
@@ -189,7 +183,7 @@
 
 
 
-			<div class="row lastbtns">
+			<div *ngIf="!showButton" class="row lastbtns">
 				<div class="twobtn col-md-12">
 					{{errMsg}}
 					<button type="button" class="btn nextbtn" (click)="calculateFunction()"><b>Calculate</b></button>
@@ -204,7 +198,7 @@
 			</div>
 
 
-			<div class="row lastbtns">
+			<div *ngIf="showButton" class="row lastbtns">
 				<div class="twobtn col-md-12">
 					<a><button type="button" class="btn nextbtn" (click)="Replan()"><b>REPLAN</b></button></a>
 					<a><button type="button" class="btn nextbtn" (click)="SubmitGoalsData()"><b>NEXT</b></button></a>
@@ -213,39 +207,6 @@
 
 		</div>
 	</section>
-	<!----footer start----------->
 
-	<section id="footer">
-		<div class="container">
-			<div class="row">
 
-				<div class="col-md-8">
-					<!--<img src="img/demo.png">-->
-					<div class="footer">
-						<p><b>@ 2020 All Rights Reserved, Aditya Birla Management Corporation Pvt. Ltd.</b></p>
-						<ul>
-							<li><a href="#">Terms and Conditions</a></li>
-							<li><a href="#">LEARN MORE</a></li>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Blog</a></li>
-						</ul>
-					</div>
-				</div>
 
-				<div class="col-md-4">
-					<div class="footer-icons">
-						<i class="fa fa-facebook"></i>
-						<i class="fa fa-twitter"></i>
-						<i class="fa fa-instagram"></i>
-						<i class="fa fa-youtube-play"></i>
-						<i class="fa fa-linkedin"></i>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</section>
-
-</body>
-
-</html>

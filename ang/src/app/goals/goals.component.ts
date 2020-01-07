@@ -52,6 +52,7 @@ export class GoalsComponent implements OnInit {
   public nextGoals = [];
 
   showDesc: boolean = false;
+  showButton: boolean = false;
 
   //Variables used for Calculations
 
@@ -98,6 +99,7 @@ export class GoalsComponent implements OnInit {
   }
 
   SubmitGoalsData() {
+    this.showButton = !this.showButton;
 
     ///////   change for next ///////////////////////
     for (let i = 0; i < this.nextGoals.length; i++) {
@@ -212,7 +214,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required',  }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -224,7 +226,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               "options": this.number,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', }],
+              'validation': [{ key: 'required', value: 'value is required', }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -236,7 +238,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!',  }],
+              'validation': [{ key: 'required', value: 'value is required', }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -248,7 +250,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!',  }],
+              'validation': [{ key: 'required', value: 'value is required', }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -273,11 +275,11 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [ { 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false,
-              
+
             }
           ],
         },
@@ -304,7 +306,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -316,7 +318,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -328,7 +330,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -340,7 +342,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -364,7 +366,7 @@ export class GoalsComponent implements OnInit {
               'controlType': 'text',
               'value': 0,
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -394,7 +396,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -406,7 +408,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -418,7 +420,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -430,7 +432,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -454,7 +456,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -483,7 +485,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -495,7 +497,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -507,7 +509,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -519,7 +521,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -543,7 +545,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -573,7 +575,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -585,7 +587,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -597,7 +599,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -621,7 +623,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -650,7 +652,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -662,7 +664,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -674,7 +676,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -686,7 +688,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -710,7 +712,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -740,7 +742,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -753,7 +755,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -765,7 +767,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -777,7 +779,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -801,7 +803,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -831,7 +833,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -843,7 +845,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -855,7 +857,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -867,7 +869,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -891,7 +893,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -920,7 +922,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -932,7 +934,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -944,7 +946,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -956,7 +958,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -980,7 +982,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1010,7 +1012,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1022,7 +1024,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -1034,7 +1036,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -1046,7 +1048,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "loanFunding",
               'value': 50,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter Bike loan funding (%)',
               'flag': 'display',
               'hasOtherInput': false
@@ -1058,7 +1060,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -1082,7 +1084,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1112,7 +1114,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1124,7 +1126,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -1136,7 +1138,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -1148,7 +1150,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "loanFunding",
               'value': 50,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter Car loan funding (%)',
               'flag': 'display',
               'hasOtherInput': false
@@ -1160,7 +1162,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'text',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -1184,7 +1186,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1214,7 +1216,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1226,7 +1228,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -1238,7 +1240,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -1250,7 +1252,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "loanFunding",
               'value': 80,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter Dream Home loan funding (%)',
               'flag': 'display',
               'hasOtherInput': false
@@ -1262,7 +1264,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -1286,7 +1288,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1303,7 +1305,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'No special character or number allowed',
-              'validation': [{ key: 'required', value: 'name is required', 'required': true }, { key: 'noSpecialCharacterOrNumberAllowed', value: 'No special character or number allowed', 'pattern': '[a-zA-Z ]*$' }],
+              'validation': [{ key: 'required', value: 'name is required', 'required': true }, { key: 'pattern', value: 'No special character or number allowed', 'pattern': '[a-zA-Z ]*$' }],
               'placeholder': "Enter child name",
               'flag': 'display',
               'hasOtherInput': false
@@ -1315,7 +1317,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter age in years",
               'flag': 'display',
               'hasOtherInput': false
@@ -1340,7 +1342,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1352,7 +1354,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -1364,7 +1366,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -1388,7 +1390,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1405,7 +1407,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'No special character or number allowed',
-              'validation': [{ key: 'required', value: 'name is required', 'required': true }, { key: 'noSpecialCharacterOrNumberAllowed', value: 'No special character or number allowed', 'pattern': '[a-zA-Z ]*$' }],
+              'validation': [{ key: 'required', value: 'name is required', 'required': true }, { key: 'pattern', value: 'No special character or number allowed', 'pattern': '[a-zA-Z ]*$' }],
               'placeholder': "Enter child name",
               'flag': 'display',
               'hasOtherInput': false
@@ -1417,7 +1419,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter age in years",
               'flag': 'display',
               'hasOtherInput': false
@@ -1442,7 +1444,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1454,7 +1456,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
               'hasOtherInput': false
@@ -1466,7 +1468,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
               'hasOtherInput': false
@@ -1491,7 +1493,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1507,9 +1509,10 @@ export class GoalsComponent implements OnInit {
               "variableName": "currentAge",
               'value': this.userAge,
               'controlType': 'text',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'flag': 'display',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': true,
             },
             {
               "questionId": "2",
@@ -1518,10 +1521,11 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterRetirementAge",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter retirement age",
               'flag': 'display',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': false,
             },
             {
               "questionId": "3",
@@ -1534,7 +1538,8 @@ export class GoalsComponent implements OnInit {
               'placeholder': 'Enter amount',
               'flag': 'display',
               'hasOtherInput': true,
-              'hasRequired': true
+              'hasRequired': true,
+              'disabled': false,
             },
             {
               "questionId": "3",
@@ -1543,10 +1548,11 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': false,
             },
             {
               "questionId": "4",
@@ -1555,10 +1561,11 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflationBeforeRetiremnet",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': false,
             },
             {
               "questionId": "5",
@@ -1567,9 +1574,10 @@ export class GoalsComponent implements OnInit {
               "variableName": "rateOfReturnBeforeRetirement",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'flag': 'display',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': false,
             },
             {
               "questionId": "6",
@@ -1578,9 +1586,10 @@ export class GoalsComponent implements OnInit {
               "variableName": "rateOfReturnPostRetirement",
               'value': 8,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'flag': 'display',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': false,
             },
             {
               "questionId": "7",
@@ -1592,7 +1601,8 @@ export class GoalsComponent implements OnInit {
               'validation': [],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'display',
-              'hasOtherInput': true
+              'hasOtherInput': true,
+              'disabled': false,
             },
             {
               "questionId": "7",
@@ -1601,10 +1611,11 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': false,
             }
           ]
         },
@@ -1618,9 +1629,10 @@ export class GoalsComponent implements OnInit {
               'value': this.customGoal,
               'controlType': 'text',
               'patternError': 'No special character or number allowed',
-              'validation': [{ key: 'required', value: 'name is required', 'required': true }, { key: 'noSpecialCharacterOrNumberAllowed', value: 'No special character or number allowed', 'pattern': '[a-zA-Z ]*$' }],
+              'validation': [{ key: 'required', value: 'Goal name is required', 'required': true }, { key: 'pattern', value: 'No special character or number allowed', 'pattern': '[a-zA-Z ]*$' }],
               'flag': 'display',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': true,
             },
             {
               "questionId": "2",
@@ -1633,7 +1645,8 @@ export class GoalsComponent implements OnInit {
               'placeholder': 'Enter amount',
               'flag': 'display',
               'hasOtherInput': true,
-              'hasRequired': true
+              'hasRequired': true,
+              'disabled': false,
             },
             {
               "questionId": "2",
@@ -1642,10 +1655,11 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'multipleOfThousand', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': false,
             },
             {
               "questionId": "3",
@@ -1654,10 +1668,11 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': false,
             },
             {
 
@@ -1667,10 +1682,11 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedInflation",
               'value': 5,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected inflation rate',
               'flag': 'display',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': false,
             },
             {
               "questionId": "5",
@@ -1679,10 +1695,11 @@ export class GoalsComponent implements OnInit {
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'Please select values!', 'required': true }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
-              'hasOtherInput': false
+              'hasOtherInput': false,
+              'disabled': false,
             },
             {
               "questionId": "6",
@@ -1695,7 +1712,7 @@ export class GoalsComponent implements OnInit {
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'display',
               'hasOtherInput': true,
-
+              'disabled': false,
             },
             {
               "questionId": "6",
@@ -1704,11 +1721,11 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
-              'hasOtherInput': false
-
+              'hasOtherInput': false,
+              'disabled': false,
             }
           ],
 
@@ -1821,11 +1838,11 @@ export class GoalsComponent implements OnInit {
       let value = singleObjectQuestionData['value']
       let validations = [];
       singleObjectQuestionData['validation'].forEach(validator => {
-      
-          validations = [Validators.required];
-        
 
-      
+        validations = [Validators.required];
+
+
+
 
         if (validator['pattern']) {
           validations.push(Validators.pattern(validator.pattern));
@@ -1833,12 +1850,17 @@ export class GoalsComponent implements OnInit {
         }
 
         // else{
-          //   let value=singleObjectQuestionData['value']   
-          //   questionFromDropdownAndText[singleObjectQuestionData['variableName']]= new FormControl(value,[Validators.required])
-          // }
-        })
-        questionFromDropdownAndText[singleObjectQuestionData['variableName']] = new FormControl(value, validations);    //each                                                                                                                                                   and every form control with                                                                                                                         values and validators
+        //   let value=singleObjectQuestionData['value']   
+        //   questionFromDropdownAndText[singleObjectQuestionData['variableName']]= new FormControl(value,[Validators.required])
         // }
+      })
+      questionFromDropdownAndText[singleObjectQuestionData['variableName']] = new FormControl(value, validations);
+    
+     
+
+      
+      //each                                                                                                                                                   and every form control with                                                                                                                         values and validators
+      // }
       // else if(singleObjectQuestionData['controlType'] === 'dropdown'){
       //       let value=singleObjectQuestionData['value']   
       //       questionFromDropdownAndText[singleObjectQuestionData['variableName']]= new FormControl(value,[Validators.required])  
@@ -1848,6 +1870,9 @@ export class GoalsComponent implements OnInit {
     console.log("questionFromDropdownAndText is ", questionFromDropdownAndText);
 
     this.dynamicGoalForm = this.fb.group(questionFromDropdownAndText);
+    console.log(this.dynamicGoalForm)
+    // this.dynamicGoalForm.get['goalName'].disable();
+    // this.dynamicGoalForm.get['currentAge'].disable();
 
     console.log(this.dynamicGoalForm);
     console.log('this is the form data', this.dynamicGoalForm.get('enterAmount'))
@@ -1857,6 +1882,7 @@ export class GoalsComponent implements OnInit {
 
 
   Replan() {
+    this.showButton = !this.showButton;
     this.router.navigateByUrl("/goals");
     // localStorage.removeItem('id');
     // this.dynamicGoalForm = null;
@@ -1999,11 +2025,22 @@ export class GoalsComponent implements OnInit {
     // return amount;
     return this.commaSeparateNumber(amount);
   }
+  
+  validation(validator, key ){
+  let result  =validator.find(val=>{ 
+      return (val.key == key)
+    })
+
+    return result['value'];
+    
+  }
 
 
   ques: any;
   onGoalClick(data, index, goalId, age?) {
     this.showDesc = false;
+    this.showButton = false;
+
 
     console.log("@@@Goal id is ", goalId);
     this.index = index;
@@ -2021,6 +2058,7 @@ export class GoalsComponent implements OnInit {
     this.ques = this.goalQuestion.find((res) => res.type === data);
     console.log('data data', data);
     console.log('this.ques', this.ques);
+    console.log('this.ques', this.goalQuestion);
     if (this.ques == undefined) {
       this.customGoal = data;
       console.log('custom goal', this.customGoal);
@@ -2056,7 +2094,7 @@ export class GoalsComponent implements OnInit {
     let questionsArrayLength = questionsArray.length;
     for (let i = 0; i < questionsArrayLength; i++) {
       let currentQuestion = questionsArray[i];
-      console.log("currentQuestion", currentQuestion)
+      // console.log("currentQuestion", currentQuestion)
       // if(currentQuestion.flag == 'display'){
       this.questions.push(currentQuestion);
       // }
@@ -2067,6 +2105,9 @@ export class GoalsComponent implements OnInit {
     this.singleSelectedGoal = data;
     // console.log(this.singleSelectedGoal);
     console.log("this.questions IS", this.questions);
+
+    console.log(this.ques);
+
 
     // call createForm 
     this.createForm();
@@ -2163,9 +2204,20 @@ export class GoalsComponent implements OnInit {
   calculateFunction() {
     this.showDesc = false;
 
+    let lumsum = this.dynamicGoalForm.get('enterLumpsumInvestmentAmount').value;
+    if(lumsum == null || lumsum == ""){
+      this.dynamicGoalForm.get('enterLumpsumInvestmentAmount').setValue(0);
+    }
+
+    // if(this.dynamicGoalForm.value.enterLumpsumInvestmentAmount == null){
+    //   this.dynamicGoalForm.value.enterLumpsumInvestmentAmount = 0;
+    // }
+    console.log(this.dynamicGoalForm.value.enterLumpsumInvestmentAmount);
+
     console.log(`Form errros are ${this.dynamicGoalForm.status}`);
     let isValid = this.dynamicGoalForm.valid;
     if (isValid === true) {
+      this.showButton = !this.showButton;
       // get values from formcontrol and store in an object
       this.goalInputValueJson = {};
       let questionsLength = this.questions.length;
@@ -2828,8 +2880,10 @@ export class GoalsComponent implements OnInit {
     else if (this.singleSelectedGoal === "Retirement") {
 
       // Calculating future Value Of Starting Business
-      this.futureValueOfExpensesInRetirementAge = Math.round(this.futureValue(this.goalInputValueJson['expectedInflationBeforeRetirement'], this.goalInputValueJson['currentAge'] - (this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge']), this.goalInputValueJson['enterAmount']))
-      console.log("This is calculation for Retirement", this.futureValueOfExpensesInRetirementAge);
+    
+      this.futureValueOfExpensesInRetirementAge=Math.round(this.futureValue(this.goalInputValueJson['expectedInflationBeforeRetiremnet'], (this.goalInputValueJson['currentAge']-25), this.goalInputValueJson['enterAmount']))
+      console.log("This is calculation for Retirement", this.futureValueOfExpensesInRetirementAge)
+
 
       //Calculating Corpus Required to Fund Retirement Expenses
       this.corpusAmount = Math.round(this.findCorpusAmount(this.futureValueOfExpensesInRetirementAge, this.goalInputValueJson['rateOfReturnPostRetirement']));
@@ -2837,11 +2891,13 @@ export class GoalsComponent implements OnInit {
       // Calculating SIP (considering no lumpsum amount is invested today)
       // this.sipNoLumpsum=Math.round(this.PMT(this.goalInputValueJson['expectedReturnsOnInvestment']/12, 25*12, 0,this.corpusAmount , 1));
       // console.log("This is calculation for sip with no lumpsum",this.sipNoLumpsum);
-      this.sipNoLumpsum = Math.round(this.PMT(this.goalInputValueJson['rateOfReturnBeforeRetirement'] / 12, (this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge']) * 12, 0, this.corpusAmount, 1));
+
+      this.sipNoLumpsum = Math.round(this.PMT((this.goalInputValueJson['rateOfReturnBeforeRetirement'] / 12), (this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge']) * 12, 0, this.corpusAmount, 1));
+       
       console.log("This is calculation for sip with no lumpsum", this.sipNoLumpsum);
 
       // // Calculating SIP (considering  lumpsum amount is invested today)
-      this.sipWithLumpsum = Math.round(-this.PMT(this.goalInputValueJson['expectedReturnsOnInvestment'] / 12, this.goalInputValueJson['enterNumberOfYears'], -this.goalInputValueJson['enterLumpsumInvestmentAmount'], this.futureValueOfExpensesInRetirementAge, 1));
+      this.sipWithLumpsum = Math.round(-this.PMT(this.goalInputValueJson['rateOfReturnBeforeRetirement'] / 12, (this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge']) * 12, this.goalInputValueJson['enterLumpsumInvestmentAmount'], this.futureValueOfExpensesInRetirementAge, 1));
       console.log("This is calculation for sip with lumpsum", this.sipWithLumpsum);
 
       //Displaying calculation for life insurance cover 
@@ -2868,7 +2924,7 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span>, after <span style="color:red !important">${(this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge'])}</span> years (as you Retire), your current annual expenses of <span style="color:red !important">${'₹'} ${this.goalsInputValue['enterAmount']}</span> would swell to <span style="color:red !important">${'₹'} ${this.futureValueOfExpensesInRetirementAge}</span>. To maintain the same lifestyle post retirement, you would need a retirement savings of <span style="color:red !important">${'₹'} ${this.corpusAmount}</span>. If you invest <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> lumpsum today for your retirement, you would need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> and continue till you turn <span style="color:red !important">${this.goalInputValueJson['currentAge']}</span> . What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost.`;
+      this.desc = `Hi <span style="color:red !important">${this.userName}</span>, after <span style="color:red !important">${(this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge'])}</span> years (as you Retire), your current annual expenses of <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterAmount']}</span> would swell to <span style="color:red !important">${'₹'} ${this.futureValueOfExpensesInRetirementAge}</span>. To maintain the same lifestyle post retirement, you would need a retirement savings of <span style="color:red !important">${'₹'} ${this.corpusAmount}</span>. If you invest <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> lumpsum today for your retirement, you would need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> and continue till you turn <span style="color:red !important">${this.goalInputValueJson['currentAge']}</span> . What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost.`;
     }
 
     else {
@@ -2965,7 +3021,7 @@ export class GoalsComponent implements OnInit {
 
   findCorpusAmount(futureValueOfExpensesInRetirementAge, rateOfReturnPostRetirement) {
     futureValueOfExpensesInRetirementAge = parseInt(futureValueOfExpensesInRetirementAge);
-    rateOfReturnPostRetirement = parseInt(rateOfReturnPostRetirement);
+    rateOfReturnPostRetirement = parseInt(rateOfReturnPostRetirement)/100;
 
     let corpusAmount = futureValueOfExpensesInRetirementAge / rateOfReturnPostRetirement;
     return corpusAmount;

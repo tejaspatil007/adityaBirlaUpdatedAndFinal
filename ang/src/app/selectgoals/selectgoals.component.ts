@@ -61,6 +61,15 @@ export class SelectgoalsComponent implements OnInit {
   ngOnInit() { }
 
   addgoal(type) {
+    console.log("this.selectedGoal.length",this.selectedGoal.length)
+    if(this.selectedGoal.length > 2){
+      this.msg='You can select maximum 3 goals';
+    }
+    else{
+      this.msg='';
+    }
+
+
     if (type == 'Self Development') {
       this.addSelfDevelopment()
     }
@@ -139,7 +148,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[0].src = "assets/img/Self Development.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addStartingBusiness() {
@@ -160,7 +169,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[1].src = "assets/img/Starting Business.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addMarriage() {
@@ -181,7 +190,7 @@ export class SelectgoalsComponent implements OnInit {
       this.goals[2].src = "assets/img/Marriage.png";
       this.removeData(data);
     }
-    this.checkMaxGoalInput();
+    
 
   }
 
@@ -203,7 +212,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[3].src = "assets/img/Honeymoon.png";
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addWealthCreation() {
@@ -224,7 +233,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[4].src = "assets/img/Wealth Creation.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addHoliday() {
@@ -246,7 +255,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[5].src = "assets/img/Holiday.png";
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addWorldTour() {
@@ -267,7 +276,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[6].src = "assets/img/World Tour.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addFollowPassion() {
@@ -288,7 +297,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[7].src = "assets/img/Follow Passion.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addPhilantropy() {
@@ -309,7 +318,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[8].src = "assets/img/Philanthropy.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addBike() {
@@ -330,7 +339,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[9].src = "assets/img/Bike.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addCar() {
@@ -351,7 +360,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[10].src = "assets/img/Car.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addDreamHome() {
@@ -372,7 +381,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[11].src = "assets/img/Dream Home.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addChildsEducation() {
@@ -393,7 +402,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[12].src = "assets/img/Childs Education.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addChildsMarriage() {
@@ -414,7 +423,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[13].src = "assets/img/Childs Marriage.png"
     }
-    this.checkMaxGoalInput();
+    
   }
 
   addRetirement() {
@@ -436,7 +445,7 @@ export class SelectgoalsComponent implements OnInit {
       this.removeData(data);
       this.goals[14].src = "assets/img/Retirement.png";
     }
-    this.checkMaxGoalInput();
+    
   }
   openGoal(){
     this.showInput = !this.showInput;
@@ -478,13 +487,19 @@ export class SelectgoalsComponent implements OnInit {
       });
     }
 
-    this.checkMaxGoalInput();
+    
 
   }
   /////new goals added ////////// 
 
   //Removing Goals  
   removeData(value) {
+    console.log(" this.selectedGoal.length", this.selectedGoal.length)
+    this.selectedGoal.length = this.selectedGoal.length - 1;
+   console.log(" this.selectedGoal.length", this.selectedGoal.length)
+   if(this.selectedGoal.length <= 2){
+     this.msg = '';
+   }
     console.log("data removed");
     for (let i = 0; i < this.selectedGoal.length; i++) {
       console.log(i)
@@ -497,14 +512,7 @@ export class SelectgoalsComponent implements OnInit {
     }
   }
 
-  checkMaxGoalInput(){
-    if(this.selectedGoal.length === 3 ){
-      this.msg='You can select maximum 3 goals'
-    }
-    else{
-      this.msg=''
-    }
-  }
+ 
 
   data() {
     let userGoals = {

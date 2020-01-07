@@ -44,13 +44,53 @@ export class TermgoalsComponent implements OnInit {
       this.longGoal = this.finalGoal.longGoals;
       console.log("longoal",this.longGoal);
 
-      this.amount = this.finalGoal.totalAmount;
+      this.amount = this.commaSeparateNumber(this.finalGoal.totalAmount);
       
       this.setImages();
 
 
 
     });
+  }
+
+  commaSeparateNumber(val: any) {
+
+    // return val;
+    if (val === 0 || val === null || val === '0') {
+      return '0';
+    }
+    // tslint:disable-next-line: prefer-const
+    var input = val;
+    var parts = input.toString().split('.');
+    var x = parts[0];
+    var decimals = parts[1];
+    if (x > 7) {
+      var crore = x.substring(0, x.length - 7);
+      var lastThree = x.substring(x.length - 3);
+      var thousandlakh = x.substring(x.length - 7, x.length - 3);
+    } else if (x <= 7) {
+      var lastThree = x.substring(x.length - 3);
+      var thousandlakh = x.substring(0, x.length - 3);
+      var crore: any = '';
+    } else if (x <= 5) {
+      var lastThree = x.substring(x.length - 3);
+      var thousandlakh = x.substring(0, x.length - 3);
+      var crore: any = '';
+    } else {
+      var lastThree: any = '';
+      var thousandlakh: any = '';
+      var crore: any = '';
+    }
+    if (thousandlakh != '') lastThree = ',' + lastThree;
+    if (crore != '') thousandlakh = ',' + thousandlakh;
+    var crorefinal = crore.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    var res =
+      crore.replace(/\B(?=(\d{3})+(?!\d))/g, ',') +
+      thousandlakh.replace(/\B(?=(\d{2})+(?!\d))/g, ',') +
+      lastThree;
+    if (res == 0) return '';
+    if (decimals) res = res + '.' + decimals;
+    return res;
   }
 
 goalTypes = ["Self Development", "Starting Business", "Bike", "Marriage", "Honeymoon", "Wealth Creation", "Holiday",
@@ -105,7 +145,7 @@ setImages(){
 
   getGoalAmt(val) {
     console.log((val))
-    return JSON.parse(val).sipWithLumpsum
+    return this.commaSeparateNumber(JSON.parse(val).sipWithLumpsum);
   }
 
   Replan(){

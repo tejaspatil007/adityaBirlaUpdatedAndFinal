@@ -12,6 +12,8 @@ import { GoalsComponent } from './goals/goals.component';
 import { TermgoalsComponent } from './termgoals/termgoals.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     CalculatorgoalComponent,
     SelectgoalsComponent,
     GoalsComponent,
-    TermgoalsComponent
+    TermgoalsComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
