@@ -38,6 +38,7 @@ export class GoalsComponent implements OnInit {
   public dynamicGoal: any;
   public customGoal: any;
   public amountInNumber: string;
+  public msg:string;
 
   public uid: any;
 
@@ -2100,6 +2101,17 @@ export class GoalsComponent implements OnInit {
     }
   };
 
+  checkNumber(sipWithLumpsum,sipNoLumpsum){
+    if(sipNoLumpsum < 0 || sipWithLumpsum < 0 ) {
+      // this.validateAllFormFields(this.dynamicGoalForm);
+      this.msg = "Please Enter Proper Value";
+      this.showButton = false;
+    }else{
+      this.msg = "";
+      this.showButton = true;
+
+    }
+  }
 
   calculationMethod() {
 
@@ -2121,7 +2133,7 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
-      
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
       
       let caclObj = {};
       caclObj['futureValueOfSelfDevelopmentGoal'] = this.futureValueOfSelfDevelopmentGoal;
@@ -2161,6 +2173,9 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
+
+
       let caclObj = {};
       caclObj['futureValueOfStartingBusiness'] = this.futureValueOfStartingBusiness;
       caclObj['sipNoLumpsum'] = this.sipNoLumpsum;
@@ -2199,6 +2214,8 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
+
       let caclObj = {};
       caclObj['futureValueOfGettingMarried'] = this.futureValueOfGettingMarried;
       caclObj['sipNoLumpsum'] = this.sipNoLumpsum;
@@ -2235,6 +2252,8 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
+
       let caclObj = {};
       caclObj['futureValueOfVisitingHoneymoonDestination'] = this.futureValueOfVisitingHoneymoonDestination;
       caclObj['sipNoLumpsum'] = this.sipNoLumpsum;
@@ -2267,7 +2286,9 @@ export class GoalsComponent implements OnInit {
       console.log("This is calculation for sip with lumpsum", this.sipWithLumpsum);
       //Displaying calculation for life insurance cover 
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
-      console.log("This is the calculation for life insurance cover", this.lifeInsurance)
+      console.log("This is the calculation for life insurance cover", this.lifeInsurance);
+
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
 
       let caclObj = {};
       caclObj['sipNoLumpsum'] = this.sipNoLumpsum;
@@ -2298,6 +2319,8 @@ export class GoalsComponent implements OnInit {
       //Displaying calculation for life insurance cover 
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
+
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
 
       let caclObj = {};
       caclObj['futureValueOfVisitingHoneymoonDestination'] = this.futureValueOfVisitingHoneymoonDestination;
@@ -2335,6 +2358,8 @@ export class GoalsComponent implements OnInit {
       //Displaying calculation for life insurance cover 
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
+
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
 
       let caclObj = {};
       caclObj['futureValueOfGoingOnWorldTour'] = this.futureValueOfGoingOnWorldTour;
@@ -2374,6 +2399,8 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
+
       let caclObj = {};
       caclObj['futureValueOfPassion'] = this.futureValueOfPassion;
       caclObj['sipNoLumpsum'] = this.sipNoLumpsum;
@@ -2410,7 +2437,9 @@ export class GoalsComponent implements OnInit {
 
       //Displaying calculation for life insurance cover 
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
-      console.log("This is the calculation for life insurance cover", this.lifeInsurance)
+      console.log("This is the calculation for life insurance cover", this.lifeInsurance);
+
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
 
       let caclObj = {};
       caclObj['futureValueOfPhilantrophy'] = this.futureValueOfPhilantrophy;
@@ -2459,6 +2488,8 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
+
       let caclObj = {};
       caclObj['futureValueOfBike'] = this.futureValueOfBike;
       caclObj['vehicleLoanAmount'] = this.vehicleLoanAmount;
@@ -2505,6 +2536,8 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
+
       let caclObj = {};
       caclObj['futureValueOfCar'] = this.futureValueOfCar;
       caclObj['vehicleLoanAmount'] = this.vehicleLoanAmount;
@@ -2550,6 +2583,8 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
+
       let caclObj = {};
       caclObj['futureValueOfDreamHome'] = this.futureValueOfDreamHome;
       caclObj['dreamHomeLoanAmount'] = this.dreamHomeLoanAmount;
@@ -2589,6 +2624,8 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
+
       let caclObj = {};
       caclObj['futureValueOfChildEducation'] = this.futureValueOfChildEducation;
       caclObj['sipNoLumpsum'] = this.sipNoLumpsum;
@@ -2623,7 +2660,9 @@ export class GoalsComponent implements OnInit {
 
       //Displaying calculation for life insurance cover 
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
-      console.log("This is the calculation for life insurance cover", this.lifeInsurance)
+      console.log("This is the calculation for life insurance cover", this.lifeInsurance);
+
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
 
       let caclObj = {};
       caclObj['futureValueOfChildMarriage'] = this.futureValueOfChildMarriage;
@@ -2658,19 +2697,21 @@ export class GoalsComponent implements OnInit {
       // this.sipNoLumpsum=Math.round(this.PMT(this.goalInputValueJson['expectedReturnsOnInvestment']/12, 25*12, 0,this.corpusAmount , 1));
       // console.log("This is calculation for sip with no lumpsum",this.sipNoLumpsum);
 
-      this.sipNoLumpsum = Math.round(this.PMT((this.goalInputValueJson['rateOfReturnBeforeRetirement'] / 12), (this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge']) * 12, 0, this.corpusAmount, 1));
-       
+      this.sipNoLumpsum = Math.round(-this.PMT((this.goalInputValueJson['rateOfReturnBeforeRetirement'] / 12), (this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge']) * 12, 0, this.corpusAmount, 1));
+
       console.log("This is calculation for sip with no lumpsum", this.sipNoLumpsum);
 
       // // Calculating SIP (considering  lumpsum amount is invested today)
-      this.sipWithLumpsum = Math.round(-this.PMT(this.goalInputValueJson['rateOfReturnBeforeRetirement'] / 12, (this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge']) * 12, this.goalInputValueJson['enterLumpsumInvestmentAmount'], this.futureValueOfExpensesInRetirementAge, 1));
+      this.sipWithLumpsum = Math.round(-this.PMT(this.goalInputValueJson['rateOfReturnBeforeRetirement'] / 12, (this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge']) * 12, -this.goalInputValueJson['enterLumpsumInvestmentAmount'], this.corpusAmount, 1));
       console.log("This is calculation for sip with lumpsum", this.sipWithLumpsum);
 
       //Displaying calculation for life insurance cover 
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
-      let ageDifference = this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge']
+      let ageDifference = this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge'];
+
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
 
       let caclObj = {};
       caclObj['futureValueOfExpensesInRetirementAge'] = this.futureValueOfExpensesInRetirementAge;
@@ -2710,7 +2751,7 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
-      let negativeNumber =this.checkNegativeNumber(this.sipWithLumpsum, this.sipNoLumpsum, this.lifeInsurance);
+      this.checkNumber(this.sipWithLumpsum, this.sipNoLumpsum);
 
 
       let caclObj = {};
@@ -2791,14 +2832,6 @@ export class GoalsComponent implements OnInit {
     let corpusAmount = futureValueOfExpensesInRetirementAge / rateOfReturnPostRetirement;
     return corpusAmount;
   }
-
-  checkNegativeNumber(sipWithLumpsum, sipWithNoLumpsum, lifeInsurance){
-    if(sipWithLumpsum || sipWithNoLumpsum || lifeInsurance < 0){
-      return 
-    }
-  }
-
-
 
 
   desc: any;

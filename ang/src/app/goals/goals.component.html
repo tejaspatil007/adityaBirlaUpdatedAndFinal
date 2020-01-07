@@ -142,17 +142,17 @@
 			</form>
 		</div>
 
-
+		
 
 		<div *ngIf="!showButton" class="row lastbtns">
 			<div class="twobtn col-md-12">
-				{{errMsg}}
+				<p ><span style="color:#8B0000 !important">{{msg}}</span></p>
 				<button type="button" class="btn nextbtn" (click)="calculateFunction()"><b>Calculate</b></button>
 			</div>
 		</div>
 
 
-		<div *ngIf="showDesc" class="row offer">
+		<div *ngIf="showButton" class="row offer">
 			<div class="subscribe" [innerHTML]="desc">
 				<!-- <P>{{description}}</P> -->
 			</div>

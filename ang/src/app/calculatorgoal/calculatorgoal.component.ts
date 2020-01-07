@@ -67,10 +67,14 @@ export class CalculatorgoalComponent implements OnInit {
       else if(this.userForm.value.maritalStatus == false){
         this.marriedImg='./assets/img/2nd page images/male single icon.png'
       }
-      
-      this.profImg="./assets/img/2nd page images/male self employeed.png"
-      console.log(this.gender);
-      console.log(this.userForm.value.gender);
+
+      if(this.userForm.value.profession == false){       
+        this.profImg="./assets/img/2nd page images/male self employeed.png"
+      }
+      else if(this.userForm.value.profession == true){
+        this.profImg="./assets/img/2nd page images/male salaried.png"
+      }
+
     } else {
       this.gender = "./assets/img/2nd page images/female single icon.png";
       if(this.userForm.value.maritalStatus == true){
@@ -79,8 +83,13 @@ export class CalculatorgoalComponent implements OnInit {
       else if(this.userForm.value.maritalStatus == false){
         this.marriedImg='./assets/img/2nd page images/female single icon.png'
       }
-    
-      this.profImg="./assets/img/2nd page images/female self employeed.png";
+      if(this.userForm.value.profession == false){        
+        this.profImg="./assets/img/2nd page images/female self employeed.png"
+      }
+      else if(this.userForm.value.profession == true){
+        this.profImg="./assets/img/2nd page images/female salaried.png"
+      }
+      
       console.log(this.gender);
       console.log(this.userForm.value.gender);
     }
