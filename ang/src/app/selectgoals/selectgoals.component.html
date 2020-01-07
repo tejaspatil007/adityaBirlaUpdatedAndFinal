@@ -21,9 +21,7 @@
 		<div class="row">
 
 			<div class="col-md-12 text-center gallary">
-				<!-- <div class="validation-next">
-						{{errorMsg}}
-					</div> -->
+		
 				<div class="goals">
 					<p><b>SELECT GOALS</b></p>
 					<span class="validation-next">{{errorMsg}}</span>
@@ -41,7 +39,7 @@
 
 					</div>
 				</div>
-				<!-- onblur="addvalue(goal.value)" -->
+			
 				<div *ngIf='selectedGoal.length < 3'>
 					<li><a (click)="openGoal()">
 							<div class="img-div-style"><img src="{{othergoalImg}}">
@@ -71,7 +69,7 @@
 		<div class="lastbtns">
 			<div class="row">
 				<div class="col-md-12">
-					<!-- <a routerLink="/goals"><button type="button" class="btn nextbtn" (click)="postData()" ><b>Next</b></button></a> -->
+				
 					<a><button type="button" class="btn nextbtn" (click)="data()"><b>Next</b></button></a>
 				</div>
 			</div>

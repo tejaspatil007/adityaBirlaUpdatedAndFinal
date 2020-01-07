@@ -523,7 +523,7 @@ export class SelectgoalsComponent implements OnInit {
 
     if(this.selectedGoal.length > 0){
 
-      this.abs.postGoalData("usergoals", userGoals).subscribe(data => {
+      this.abs.postGoalData(userGoals).subscribe(data => {
         console.log(data);
         this.uid = data['user_id'];
         console.log("uid", this.uid);

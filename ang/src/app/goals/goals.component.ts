@@ -2,7 +2,7 @@ import { Component, OnInit, TestabilityRegistry } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'
 import { AdityaBirlaServices } from "../../Shared/Services/calculatorgoal.services"
 import { SelectgoalsComponent } from "../selectgoals/selectgoals.component"
-// import { Icalculatorgoal } from 'src/Shared/Interfaces(Structure)/calculatorgoal';
+
 import { Igoal } from './../../Shared/Interfaces(Structure)/goal';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from "@angular/forms";
 
@@ -40,7 +40,7 @@ export class GoalsComponent implements OnInit {
   public amountInNumber: string;
 
   public uid: any;
-  // public percent:any;
+
   public ival: any;
 
   public abc = [];
@@ -90,12 +90,6 @@ export class GoalsComponent implements OnInit {
 
   ngOnInit() {
     this.getSelectedGoals();
-
-
-    // this.goalQuestion={};
-    // this.goalQuestion[d = '';
-
-
   }
 
   SubmitGoalsData() {
@@ -167,27 +161,6 @@ export class GoalsComponent implements OnInit {
         }
         this.nextGoals.push(goalObject);
       }
-      ///////   change for next ///////////////////////
-
-      // this.ques = this.goalQuestion.find((res) => res.type === 'customGoal');
-      //   this.dynamicGoal=data;
-      //   console.log('dyanmic goal',this.dynamicGoal);
-      //   console.log(data)
-      //   this.ques = this.goalQuestion.find((res) => res.type === 'customGoal');
-
-
-      // this.selectGoal.forEach(res=>{
-      //    this.customGoal= res.goals
-      //   console.log('custom goals', this.customGoal);
-      // })
-
-      // this.ques = this.goalQuestion.find((res) => res.type === this.customGoal);
-      // if(this.ques == undefined){
-      //   this.dynamicGoal=this.customGoal;
-      //   console.log('dyanmic goal',this.dynamicGoal);
-      //   console.log(this.customGoal)
-      //   this.ques = this.goalQuestion.find((res) => res.type === 'customGoal');
-      // }      
 
 
       this.goalQuestion = [
@@ -1732,56 +1705,10 @@ export class GoalsComponent implements OnInit {
         }
       ]
 
-      //   let questionFromDropdownAndText ={};
-
-      //   if(this.goalQuestion.length > 0){
-      //    this.goalQuestion.forEach(goalSingleObject=>{
-      //     this.selectGoal.forEach(singleGoal=>{
-
-      //     })
-      //      if(goalSingleObject.type == 'Bike'){
-      //        goalSingleObject.questions.forEach(singleObjectQuestionData=>{
-      //           if(singleObjectQuestionData['controlType'] === 'text'){
-      //             singleObjectQuestionData['validation'].forEach(validator=>{
-      //               if(validator['key']=='pattern'){    
-      //                     let value=singleObjectQuestionData['value']                         
-      //                     questionFromDropdownAndText[singleObjectQuestionData['variableName']] = new FormControl(value,[Validators.required, Validators.pattern(validator.pattern)])
-      //               }
-      //               else{
-      //                 let value=singleObjectQuestionData['value']   
-      //                 questionFromDropdownAndText[singleObjectQuestionData['variableName']]= new FormControl(value,[Validators.required])
-      //               }
-      //             })
-      //           }
-      //           else if(singleObjectQuestionData['controlType'] === 'dropdown'){
-      //                 let value=singleObjectQuestionData['value']   
-      //                 questionFromDropdownAndText[singleObjectQuestionData['variableName']]= new FormControl(value,[Validators.required])  
-      //           }
-      //         })
-      //      }
-      //    })
-      //   }
-
-      //  this.dynamicGoalForm= this.fb.group(questionFromDropdownAndText);
-      //  console.log(this.dynamicGoalForm);
-
-
       if (res[0].goals) {
         this.onGoalClick(res[0].goals, 0, res[0].goal_id, res[0].age);
       }
-      // this.goalInputValueJson = {};
-      // this.goalQuestion.forEach(items=>{
-      //   if(items.type == this.data)
-
-      //   for(let i=0;i<items.questions.length;i++)
-      //   this.getSelectedGoals=items.questions[i].variableName
-      // })
-      // this.goalQuestion[0].questions.forEach(async goal => {
-      //   this.goalInputValueJson[goal.variableName] = '';
-      // });
-
-
-
+  
     });
 
 
@@ -1833,7 +1760,7 @@ export class GoalsComponent implements OnInit {
     console.log(this.ques.questions);
 
     this.ques.questions.forEach(singleObjectQuestionData => {             //{question 1 full object}
-      // if(singleObjectQuestionData['controlType'] === 'text'){
+     
 
       let value = singleObjectQuestionData['value']
       let validations = [];
@@ -1846,33 +1773,17 @@ export class GoalsComponent implements OnInit {
 
         if (validator['pattern']) {
           validations.push(Validators.pattern(validator.pattern));
-          // questionFromDropdownAndText[singleObjectQuestionData['variableName']] = new FormControl(value,[Validators.required, Validators.pattern(validator.pattern)])
+         
         }
-
-        // else{
-        //   let value=singleObjectQuestionData['value']   
-        //   questionFromDropdownAndText[singleObjectQuestionData['variableName']]= new FormControl(value,[Validators.required])
-        // }
       })
       questionFromDropdownAndText[singleObjectQuestionData['variableName']] = new FormControl(value, validations);
     
-     
-
-      
-      //each                                                                                                                                                   and every form control with                                                                                                                         values and validators
-      // }
-      // else if(singleObjectQuestionData['controlType'] === 'dropdown'){
-      //       let value=singleObjectQuestionData['value']   
-      //       questionFromDropdownAndText[singleObjectQuestionData['variableName']]= new FormControl(value,[Validators.required])  
-      // }
     });
 
     console.log("questionFromDropdownAndText is ", questionFromDropdownAndText);
 
     this.dynamicGoalForm = this.fb.group(questionFromDropdownAndText);
     console.log(this.dynamicGoalForm)
-    // this.dynamicGoalForm.get['goalName'].disable();
-    // this.dynamicGoalForm.get['currentAge'].disable();
 
     console.log(this.dynamicGoalForm);
     console.log('this is the form data', this.dynamicGoalForm.get('enterAmount'))
@@ -1880,15 +1791,27 @@ export class GoalsComponent implements OnInit {
     this.isFormReady = true;
   }
 
-
   Replan() {
     this.showButton = !this.showButton;
     this.router.navigateByUrl("/goals");
-    // localStorage.removeItem('id');
-    // this.dynamicGoalForm = null;
-    this.createForm();
+    for(let i = 0; i< this.nextGoals.length; i++){
 
-  }
+        this.nextGoals[i].isCalculated = false;
+  
+    }
+      let goalObj =  {
+      goals : '',
+      goal_id: 0,
+      queans : [],
+      res: null
+    };
+    this.globalCal['goal1'] = goalObj;
+    this.globalCal['goal2'] = goalObj;
+    this.globalCal['goal3'] = goalObj;
+ 
+    this.createForm(); 
+   }
+ 
 
   goalTypes = ["Self Development", "Starting Business", "Bike", "Marriage", "Honeymoon", "Wealth Creation", "Holiday",
     "Car", "Childs Education", "Childs Marriage", "Follow Passion", "World Tour", "Dream Home", "Retirement",
@@ -1901,10 +1824,10 @@ export class GoalsComponent implements OnInit {
     for (let i = 0; i < goalsLength; i++) {
       let currentGoalName = this.selectGoal[i].goals;
       if (this.goalTypes.includes(currentGoalName)) {
-        let imgUrl = `../../assets/img/${currentGoalName}.png`;
+        let imgUrl = `./assets/img/${currentGoalName}.png`;
         this.images.push(imgUrl);
       } else {
-        let customImgUrl = `../../assets/img/AddOtherGoal.png`;
+        let customImgUrl = `./assets/img/AddOtherGoal.png`;
         this.images.push(customImgUrl);
       }
     }
@@ -2046,10 +1969,10 @@ export class GoalsComponent implements OnInit {
     this.index = index;
     this.setImages();
     if (this.goalTypes.includes(data)) {
-      let selectedGoalImgUrl = `../../assets/img/${data}color.png`;
+      let selectedGoalImgUrl = `./assets/img/${data}color.png`;
       this.images[index] = selectedGoalImgUrl;
     } else {
-      let customColorImg = `../../assets/img/AddOtherGoalcolor.png`
+      let customColorImg = `./assets/img/AddOtherGoalcolor.png`
       this.images[index] = customColorImg;
     }
 
@@ -2111,95 +2034,9 @@ export class GoalsComponent implements OnInit {
 
     // call createForm 
     this.createForm();
-
-    // this.goalQuestion.forEach(async goal => {
-    //   if (goal.type == this.singleSelectedGoal) {                               //data= bike    (assume we clicked on bike goals)
-
-    //     console.log("data", this.singleSelectedGoal);
-    //     goal.questions.forEach(async goalQuestion => {
-    //       this.goalInputValueJson[goalQuestion.variableName] = ""
-    //     })
-    //   }
-    // })
-
-    // console.log(this.goalInputValueJson)
-
-
-
-
-    // for(let i=0;i<this.goalQuestion.length;i++){
-    //   // console.log(this.goalQuestion);
-    //   // console.log(this.goalQuestion[i].type);  
-    //    this.questionType = this.goalQuestion[i].type;
-    //   // console.log(quetype);
-    //   if(this.questionType === data){        //data=retirement
-    //     console.log(data);
-    //      this.singleSelectedQuestion=data;
-    //     console.log(this.questionType);
-    //     this.questions = this.goalQuestion[i].questions;   //questions=list of questions of retirement goal        console.log(this.goalQuestion[i].questions);
-    //     console.log("ang",this.questions);
-
-    //   }
-    // }
   }
 
-  // let answers = {
-  //   amountForGoal : 1000,
-  //   inflation : 10%,
-  // }
-
-  // let answers = {};
-  // answered(answer, index?, variableName?){
-  //   if(variableName){
-
-  //   }
-  // }
-
-
-
-
-
-
-  //Fetching input values from dropdown
-  // optionSelect(goalInputField, inputValue) {
-  //   console.log("Input values from dropdown", goalInputField, inputValue);
-  //   //call method to insert value
-  //   this.goalInputValueInsert(goalInputField, parseInt(inputValue));
-  // }  // this.answers.push();
-
-  // //Fetching input values from input text box
-  // inputChanged(goalInputField, inputValue) {
-  //   console.log("Input values from input text box", goalInputField, inputValue);
-  //   //call method to insert value
-  //   this.goalInputValueInsert(goalInputField, inputValue);
-  // }
-
-  // //Inserting input Values from input text box and dropdown
-  // goalInputValueInsert(goalInputField, inputValue) {
-  //   // this.goalsInputValue[goalInputField] = inputValue;   //Previous
-
-  //   this.goalInputValueJson[goalInputField] = inputValue; //New
-
-
-  //   //  this.goalsInputValue[goalInputField];
-
-  //   console.log("This is the i/p field", goalInputField);
-
-
-
-
-
-  //   console.log(this.goalsInputValue);
-  //   // console.log(this.goalsInputValue['enterAmount']);
-  //   // console.log(this.goalsInputValue['expectedInflation']);
-  //   // console.log(this.goalsInputValue['enterNumberOfYears'])
-
-  //   // //For Calculation
-  //   // this.calculationMethod();
-
-
-  // }
-
+  
   errMsg: string;
   calculateFunction() {
     this.showDesc = false;
@@ -2209,24 +2046,16 @@ export class GoalsComponent implements OnInit {
       this.dynamicGoalForm.get('enterLumpsumInvestmentAmount').setValue(0);
     }
 
-    // if(this.dynamicGoalForm.value.enterLumpsumInvestmentAmount == null){
-    //   this.dynamicGoalForm.value.enterLumpsumInvestmentAmount = 0;
-    // }
-    console.log(this.dynamicGoalForm.value.enterLumpsumInvestmentAmount);
-
     console.log(`Form errros are ${this.dynamicGoalForm.status}`);
     let isValid = this.dynamicGoalForm.valid;
-    if (isValid === true) {
+    if (isValid === true ) {
       this.showButton = !this.showButton;
       // get values from formcontrol and store in an object
       this.goalInputValueJson = {};
       let questionsLength = this.questions.length;
       for (let i = 0; i < questionsLength; i++) {
         let currentQuestion = this.questions[i];
-        // this.goalInputValueJson[currentQuestion.variableName] = this.dynamicGoalForm.controls[currentQuestion.variableName].value;
-
-        // let amount=this.dynamicGoalForm.controls[currentQuestion.variableName].value
-        // let number= this.convertCommaSeperatedNumberToNumber(amount);
+      
         if (currentQuestion.variableName == 'enterChildName') {
           this.goalInputValueJson[currentQuestion.variableName] = this.dynamicGoalForm.controls[currentQuestion.variableName].value;
         }
@@ -2239,7 +2068,7 @@ export class GoalsComponent implements OnInit {
         }
 
       }
-      console.log('this.GlobalCal i/p Json', this.goalInputValueJson);
+      console.log('this.goalInputValueJson i/p Json', this.goalInputValueJson);
       // call calculations
       this.calculationMethod();
 
@@ -2247,72 +2076,6 @@ export class GoalsComponent implements OnInit {
       console.log("Not Valid data")
       this.validateAllFormFields(this.dynamicGoalForm)
     }
-
-    // let patternErr = this.dynamicGoalForm.controls['enterAmount'].errors.pattern;
-
-    // console.log("Form patternErr -->> ", patternErr);
-
-
-
-    // console.log("data", this.data);
-
-
-    // console.log("Json i/p value", this.goalInputValueJson)
-
-    // this.futureValueOfSelfDevelopmentGoal = 1000
-    // console.log(this.futureValueOfSelfDevelopmentGoal)
-    // console.log(this.goalQuestion);
-
-    // if(this.goalsInputValue['enterAmount'] == ""){
-    //   return console.log('required')
-    // }
-    // console.log(this.goalInputValueJson)
-    // Object.keys(this.goalInputValueJson).forEach(i => {
-    //   console.log(this.goalsInputValue[i])
-    //   if (this.goalInputValueJson[i].length == 0) {
-    //     this.errMsg = `<span style="color:red !important">${i} is required!`
-    //     alert(this.errMsg);
-    //   }
-    //   else if (i == 'enterAmount' || i == '') {
-    //     if (!parseInt(this.goalsInputValue[i])) {
-    //       this.errMsg = `<span style="color:red !important">${i} should be a number!!`
-    //       alert(this.errMsg);
-    //     }
-    //     else {
-    //       if (this.goalsInputValue[i] % 1000 > 0) {
-    //         this.errMsg = '<span style="color:red !important">${i} should be multiple of 1000s'
-    //         alert(this.errMsg);
-    //       }
-    //     }
-    //   }
-    //   // else {
-
-    //   // }
-    // })
-    // let questions = this.ques.questions;
-    // let questionsLength = questions.length;
-    // for(let i = 0; i < questionsLength; i++){
-    //   let currentQuestion = questions[i];
-    //   if(currentQuestion.variableName){
-    //     if(!this.goalsInputValue[currentQuestion.variableName]){
-
-    //       return console.log(`Value of <span style="color:red !important">${currentQuestion.name} is not present.`)
-    //     }
-    //     else if(this.goalsInputValue[currentQuestion.variableName] == '' || this.goalsInputValue[currentQuestion.variableName] == 0 
-    //       || this.goalsInputValue[currentQuestion.variableName] == undefined){
-    //         return console.log(`Invalid value for <span style="color:red !important">${currentQuestion.name}.`)
-    //     }
-    //   }
-    // }
-
-    // console.log("Keys are ", keys);
-    // var length = keys.length
-    // for(let i=0; i< length; i++){
-    //   var key = keys[i];
-    //   if(!this.goalsInputValue[key]){
-    //     return console.log(`Value of <span style="color:red !important">${key} is not present.`)
-    //   }
-    // }
 
   }
 
@@ -2357,6 +2120,9 @@ export class GoalsComponent implements OnInit {
       //Displaying calculation for life insurance cover 
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
+
+      
+      
       let caclObj = {};
       caclObj['futureValueOfSelfDevelopmentGoal'] = this.futureValueOfSelfDevelopmentGoal;
       caclObj['sipNoLumpsum'] = this.sipNoLumpsum;
@@ -2944,6 +2710,9 @@ export class GoalsComponent implements OnInit {
       (this.sipWithLumpsum * 100) < 5000000 ? this.lifeInsurance = this.sipWithLumpsum * 100 : this.lifeInsurance = 5000000;
       console.log("This is the calculation for life insurance cover", this.lifeInsurance)
 
+      let negativeNumber =this.checkNegativeNumber(this.sipWithLumpsum, this.sipNoLumpsum, this.lifeInsurance);
+
+
       let caclObj = {};
       caclObj['futureValueOfGoal'] = this.futureValueOfGoal;
       caclObj['sipNoLumpsum'] = this.sipNoLumpsum;
@@ -2979,10 +2748,6 @@ export class GoalsComponent implements OnInit {
     return FV;
   }
 
-  // PMT(ROI, numberOfYears, FV, type, enterLumpsumInvestmentAmount?, PV?){
-  //   var PMT:number=9999;
-  //   return PMT;
-  // }
 
   PMT(rate_per_period, number_of_payments, present_value, future_value, type) {
     rate_per_period = parseInt(rate_per_period);
@@ -3025,6 +2790,12 @@ export class GoalsComponent implements OnInit {
 
     let corpusAmount = futureValueOfExpensesInRetirementAge / rateOfReturnPostRetirement;
     return corpusAmount;
+  }
+
+  checkNegativeNumber(sipWithLumpsum, sipWithNoLumpsum, lifeInsurance){
+    if(sipWithLumpsum || sipWithNoLumpsum || lifeInsurance < 0){
+      return 
+    }
   }
 
 
@@ -3070,9 +2841,7 @@ export class GoalsComponent implements OnInit {
       if (indexOfLoop == this.index) {
         this.nextGoals[i].isCalculated = true;
       }
-      // else{
-      //   this.nextGoals[i].isCalculated = false;
-      // }
+      
     }
 
 

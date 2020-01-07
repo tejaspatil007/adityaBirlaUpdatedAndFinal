@@ -7,8 +7,8 @@ import { Igoal } from '../Interfaces(Structure)/goal';
 @Injectable({providedIn:'root'})
 
 export class AdityaBirlaServices{
-    public url=" http://localhost:3000/";
-    // public url="  http://1d3f301c.ngrok.io ";
+    // public url=" http://localhost:3000/";
+    public url="https://ba904423.ngrok.io/";
     public setselectedgoals:any;
     public headers:HttpHeaders;
     constructor( private http:HttpClient ){
@@ -17,15 +17,15 @@ export class AdityaBirlaServices{
         });
     }
 
-    postUserDetails(routename,data):Observable<Icalculatorgoal>{
-        console.log(this.url+routename,data);
+    postUserDetails(data):Observable<Icalculatorgoal>{
+        console.log(this.url,data);
         console.log("postCalculatorgoal method executed")
-        return this.http.post<Icalculatorgoal>(this.url+routename,data,{headers:this.headers});
+        return this.http.post<Icalculatorgoal>(`${this.url}details`,data,{headers:this.headers});
     }
 
-    postGoalData(routename,data):Observable<Igoal[]>{
-        console.log("=>",this.url+routename+localStorage.getItem('id'),data);
-        return this.http.post<Igoal[]>(this.url+routename,data,{headers:this.headers});
+    postGoalData(data):Observable<Igoal[]>{
+        // console.log("=>",this.url+routename+localStorage.getItem('id'),data);
+        return this.http.post<Igoal[]>(`${this.url}usergoals`,data,{headers:this.headers});
     }
 
     addCustomGoal(goalName){

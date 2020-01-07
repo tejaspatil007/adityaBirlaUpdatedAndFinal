@@ -1,16 +1,4 @@
 
-
-
-  <!-- <section id="nav-bar">
-    <nav class="navbar navbar-expand-lg navbar-light ">
-      <a class="navbar-brand" href="#"></a>
-    </nav>
-  </section> -->
-  <!-- <section id="nav-bar">
-    <a class="navbar-brand" href="#"></a>
-    <img src="../../assets/img/aditybilacapital logo.png">
-  </section> -->
-  <!---nav-bar end----->
   <section class="cover">
     <div class="container back fix">
       <div class="row heading">
@@ -28,25 +16,7 @@
           </ul>
         </div>
       </div>
-      <!-- <div class="selectmenu mt-15">
-			         <div class="row">
-			        <div class="col-md-4 col-sm-4 col-4 col-4-css">
-			          		<button type="button" class="btn selectbtn"><b>Step 1</b></button>
-			          		<p><strong>Enter <br>Details</strong></p>
-			        </div>
-			        <div class="col-md-4 col-sm-4 col-4 col-4-css">
-			          		<button type="button" class="btn selectbtn"><b>Step 2</b></button>
-			          		<p><strong>Select & <br>Prioritize Goals</strong></p>
-			         </div>
-			         <div class="col-md-4 col-sm-4 col-4 col-4-css">
-			          		<button type="button" class="btn selectbtn"><b>Step 3</b></button>
-			          		<p><strong>Calculate Goal <br>Values</strong></p>
-			         </div>
-                     <div class="clearfix">
-                        <div class="line"></div>
-                     </div>
-			         </div>
-			     </div> -->
+    
       <!-------start form------------->
       <div id="cust-age">
         <div class="row">
@@ -92,7 +62,7 @@
             </div>
             <div class="col-md-6 users">
               <div class="form">
-                <!--	<img src= "../../assets/img/2nd page images/male single icon.png" (click)="gender()" class="img-fluid"> -->
+           
                 <img src="{{gender}}" class="img-fluid">
                 <p><strong>SELECT GENDER</strong></p>
                 <span class="switcher switcher-1">
@@ -103,17 +73,13 @@
             </div>
           </div>
         </div>
-        <!--  <div id="cust-age">
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <p>SELECT AGE <input type="text" id="ip4" placeholder="ENTER AGE"/> </p>              </div>
-            </div> -->
+     
 
         <div class="marrial text-center">
           <div class="row">
             <div class="col-md-6 user d-flex">
               <div class="form1">
-                <!-- <img src="../../assets/img/2nd page images/male single icon.png" class="img-fluid"> -->
+        
                 <img src="{{marriedImg}}" class="img-fluid">
                 <p><strong>MARITAL STATUS</strong></p>
                 <span class="switcher switcher-2">
@@ -137,17 +103,12 @@
               </div>
               <div *ngIf="userForm.value.child ==  true" class="kidselect">
                 <ul class="baby-style">
-                  <li><img src="../../assets/img/1 baby icon.png" (click)="kid1()"></li>
-                  <li><img src="../../assets/img/2 baby icon.png" (click)="kid2()"></li>
-                  <li><img src="../../assets/img/3 baby icon.png" (click)="kid3()" style="width: 40px;"></li>
-                  <li style="border-right:none;"><img src="../../assets/img/4 baby.png" style="width: 50px;"
+                  <li><img src="./assets/img/1baby.png" (click)="kid1()"></li>
+                  <li><img src="./assets/img/2baby.png" (click)="kid2()"></li>
+                  <li><img src="./assets/img/3baby.png" (click)="kid3()" style="width: 40px;"></li>
+                  <li style="border-right:none;"><img src="./assets/img/4baby.png" style="width: 50px;"
                       (click)="kid4()"></li>
-                  <!--  <input *ngIf="userForm.value.child == true" value="{{formJson}}" class=form-control type="number"
-                    id="ip3" placeholder="" value="{{formJson.kids}}" formControlName="kids" autocomplete="off" />-->
-
-                  <!-- <span class=" validation-name" *ngIf="userForm.get('kids').hasError('required') &&  submitted">
-                    *KIDS is required*
-                  </span> -->
+                
                 </ul>
               </div>
             </div>
@@ -157,7 +118,7 @@
           <div class="row">
             <div class="col-md-12 text-right d-flex align-content-center flex-wrap">
               <div class="form3">
-                <!-- <img src="../../assets/img/male salaried.png" class="img-fluid"> -->
+                
                 <img src="{{profImg}}" class="img-fluid">
                 <p><strong>PROFESSION</strong></p>
                 <span class="switcher switcher-4">
@@ -168,9 +129,7 @@
             </div>
           </div>
         </div>
-        <!-- <div>
-          <input type="number" formControlName="age" placeholder="enter age">
-        </div> -->
+      
         <div class="row">
           <div class=" col-md-12 lastbtns form-group">
             <a><button type="submit" class="btn nextbtn"><b>Next</b></button></a>

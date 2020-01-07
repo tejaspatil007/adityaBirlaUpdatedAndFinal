@@ -109,11 +109,11 @@ setImages(){
   for(let i = 0; i < shortGoalLength; i++){
     let currentGoalName = this.shortGoal[i].goals;
     if(this.goalTypes.includes(currentGoalName)){
-      let imgUrl = `../../assets/img/${currentGoalName}color.png`;
+      let imgUrl = `./assets/img/${currentGoalName}color.png`;
       this.shortGoalImages.push(imgUrl);
     }
     else{
-      let customImgUrl = `../../assets/img/AddOtherGoalcolor.png`;
+      let customImgUrl = `./assets/img/AddOtherGoalcolor.png`;
       this.shortGoalImages.push(customImgUrl);
     }   
   }
@@ -121,11 +121,11 @@ setImages(){
   for(let i = 0; i < midGoalLength; i++){
     let currentGoalName = this.midGoal[i].goals;
     if(this.goalTypes.includes(currentGoalName)){
-      let imgUrl = `../../assets/img/${currentGoalName}color.png`;
+      let imgUrl = `./assets/img/${currentGoalName}color.png`;
       this.midGoalImages.push(imgUrl);
     }
     else{
-      let customImgUrl = `../../assets/img/AddOtherGoalcolor.png`;
+      let customImgUrl = `./assets/img/AddOtherGoalcolor.png`;
       this.midGoalImages.push(customImgUrl);
     }   
   }
@@ -133,11 +133,11 @@ setImages(){
   for(let i = 0; i < longGoalLength; i++){
     let currentGoalName = this.longGoal[i].goals;
     if(this.goalTypes.includes(currentGoalName)){
-      let imgUrl = `../../assets/img/${currentGoalName}color.png`;
+      let imgUrl = `./assets/img/${currentGoalName}color.png`;
       this.longGoalImages.push(imgUrl);
     }
     else{
-      let customImgUrl = `../../assets/img/AddOtherGoalcolor.png`;
+      let customImgUrl = `./assets/img/AddOtherGoalcolor.png`;
       this.longGoalImages.push(customImgUrl);
     }   
   }
