@@ -188,7 +188,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -200,7 +200,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               "options": this.number,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', }],
+              'validation': [{ key: 'required', value: 'Please select number of years', }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -249,7 +249,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false,
@@ -280,7 +280,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -292,7 +292,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -340,7 +340,7 @@ export class GoalsComponent implements OnInit {
               'controlType': 'text',
               'value': 0,
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -370,7 +370,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -382,7 +382,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -430,7 +430,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -459,7 +459,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -471,7 +471,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -519,7 +519,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -549,7 +549,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -561,7 +561,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -597,7 +597,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -626,7 +626,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -638,7 +638,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -686,7 +686,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -716,7 +716,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -729,7 +729,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -777,7 +777,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -807,7 +807,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -819,7 +819,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -867,7 +867,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -896,7 +896,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -908,7 +908,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -956,7 +956,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -986,7 +986,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -998,7 +998,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -1058,7 +1058,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1088,7 +1088,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1100,7 +1100,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -1135,7 +1135,7 @@ export class GoalsComponent implements OnInit {
               "options": this.percent5,
               "variableName": "expectedReturnsOnInvestment",
               'value': 12,
-              'controlType': 'text',
+              'controlType': 'dropdown',
               'validation': [{ key: 'required', value: 'value is required', 'required': true }],
               'placeholder': 'Enter expected return on investment',
               'flag': 'display',
@@ -1160,7 +1160,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1190,7 +1190,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1202,7 +1202,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false
@@ -1262,7 +1262,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1291,7 +1291,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter age in years",
               'flag': 'display',
               'hasOtherInput': false
@@ -1316,7 +1316,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1364,7 +1364,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1393,7 +1393,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter age in years",
               'flag': 'display',
               'hasOtherInput': false
@@ -1418,7 +1418,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1467,7 +1467,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1495,7 +1495,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterRetirementAge",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Retirement Age is required', 'required': true }],
               'placeholder': "Enter retirement age",
               'flag': 'display',
               'hasOtherInput': false,
@@ -1522,7 +1522,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false,
@@ -1585,7 +1585,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false,
@@ -1629,7 +1629,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false,
@@ -1642,7 +1642,7 @@ export class GoalsComponent implements OnInit {
               "variableName": "enterNumberOfYears",
               'value': null,
               'controlType': 'dropdown',
-              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'validation': [{ key: 'required', value: 'Please select number of years', 'required': true }],
               'placeholder': "Enter number of years",
               'flag': 'display',
               'hasOtherInput': false,
@@ -1695,7 +1695,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'value must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false,
@@ -1794,23 +1794,28 @@ export class GoalsComponent implements OnInit {
 
   Replan() {
     this.showButton = !this.showButton;
-    this.router.navigateByUrl("/goals");
-    for(let i = 0; i< this.nextGoals.length; i++){
+    // this.router.navigateByUrl("/goals");
+    // for(let i = 0; i< this.nextGoals.length; i++){
 
-        this.nextGoals[i].isCalculated = false;
+    //     this.nextGoals[i].isCalculated = false;
   
-    }
-      let goalObj =  {
-      goals : '',
-      goal_id: 0,
-      queans : [],
-      res: null
-    };
-    this.globalCal['goal1'] = goalObj;
-    this.globalCal['goal2'] = goalObj;
-    this.globalCal['goal3'] = goalObj;
+    // }
+    //   let goalObj =  {
+    //   goals : '',
+    //   goal_id: 0,
+    //   queans : [],
+    //   res: null
+    // };
+    // this.globalCal['goal1'] = goalObj;
+    // this.globalCal['goal2'] = goalObj;
+    // this.globalCal['goal3'] = goalObj;
  
-    this.createForm(); 
+    // this.createForm(); 
+    
+      // localStorage.removeItem('id');
+      location.reload();
+
+    
    }
  
 
@@ -2150,10 +2155,20 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Self Development'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Self Development'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require <span style="color:red !important">${'₹'} ${this.futureValueOfSelfDevelopmentGoal}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	 `;
+         }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Self Development'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
       you would require <span style="color:red !important">${'₹'} ${this.futureValueOfSelfDevelopmentGoal}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
       over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>.	
       What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+     
+     
+      }
+      
     }
 
 
@@ -2190,12 +2205,21 @@ export class GoalsComponent implements OnInit {
       this.sipWithLumpsum = this.convertNumberToCommaSeperatedNumber(this.sipWithLumpsum);
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
-
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important"> ${'Starting Business'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+      
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important"> ${'Starting Business'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
       you would require <span style="color:red !important">${'₹'} ${this.futureValueOfStartingBusiness}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
-      over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important"> ${'₹'} ${this.sipWithLumpsum}</span>.	
-      What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years.  What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.`;
+        
 
+      }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important"> ${'Starting Business'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require <span style="color:red !important">${'₹'} ${this.futureValueOfStartingBusiness}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important"> ${'₹'} ${this.sipWithLumpsum}</span>.	
+        What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      }
+      
     }
 
     else if (this.singleSelectedGoal === "Marriage") {
@@ -2231,10 +2255,17 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Marriage'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
-      you would require <span style="color:red !important">${'₹'} ${this.futureValueOfGettingMarried}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
-      over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
-    }
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Marriage'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require <span style="color:red !important">${'₹'} ${this.futureValueOfGettingMarried}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.`;
+       }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Marriage'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require <span style="color:red !important">${'₹'} ${this.futureValueOfGettingMarried}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      }
+     }
 
 
     else if (this.singleSelectedGoal === "Honeymoon") {
@@ -2270,9 +2301,18 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Honeymoon'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
-      you would require <span style="color:red !important">${'₹'} ${this.futureValueOfVisitingHoneymoonDestination}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
-      over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>.	What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Honeymoon'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require <span style="color:red !important">${'₹'} ${this.futureValueOfVisitingHoneymoonDestination}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years.	What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Honeymoon'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require <span style="color:red !important">${'₹'} ${this.futureValueOfVisitingHoneymoonDestination}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>.	What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      }
+
+  
 
     }
 
@@ -2298,7 +2338,15 @@ export class GoalsComponent implements OnInit {
 
       this.storeDataToLocalObject(caclObj);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span> for <span style="color:red !important">${'Wealth Creation'}</span> of <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterAmount']}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> over next <span style="color:red !important"> ${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>	If less than 50 lakh, at no additional cost.`
+
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span> for <span style="color:red !important">${'Wealth Creation'}</span> of <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterAmount']}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> over next <span style="color:red !important"> ${this.goalInputValueJson['enterNumberOfYears']}</span> years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>	If less than 50 lakh, at no additional cost.`
+      }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span> for <span style="color:red !important">${'Wealth Creation'}</span> of <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterAmount']}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> over next <span style="color:red !important"> ${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>	If less than 50 lakh, at no additional cost.`
+      }
+
+
     }
 
     else if (this.singleSelectedGoal === "Holiday") {
@@ -2337,10 +2385,18 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Holiday'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
-      you would require <span style="color:red !important">${'₹'} ${this.futureValueOfVisitingHolidayDestination}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
-      over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>. 	
-      What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Holiday'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require <span style="color:red !important">${'₹'} ${this.futureValueOfVisitingHolidayDestination}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Holiday'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you would require <span style="color:red !important">${'₹'} ${this.futureValueOfVisitingHolidayDestination}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>. 	
+        What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      }
+
+  
     }
 
     else if (this.singleSelectedGoal === "World Tour") {
@@ -2376,11 +2432,21 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'World Tour'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
-      you would require <span style="color:red !important">${'₹'} ${this.futureValueOfGoingOnWorldTour}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
-      over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> 	
-      What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'World Tour'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require <span style="color:red !important">${'₹'} ${this.futureValueOfGoingOnWorldTour}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.`;
+  
+      }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'World Tour'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require <span style="color:red !important">${'₹'} ${this.futureValueOfGoingOnWorldTour}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> 	
+        What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+  
+      }
 
+     
     }
 
     else if (this.singleSelectedGoal === "Follow Passion") {
@@ -2416,10 +2482,19 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Following your Passion'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
-      you would require ₹ <span style="color:red !important">${this.futureValueOfPassion}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
-      over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> 	
-      What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Following your Passion'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require ₹ <span style="color:red !important">${this.futureValueOfPassion}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.`;
+      }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Following your Passion'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require ₹ <span style="color:red !important">${this.futureValueOfPassion}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> 	
+        What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+      }
+
+
 
     }
 
@@ -2456,11 +2531,21 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
 
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Philanthropy'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+        you would require <span style="color:red !important">${'₹'} ${this.futureValueOfPhilantrophy}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+        over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+  
+      }
+      else{
+        
       this.desc = `Hi <span style="color:red !important">${this.userName}</span>  for <span style="color:red !important">${'Philanthropy'}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
       you would require <span style="color:red !important">${'₹'} ${this.futureValueOfPhilantrophy}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
       over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> 	
       What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.	`;
+
+      }
 
     }
 
@@ -2511,7 +2596,14 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Bike'}</span> will cost you <span style="color:red !important">${'₹'} ${this.futureValueOfBike}</span>. As you are funding <span style="color:red !important">${'20%'}</span> of the down payment i.e. <span style="color:red !important">${'₹'} ${this.downPaymentAmount}</span> you would need to start a monthly SIP of 	<span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.`;
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Bike'}</span> will cost you <span style="color:red !important">${'₹'} ${this.futureValueOfBike}</span>. As you are funding <span style="color:red !important">${'20%'}</span> of the down payment i.e. <span style="color:red !important">${'₹'} ${this.downPaymentAmount}</span> you would need to start a monthly SIP of 	<span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span>.  What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.`;
+      }
+      else{
+        this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Bike'}</span> will cost you <span style="color:red !important">${'₹'} ${this.futureValueOfBike}</span>. As you are funding <span style="color:red !important">${'20%'}</span> of the down payment i.e. <span style="color:red !important">${'₹'} ${this.downPaymentAmount}</span> you would need to start a monthly SIP of 	<span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.`;
+      }
+
+   
     }
 
     else if (this.singleSelectedGoal === "Car") {
@@ -2556,7 +2648,14 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Car'}</span> will cost you <span style="color:red !important">${'₹'} ${this.futureValueOfCar}</span> As you are funding 	<span style="color:red !important">${'30%'}</span> of the down payment i.e. <span style="color:red !important">${'₹'} ${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span>. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important"> ${'₹'} ${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">	${'₹'} ${this.lifeInsurance}</span>at no additional cost.`;
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Car'}</span> will cost you <span style="color:red !important">${'₹'} ${this.futureValueOfCar}</span> As you are funding 	<span style="color:red !important">${'30%'}</span> of the down payment i.e. <span style="color:red !important">${'₹'} ${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span>.  What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">	${'₹'} ${this.lifeInsurance}</span>at no additional cost.`;
+      }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Car'}</span> will cost you <span style="color:red !important">${'₹'} ${this.futureValueOfCar}</span> As you are funding 	<span style="color:red !important">${'30%'}</span> of the down payment i.e. <span style="color:red !important">${'₹'} ${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span>. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important"> ${'₹'} ${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">	${'₹'} ${this.lifeInsurance}</span>at no additional cost.`;
+      }
+
+
     }
 
     else if (this.singleSelectedGoal === "Dream Home") {
@@ -2605,7 +2704,14 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Dream Home'}</span>  will cost you <span style="color:red !important">${'₹'} ${this.futureValueOfDreamHome}</span>. As you are funding 	<span style="color:red !important">${'20%'}</span> of the down payment i.e. <span style="color:red !important">${'₹'} ${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span>. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of 	<span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.`;
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Dream Home'}</span>  will cost you <span style="color:red !important">${'₹'} ${this.futureValueOfDreamHome}</span>. As you are funding 	<span style="color:red !important">${'20%'}</span> of the down payment i.e. <span style="color:red !important">${'₹'} ${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.`;
+      }
+      else{
+        this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Dream Home'}</span>  will cost you <span style="color:red !important">${'₹'} ${this.futureValueOfDreamHome}</span>. As you are funding 	<span style="color:red !important">${'20%'}</span> of the down payment i.e. <span style="color:red !important">${'₹'} ${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span>. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of 	<span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost.`;
+      }
+
+
     }
 
     else if (this.singleSelectedGoal === "Childs Education") {
@@ -2643,7 +2749,14 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> for 	<span style="color:red !important">${this.goalInputValueJson['enterChildName']}${"'s Education"} </span>after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you would require <span style="color:red !important">${'₹'} ${this.futureValueOfChildEducation}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> over next	<span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span>	years. As you are investing	<span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span>	as lumpsum amount today, you can achieve your goal by starting a monthly SIP of	<span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost`;
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> for 	<span style="color:red !important">${this.goalInputValueJson['enterChildName']}${"'s Education"} </span>after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you would require <span style="color:red !important">${'₹'} ${this.futureValueOfChildEducation}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> over next	<span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span>	years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost`;
+      }
+      else{
+        this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> for 	<span style="color:red !important">${this.goalInputValueJson['enterChildName']}${"'s Education"} </span>after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you would require <span style="color:red !important">${'₹'} ${this.futureValueOfChildEducation}</span>. To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> over next	<span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span>	years. As you are investing	<span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span>	as lumpsum amount today, you can achieve your goal by starting a monthly SIP of	<span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span> at no additional cost`;
+      }
+
+     
     }
 
     else if (this.singleSelectedGoal === "Childs Marriage") {
@@ -2679,14 +2792,24 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span> for <span style="color:red !important">${this.goalInputValueJson['enterChildName']}${"'s Marriage"}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you would require<span style="color:red !important">${'₹'} ${this.futureValueOfChildMarriage}</span> To fund the same, you need to start a monthly SIP of	<span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> over next	<span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span>	years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span>	as lumpsum amount today, you can achieve your goal by starting a monthly SIP of	<span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost`;
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span> for <span style="color:red !important">${this.goalInputValueJson['enterChildName']}${"'s Marriage"}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you would require<span style="color:red !important">${'₹'} ${this.futureValueOfChildMarriage}</span> To fund the same, you need to start a monthly SIP of	<span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> over next	<span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span>	years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost`;
+      }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span> for <span style="color:red !important">${this.goalInputValueJson['enterChildName']}${"'s Marriage"}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you would require<span style="color:red !important">${'₹'} ${this.futureValueOfChildMarriage}</span> To fund the same, you need to start a monthly SIP of	<span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> over next	<span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span>	years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span>	as lumpsum amount today, you can achieve your goal by starting a monthly SIP of	<span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost`;
+      }
+
+    
     }
 
     else if (this.singleSelectedGoal === "Retirement") {
 
       // Calculating future Value Of Starting Business
     
-      this.futureValueOfExpensesInRetirementAge=Math.round(this.futureValue(this.goalInputValueJson['expectedInflationBeforeRetiremnet'], (this.goalInputValueJson['currentAge']-25), this.goalInputValueJson['enterAmount']))
+      // this.futureValueOfExpensesInRetirementAge=Math.round(this.futureValue(this.goalInputValueJson['expectedInflationBeforeRetiremnet'], (this.goalInputValueJson['currentAge']-25), this.goalInputValueJson['enterAmount']))
+      // console.log("This is calculation for Retirement", this.futureValueOfExpensesInRetirementAge)
+
+      this.futureValueOfExpensesInRetirementAge=Math.round(this.futureValue(this.goalInputValueJson['expectedInflationBeforeRetiremnet'], (this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge']), this.goalInputValueJson['enterAmount']))
       console.log("This is calculation for Retirement", this.futureValueOfExpensesInRetirementAge)
 
 
@@ -2731,7 +2854,14 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
-      this.desc = `Hi <span style="color:red !important">${this.userName}</span>, after <span style="color:red !important">${(this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge'])}</span> years (as you Retire), your current annual expenses of <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterAmount']}</span> would swell to <span style="color:red !important">${'₹'} ${this.futureValueOfExpensesInRetirementAge}</span>. To maintain the same lifestyle post retirement, you would need a retirement savings of <span style="color:red !important">${'₹'} ${this.corpusAmount}</span>. If you invest <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> lumpsum today for your retirement, you would need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> and continue till you turn <span style="color:red !important">${this.goalInputValueJson['currentAge']}</span> . What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost.`;
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>, after <span style="color:red !important">${(this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge'])}</span> years (as you Retire), your current annual expenses of <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterAmount']}</span> would swell to <span style="color:red !important">${'₹'} ${this.futureValueOfExpensesInRetirementAge}</span>. To maintain the same lifestyle post retirement, you would need a retirement savings of <span style="color:red !important">${'₹'} ${this.corpusAmount}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost.`;
+      }
+      else{
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span>, after <span style="color:red !important">${(this.goalInputValueJson['enterRetirementAge'] - this.goalInputValueJson['currentAge'])}</span> years (as you Retire), your current annual expenses of <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterAmount']}</span> would swell to <span style="color:red !important">${'₹'} ${this.futureValueOfExpensesInRetirementAge}</span>. To maintain the same lifestyle post retirement, you would need a retirement savings of <span style="color:red !important">${'₹'} ${this.corpusAmount}</span>. If you invest <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> lumpsum today for your retirement, you would need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> and continue till you turn <span style="color:red !important">${this.goalInputValueJson['enterRetirementAge']}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost.`;
+      }
+
+     
     }
 
     else {
@@ -2769,11 +2899,17 @@ export class GoalsComponent implements OnInit {
       this.goalInputValueJson['enterLumpsumInvestmentAmount'] = this.convertNumberToCommaSeperatedNumber(this.goalInputValueJson['enterLumpsumInvestmentAmount']);
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
+      if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
 
       this.desc = `Hi <span style="color:red !important">${this.userName}</span> for <span style="color:red !important">${this.customGoal}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
       you would require <span style="color:red !important">${'₹'} ${this.futureValueOfGoal}</span> To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
-      over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span> 	
-      What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost.	`;
+      over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost.`;
+      }
+      else{
+       this.desc = `Hi <span style="color:red !important">${this.userName}</span> for <span style="color:red !important">${this.customGoal}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years 	
+      you would require <span style="color:red !important">${'₹'} ${this.futureValueOfGoal}</span> To fund the same, you need to start a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipNoLumpsum}</span> 	
+      over next <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years. As you are investing <span style="color:red !important">${'₹'} ${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important">${'₹'} ${this.sipWithLumpsum}</span>.	What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">${'₹'} ${this.lifeInsurance}</span>  at no additional cost.	`;
+      }
     }
   }
 
@@ -2827,9 +2963,9 @@ export class GoalsComponent implements OnInit {
 
   findCorpusAmount(futureValueOfExpensesInRetirementAge, rateOfReturnPostRetirement) {
     futureValueOfExpensesInRetirementAge = parseInt(futureValueOfExpensesInRetirementAge);
-    rateOfReturnPostRetirement = parseInt(rateOfReturnPostRetirement)/100;
+    rateOfReturnPostRetirement = parseInt(rateOfReturnPostRetirement);
 
-    let corpusAmount = futureValueOfExpensesInRetirementAge / rateOfReturnPostRetirement;
+    let corpusAmount = futureValueOfExpensesInRetirementAge / (rateOfReturnPostRetirement/100);
     return corpusAmount;
   }
 

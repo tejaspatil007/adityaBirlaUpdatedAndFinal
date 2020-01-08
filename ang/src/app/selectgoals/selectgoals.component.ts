@@ -62,12 +62,16 @@ export class SelectgoalsComponent implements OnInit {
 
   addgoal(type) {
     console.log("this.selectedGoal.length",this.selectedGoal.length)
-    if(this.selectedGoal.length > 2){
+    if(this.selectedGoal.length == 3){
       this.msg='You can select maximum 3 goals';
     }
     else{
-      this.msg='';
+      // this.msg='';
+      this.errorMsg=""
     }
+
+    
+    this.removeData(type);
 
 
     if (type == 'Self Development') {
@@ -145,7 +149,7 @@ export class SelectgoalsComponent implements OnInit {
     else if (this.selectedGoal.length <= 3 && this.isSelfDevelopmentPresent == true) {
       let data = "Self Development";
       this.isSelfDevelopmentPresent = false
-      this.removeData(data);
+      // this.removeData(data);
       this.goals[0].src = "assets/img/Self Development.png"
     }
     
@@ -166,7 +170,7 @@ export class SelectgoalsComponent implements OnInit {
     else if (this.selectedGoal.length <= 3 && this.isStartingBusinessPresent == true) {
       let data = `Starting Business`;
       this.isStartingBusinessPresent = false
-      this.removeData(data);
+      // this.removeData(data);
       this.goals[1].src = "assets/img/Starting Business.png"
     }
     
@@ -188,7 +192,7 @@ export class SelectgoalsComponent implements OnInit {
       let data = "Marriage";
       this.isMarriagePresent = false
       this.goals[2].src = "assets/img/Marriage.png";
-      this.removeData(data);
+      // this.removeData(data);
     }
     
 
@@ -494,12 +498,14 @@ export class SelectgoalsComponent implements OnInit {
 
   //Removing Goals  
   removeData(value) {
-    console.log(" this.selectedGoal.length", this.selectedGoal.length)
-    this.selectedGoal.length = this.selectedGoal.length - 1;
-   console.log(" this.selectedGoal.length", this.selectedGoal.length)
-   if(this.selectedGoal.length <= 2){
-     this.msg = '';
-   }
+    // console.log(" this.selectedGoal.length", this.selectedGoal.length)
+    // this.selectedGoal.length = this.selectedGoal.length - 1;
+  //  console.log(" this.selectedGoal.length", this.selectedGoal.length)
+  
+  
+  if(this.selectedGoal.length < 3){
+    this.msg = '';
+  }
     console.log("data removed");
     for (let i = 0; i < this.selectedGoal.length; i++) {
       console.log(i)
@@ -531,6 +537,7 @@ export class SelectgoalsComponent implements OnInit {
       }, err => {
         console.log(err)
       });
+      
     }
 
     else(this.errorMsg='Please select goals')

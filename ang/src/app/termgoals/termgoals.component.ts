@@ -149,6 +149,9 @@ setImages(){
   }
 
   Replan(){
+    this.router.navigateByUrl("/selectgoals");
+    }
+  restart(){
     localStorage.removeItem('id');
     this.router.navigateByUrl("/calculatorgoal");
   }
