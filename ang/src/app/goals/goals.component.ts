@@ -188,7 +188,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -249,7 +249,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false,
@@ -280,7 +280,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -340,7 +340,7 @@ export class GoalsComponent implements OnInit {
               'controlType': 'text',
               'value': 0,
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -370,7 +370,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -430,7 +430,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -459,7 +459,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -519,7 +519,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -549,7 +549,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -597,7 +597,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -626,7 +626,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -686,7 +686,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -716,7 +716,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -777,7 +777,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -807,7 +807,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -896,7 +896,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -986,7 +986,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1058,7 +1058,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1088,7 +1088,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1160,7 +1160,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1190,7 +1190,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1262,7 +1262,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1316,7 +1316,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1364,7 +1364,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1418,7 +1418,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1467,7 +1467,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false
@@ -1522,7 +1522,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false,
@@ -1585,7 +1585,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false,
@@ -1629,7 +1629,7 @@ export class GoalsComponent implements OnInit {
               'value': null,
               'controlType': 'text',
               'patternError': 'value must be in multiple of 1000',
-              'validation': [{ key: 'required', value: 'amount is required', 'required': false }, { key: 'pattern', value: 'amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'Amount is required', 'required': false }, { key: 'pattern', value: 'Amount must be in multiple of 1000', 'pattern': '^[1-9][0-9]*000$' }],
               'placeholder': 'Enter amount',
               'flag': 'noDisplay',
               'hasOtherInput': false,
@@ -1695,7 +1695,7 @@ export class GoalsComponent implements OnInit {
               'value': 0,
               'controlType': 'text',
               'patternError': 'value must be 0 or in multiple of 1000',
-              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
+              'validation': [{ key: 'required', value: 'value is required', 'required': false }, { key: 'pattern', value: 'Amount must be 0 or in multiple of 1000', 'pattern': '^0|[1-9][0-9]*000$' }],
               'placeholder': "Enter lumpsum investment amount",
               'flag': 'noDisplay',
               'hasOtherInput': false,

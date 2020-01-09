@@ -272,13 +272,16 @@ input{
     margin: auto;
     width: 100%;
 }
-.range, .number-css{display: none;}
+.range, .number-css{display: none !important;}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  -webkit-appearance: none !important;
   margin: 0;
+  -moz-appearance: none !important;
+-webkit-appearance: none;
 }
-
+.range .number-css{-moz-appearance: none !important;
+-webkit-appearance: none !important;}
 .head-css{display: none;}
 
 .users{
@@ -1465,10 +1468,12 @@ margin-bottom:5px;
     .mob label{
       margin-left: 0px !important;
     }
+    .dropdowns p{padding:0px 11px;}
+    .dropdown input{margin: auto !important;}
   #nav-bar {
     text-align: center;
   }
-  #ip2{margin-left: 70px;}
+  #ip3{width: 60px;}
   .progressbar li {
     font-size: 16px;
     line-height: 20px;
@@ -1647,9 +1652,7 @@ width: 115PX;
     margin-top: 20px;
     margin-left: 0px;
   }
- #ip2 {
-    margin-left: 15px;
-}
+
   .users{
     border-left: none;
   }
