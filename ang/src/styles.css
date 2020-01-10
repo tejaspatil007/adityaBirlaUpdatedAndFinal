@@ -212,7 +212,7 @@ button:hover, button:focus {
 	border:none;
 	border-radius: 20px;
 	background-image: linear-gradient(to right, #FF8C00,#FF8C00);
-	margin-bottom: 30px;
+	margin-top: 20px;
 }
 
 /*------------2nd page-----------*/
@@ -272,7 +272,8 @@ input{
     margin: auto;
     width: 100%;
 }
-.range, .number-css{display: none !important;}
+.range, .number-css{
+  display: none !important;}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none !important;

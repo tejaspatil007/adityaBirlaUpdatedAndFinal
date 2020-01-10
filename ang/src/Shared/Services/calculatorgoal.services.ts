@@ -8,7 +8,7 @@ import { Igoal } from '../Interfaces(Structure)/goal';
 
 export class AdityaBirlaServices{
     // public url=" http://localhost:3000/";
-    public url="https://514f384c.ngrok.io/";
+    public url=" https://f2d0b426.ngrok.io/";
     public setselectedgoals:any;
     public headers:HttpHeaders;
     constructor( private http:HttpClient ){
