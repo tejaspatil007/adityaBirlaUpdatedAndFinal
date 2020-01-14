@@ -7,8 +7,10 @@ import { Igoal } from '../Interfaces(Structure)/goal';
 @Injectable({providedIn:'root'})
 
 export class AdityaBirlaServices{
-    // public url=" http://localhost:3000/";
-    public url=" https://f2d0b426.ngrok.io/";
+    public url=" http://localhost:3000/";
+    // public url="https://e595f335.ngrok.io/";
+    //https://d2cb6b4f.ngrok.io
+
     public setselectedgoals:any;
     public headers:HttpHeaders;
     constructor( private http:HttpClient ){

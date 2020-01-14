@@ -120,6 +120,7 @@ export class SelectgoalsComponent implements OnInit {
       this.addRetirement()
     }
 
+    //to remove dynamic custom goal from static goal area
     else{
       let goalsLength = this.goals.length;
       for(let i = 0; i < goalsLength; i++){
@@ -498,14 +499,7 @@ export class SelectgoalsComponent implements OnInit {
 
   //Removing Goals  
   removeData(value) {
-    // console.log(" this.selectedGoal.length", this.selectedGoal.length)
-    // this.selectedGoal.length = this.selectedGoal.length - 1;
-  //  console.log(" this.selectedGoal.length", this.selectedGoal.length)
-  
-  
-  if(this.selectedGoal.length < 3){
-    this.msg = '';
-  }
+ 
     console.log("data removed");
     for (let i = 0; i < this.selectedGoal.length; i++) {
       console.log(i)
@@ -515,6 +509,9 @@ export class SelectgoalsComponent implements OnInit {
         console.log(this.selectedGoal);
       }
       console.log(this.selectedGoal);
+    }
+    if(this.selectedGoal.length < 3){
+      this.msg="";
     }
   }
 
