@@ -44,8 +44,8 @@ export class SelectgoalsComponent implements OnInit {
   { "id": 10, "type": "Bike", "src": "assets/img/Bike.png" },
   { "id": 11, "type": "Car", "src": "assets/img/Car.png" },
   { "id": 12, "type": "Dream Home", "src": "assets/img/Dream Home.png" },
-  { "id": 13, "type": "Childs Education", "src": "assets/img/Childs Education.png" },
-  { "id": 14, "type": "Childs Marriage", "src": "assets/img/Childs Marriage.png" },
+  { "id": 13, "type": "Child's Education", "src": "assets/img/Child's Education.png" },
+  { "id": 14, "type": "Child's Marriage", "src": "assets/img/Child's Marriage.png" },
   { "id": 15, "type": "Retirement", "src": "assets/img/Retirement.png" }
   ]
 
@@ -110,10 +110,10 @@ export class SelectgoalsComponent implements OnInit {
     else if (type == 'Dream Home') {
       this.addDreamHome()
     }
-    else if (type == 'Childs Education') {
+    else if (type == "Child's Education") {
       this.addChildsEducation()
     }
-    else if (type == 'Childs Marriage') {
+    else if (type == "Child's Marriage") {
       this.addChildsMarriage()
     }
     else if (type == 'Retirement') {
@@ -288,7 +288,7 @@ export class SelectgoalsComponent implements OnInit {
     if (this.selectedGoal.length < 3 && this.isFollowPassionPresent == false) {
       var FollowPassion = {
         id: 8,
-        type: "Follow Passion",
+        type: "Follow your Passion",
         src: 'assets/img/Follow Passioncolor.png'
       }
       this.selectedGoal.push(FollowPassion);
@@ -297,7 +297,7 @@ export class SelectgoalsComponent implements OnInit {
       this.goals[7].src = "assets/img/Follow Passioncolor.png"
     }
     else if (this.selectedGoal.length <= 3 && this.isFollowPassionPresent == true) {
-      let data = "Follow Passion";
+      let data = "Follow your Passion";
       this.isFollowPassionPresent = false
       this.removeData(data);
       this.goals[7].src = "assets/img/Follow Passion.png"
@@ -393,19 +393,19 @@ export class SelectgoalsComponent implements OnInit {
     if (this.selectedGoal.length < 3 && this.isChildsEducationPresent == false) {
       var ChildsEducation = {
         id: 13,
-        type: "Childs Education",
-        src: 'assets/img/Childs Educationcolor.png'
+        type: "Child's Education",
+        src: "assets/img/Child's Educationcolor.png"
       }
       this.selectedGoal.push(ChildsEducation);
       this.isChildsEducationPresent = true;
       console.log(this.selectedGoal)
-      this.goals[12].src = "assets/img/Childs Educationcolor.png"
+      this.goals[12].src = "assets/img/Child's Educationcolor.png"
     }
     else if (this.selectedGoal.length <= 3 && this.isChildsEducationPresent == true) {
-      let data = "Childs Education";
+      let data = "Child's Education";
       this.isChildsEducationPresent = false
       this.removeData(data);
-      this.goals[12].src = "assets/img/Childs Education.png"
+      this.goals[12].src = "assets/img/Child's Education.png"
     }
     
   }
@@ -414,19 +414,19 @@ export class SelectgoalsComponent implements OnInit {
     if (this.selectedGoal.length < 3 && this.isChildsMarriagePresent == false) {
       var ChildsMarriage = {
         id: 14,
-        type: "Childs Marriage",
-        src: 'assets/img/Childs Marriagecolor.png'
+        type: "Child's Marriage",
+        src: "assets/img/Child's Marriagecolor.png"
       }
       this.selectedGoal.push(ChildsMarriage);
       this.isChildsMarriagePresent = true;
       console.log(this.selectedGoal)
-      this.goals[13].src = "assets/img/Childs Marriagecolor.png"
+      this.goals[13].src = "assets/img/Child's Marriagecolor.png"
     }
     else if (this.selectedGoal.length <= 3 && this.isChildsMarriagePresent == true) {
-      let data = "Childs Marriage";
+      let data = "Child's Marriage";
       this.isChildsMarriagePresent = false
       this.removeData(data);
-      this.goals[13].src = "assets/img/Childs Marriage.png"
+      this.goals[13].src = "assets/img/Child's Marriage.png"
     }
     
   }

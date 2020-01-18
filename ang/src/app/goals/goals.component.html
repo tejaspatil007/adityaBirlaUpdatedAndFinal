@@ -150,6 +150,12 @@
 				<button type="button" class="btn nextbtn" (click)="calculateFunction()"><b>Calculate</b></button>
 			</div>
 		</div>
+		<div *ngIf="showButton" class="row lastbtns">
+			<div class="twobtn col-md-12">
+				<p ><span style="color:#8B0000 !important">{{msg}}</span></p>
+				<button type="button" class="btn nextbtn" (click)="calculateFunction()"><b>Re-Calculate</b></button>
+			</div>
+		</div>
 
 
 		<div *ngIf="showButton" class="row offer">

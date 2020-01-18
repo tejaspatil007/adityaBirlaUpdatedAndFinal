@@ -448,7 +448,9 @@ margin-bottom: 5px;
 
 }
 
-
+.subscribe span > span {
+  padding-right: 2px;
+}
 /*------------------------select age-----------------------------*/
 .age{
 
@@ -990,13 +992,13 @@ background-color: #fff;
 }
 .dropdowns{
 	text-align: left;
-	padding: 10px;
+	padding: 10px 40px;
 	color: #fff;
 }
 .dropdowns p{
 	text-align: left;
-	font-size: 17px;
-	height: 50px;
+	font-size: 16px;
+	height: 55px;
 	line-height: 19px;
 }
 
@@ -1118,7 +1120,7 @@ color: #fff;
 	font-size: 23px;
 	display: inline-block;
 	width: 70%;
-	float: left;
+float: left;
 	padding-left: 10px;
 	margin-bottom: 20px;
 }
@@ -1459,6 +1461,30 @@ margin-bottom:5px;
 
 
 @media screen and (max-width: 768px) {
+  #nav-bar img {
+    
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-top: -12px;}
+  .head h3{font-size: 30px; margin-bottom: 20px;}
+  .head h5{font-size: 26px;}
+  .head h6 {font-size: 22px;}
+  .footer{font-size: 12px;}
+  .footer-icons .fa{font-size: 20px;}
+.services p {
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 8px;
+  margin-bottom: 30px;}
+  .para .btn-primary{margin-top: 0;
+  margin-bottom: 50px;}
+  .progressbar li:after {height: 3px; top:12px;}
+  .progressbar li:before{    width: 55px;
+    height: 30px;
+    line-height: 25px;}
+
+
   #amount, .amount{
  margin: auto;
   margin-bottom: 20px;
@@ -1469,15 +1495,15 @@ margin-bottom:5px;
     .mob label{
       margin-left: 0px !important;
     }
-    .dropdowns p{padding:0px 11px;}
+    .dropdowns p{padding:0px 50px;}
     .dropdown input{margin: auto !important;}
   #nav-bar {
     text-align: center;
   }
   #ip3{width: 60px;}
   .progressbar li {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 18px;
   }
   .age{
     margin-bottom: 20px;
@@ -1573,9 +1599,7 @@ margin-bottom:5px;
     margin-left: 0px;
 }
 
-.services p {
-    line-height: 28px;
-}
+
 .disclaimer {
     font-size:16px;
 }
@@ -1610,7 +1634,7 @@ margin-bottom:5px;
 		
 		.dropdowns p {
     		text-align: center;
-   			height: 47px;}
+   			height: auto;}
 		.dropdowns {
     		text-align: center;
    			 padding: 0px;}
