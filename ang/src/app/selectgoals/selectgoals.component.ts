@@ -39,7 +39,7 @@ export class SelectgoalsComponent implements OnInit {
   { "id": 5, "type": "Wealth Creation", "src": "assets/img/Wealth Creation.png" },
   { "id": 6, "type": "Holiday", "src": "assets/img/Holiday.png" },
   { "id": 7, "type": "World Tour", "src": "assets/img/World Tour.png" },
-  { "id": 8, "type": "Follow your Passion", "src": "assets/img/Follow Passion.png" },
+  { "id": 8, "type": "Follow your Passion", "src": "assets/img/Follow your Passion.png" },
   { "id": 9, "type": "Philantropy", "src": "assets/img/Philanthropy.png" },
   { "id": 10, "type": "Bike", "src": "assets/img/Bike.png" },
   { "id": 11, "type": "Car", "src": "assets/img/Car.png" },
@@ -289,18 +289,18 @@ export class SelectgoalsComponent implements OnInit {
       var FollowPassion = {
         id: 8,
         type: "Follow your Passion",
-        src: 'assets/img/Follow Passioncolor.png'
+        src: 'assets/img/Follow your Passioncolor.png'
       }
       this.selectedGoal.push(FollowPassion);
       this.isFollowPassionPresent = true;
       console.log(this.selectedGoal)
-      this.goals[7].src = "assets/img/Follow Passioncolor.png"
+      this.goals[7].src = "assets/img/Follow your Passioncolor.png"
     }
     else if (this.selectedGoal.length <= 3 && this.isFollowPassionPresent == true) {
       let data = "Follow your Passion";
       this.isFollowPassionPresent = false
       this.removeData(data);
-      this.goals[7].src = "assets/img/Follow Passion.png"
+      this.goals[7].src = "assets/img/Follow your Passion.png"
     }
     
   }
