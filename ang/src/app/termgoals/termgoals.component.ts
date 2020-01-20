@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
 import { AdityaBirlaServices } from 'src/Shared/Services/calculatorgoal.services';
 import { JsonPipe } from '@angular/common';
 
@@ -48,7 +48,9 @@ export class TermgoalsComponent implements OnInit {
       
       this.setImages();
 
-
+      if(!this.amount){
+        this.router.navigateByUrl("/selectgoals"); 
+      }
 
     });
   }

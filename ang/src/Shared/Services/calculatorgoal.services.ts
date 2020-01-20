@@ -3,20 +3,32 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Icalculatorgoal } from '../Interfaces(Structure)/calculatorgoal';
 import { Igoal } from '../Interfaces(Structure)/goal';
+import { Location } from '@angular/common';
+import {Router} from '@angular/router';
+
 
 @Injectable({providedIn:'root'})
 
 export class AdityaBirlaServices{
-    public url=" http://localhost:3000/";
-    // public url="https://b1a06767.ngrok.io/";
-
+    // public url="http://localhost:8000/";
+    
+    public url="https://0e583676.ngrok.io/"
+    
 
     public setselectedgoals:any;
     public headers:HttpHeaders;
-    constructor( private http:HttpClient ){
+    constructor( private http:HttpClient, private location: Location, private router : Router ){
         this.headers = new HttpHeaders({
             'Content-Type':'application/json'
         });
+
+        // this.location.subscribe(x => {
+        // console.log("this is location",x);
+        // if(x.url === "/termgoals" && x.pop === true){
+        //     console.log("@@@@@@@@@@@@@@@@@@@inside if");
+        //     return this.router.navigate(["/calculatorgoal"]);
+        // } 
+        // });
     }
 
     postUserDetails(data):Observable<Icalculatorgoal>{
@@ -56,5 +68,4 @@ export class AdityaBirlaServices{
     getAnswer(id){
         return this.http.get(`${this.url}getanswers/${id}`)
     }    
-    
 }

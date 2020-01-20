@@ -484,6 +484,7 @@ export class SelectgoalsComponent implements OnInit {
           }
           else if (this.selectedGoal.length <= 3 && this.otherGoalsCount <= 3) {
             let data = newGoal;
+            this.otherGoalsCount -= 1;
             this.isOtherGoalPresent = false
             this.removeData(data);
             this.othergoalImg = "assets/img/AddOtherGoal.png"

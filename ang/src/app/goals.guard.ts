@@ -19,6 +19,7 @@ export class GoalsGuard implements CanActivate {
         this.router.navigate(['']);
         return false;
       }
+      
       // this.abs.getdata(localStorage.getItem('id')).subscribe(res => {
       //   console.log("guard",res[0].user_id);
       //   if(localStorage.getItem('id')){

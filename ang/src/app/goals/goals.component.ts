@@ -39,6 +39,7 @@ export class GoalsComponent implements OnInit {
   public customGoal: any;
   public amountInNumber: string;
   public msg:string;
+  public csip:string;
 
   public uid: any;
 
@@ -51,6 +52,7 @@ export class GoalsComponent implements OnInit {
   public five = [];
   public age = [];
   public nextGoals = [];
+  public downPayment = [];
 
   showDesc: boolean = false;
   showButton: boolean = false;
@@ -79,7 +81,7 @@ export class GoalsComponent implements OnInit {
   public sipWithLumpsum: number = 0;
   public vehicleLoanAmount: number;
   public dreamHomeLoanAmount: number;
-  public downPayment: number;
+  
   public downPaymentAmount: number;
   public corpusAmount: number;
   public lifeInsurance: number;
@@ -1029,6 +1031,18 @@ export class GoalsComponent implements OnInit {
             },
             {
               "questionId": "5",
+              "name": "Down payment (%)",
+              "options": this.downPayment,
+              "variableName": "downPayment",
+              'value': 20,
+              'controlType': 'dropdown',
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'placeholder': "Enter down payment (%)",
+              'flag': 'display',
+              'hasOtherInput': false
+            },
+            {
+              "questionId": "6",
               "name": "Expected returns on your investment (% p.a.)",
               "options": this.percent5,
               "variableName": "expectedReturnsOnInvestment",
@@ -1040,7 +1054,7 @@ export class GoalsComponent implements OnInit {
               'hasOtherInput': false
             },
             {
-              "questionId": "6",
+              "questionId": "7",
               "name": "How much can you invest as lumpsum today?",
               "variableName": "enterLumpsumInvestmentAmount",
               'value': 0,
@@ -1052,7 +1066,7 @@ export class GoalsComponent implements OnInit {
               'hasOtherInput': true
             },
             {
-              "questionId": "6",
+              "questionId": "7",
               "name": "How much can you invest as lumpsum today?",
               "variableName": "enterLumpsumInvestmentAmountWithValidation",
               'value': 0,
@@ -1131,6 +1145,18 @@ export class GoalsComponent implements OnInit {
             },
             {
               "questionId": "5",
+              "name": "Down payment (%)",
+              "options": this.downPayment,
+              "variableName": "downPayment",
+              'value': 30,
+              'controlType': 'dropdown',
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'placeholder': "Enter down payment (%)",
+              'flag': 'display',
+              'hasOtherInput': false
+            },
+            {
+              "questionId": "6",
               "name": "Expected returns on your investment (% p.a.)",
               "options": this.percent5,
               "variableName": "expectedReturnsOnInvestment",
@@ -1142,7 +1168,7 @@ export class GoalsComponent implements OnInit {
               'hasOtherInput': false
             },
             {
-              "questionId": "6",
+              "questionId": "7",
               "name": "How much can you invest as lumpsum today?",
               "variableName": "enterLumpsumInvestmentAmount",
               'value': 0,
@@ -1154,7 +1180,7 @@ export class GoalsComponent implements OnInit {
               'hasOtherInput': true
             },
             {
-              "questionId": "6",
+              "questionId": "7",
               "name": "How much can you invest as lumpsum today?",
               "variableName": "enterLumpsumInvestmentAmountWithValidation",
               'value': 0,
@@ -1233,6 +1259,18 @@ export class GoalsComponent implements OnInit {
             },
             {
               "questionId": "5",
+              "name": "Down payment (%)",
+              "options": this.downPayment,
+              "variableName": "downPayment",
+              'value': 20,
+              'controlType': 'dropdown',
+              'validation': [{ key: 'required', value: 'value is required', 'required': true }],
+              'placeholder': "Enter down payment (%)",
+              'flag': 'display',
+              'hasOtherInput': false
+            },
+            {
+              "questionId": "6",
               "name": "Expected returns on your investment (% p.a.)",
               "options": this.percent5,
               "variableName": "expectedReturnsOnInvestment",
@@ -1244,7 +1282,7 @@ export class GoalsComponent implements OnInit {
               'hasOtherInput': false
             },
             {
-              "questionId": "6",
+              "questionId": "7",
               "name": "How much can you invest as lumpsum today?",
               "variableName": "enterLumpsumInvestmentAmount",
               'value': 0,
@@ -1256,7 +1294,7 @@ export class GoalsComponent implements OnInit {
               'hasOtherInput': true
             },
             {
-              "questionId": "6",
+              "questionId": "7",
               "name": "How much can you invest as lumpsum today?",
               "variableName": "enterLumpsumInvestmentAmountWithValidation",
               'value': 0,
@@ -1743,7 +1781,10 @@ export class GoalsComponent implements OnInit {
       this.age.push(ival);
     }
 
-
+    for(let i = 10; i <= 90; i++){
+      let ival = { "name": `${i}%`, "value": i }
+      this.downPayment.push(ival);
+    }
 
   }
 
@@ -2547,11 +2588,11 @@ export class GoalsComponent implements OnInit {
       console.log("This is calculation for Bike", this.futureValueOfBike);
 
       //Calculating vehicle loan amount
-      this.vehicleLoanAmount = Math.round(this.findLoanAmount(this.downPayment = 20, this.futureValueOfBike));
+      this.vehicleLoanAmount = Math.round(this.findLoanAmount(this.goalInputValueJson['downPayment'], this.futureValueOfBike));
       console.log(this.vehicleLoanAmount);
 
       //Calculating Down Payment Amount
-      this.downPaymentAmount = Math.round(this.findDownPaymentAmount(this.downPayment = 20, this.futureValueOfBike));
+      this.downPaymentAmount = Math.round(this.findDownPaymentAmount(this.goalInputValueJson['downPayment'], this.futureValueOfBike));
       console.log(this.downPaymentAmount)
 
       this.sipNoLumpsum = Math.round(this.PMT(this.goalInputValueJson['expectedReturnsOnInvestment'] / 12, this.goalInputValueJson['enterNumberOfYears'] * 12, 0, -this.downPaymentAmount, 1));
@@ -2589,13 +2630,13 @@ export class GoalsComponent implements OnInit {
 
       if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
         this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> after <span style="color:red !important">
-        ${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Bike'}</span> will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfBike}</span>. As you are funding <span style="color:red !important">${'20%'}</span> of the down payment i.e. <span style="color:red !important">
+        ${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Bike'}</span> will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfBike}</span>. As you are funding <span style="color:red !important">${this.goalInputValueJson['downPayment']}%</span> of the down payment i.e. <span style="color:red !important">
         <span>${'₹'}</span>${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">
         <span>${'₹'}</span>${this.sipNoLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important"><span>${'₹'}</span>${this.lifeInsurance}</span> at no additional cost.`;
       }
       else{
         this.desc = `Hi <span style="color:red !important">${this.userName}</span> after <span style="color:red !important">
-        ${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Bike'}</span> will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfBike}</span>. As you are funding <span style="color:red !important">${'20%'}</span> of the down payment i.e. <span style="color:red !important">
+        ${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Bike'}</span> will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfBike}</span>. As you are funding <span style="color:red !important">${this.goalInputValueJson['downPayment']}%</span> of the down payment i.e. <span style="color:red !important">
         <span>${'₹'}</span>${this.downPaymentAmount}</span> you would need to start a monthly SIP of 	<span style="color:red !important"><span>${'₹'}</span>${this.sipNoLumpsum}</span>. As you are investing <span style="color:red !important">
         <span>${'₹'}</span>${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important"><span>${'₹'}</span>${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">
         <span>${'₹'}</span>${this.lifeInsurance}</span> at no additional cost.`;
@@ -2611,10 +2652,10 @@ export class GoalsComponent implements OnInit {
       console.log("This is calculation for Car", this.futureValueOfCar);
 
       //Calculating vehicle loan amount
-      this.vehicleLoanAmount = Math.round(this.findLoanAmount(this.downPayment = 30, this.futureValueOfCar));
+      this.vehicleLoanAmount = Math.round(this.findLoanAmount(this.goalInputValueJson['downPayment'], this.futureValueOfCar));
       console.log(this.vehicleLoanAmount);
       //Calculating Down Payment Amount
-      this.downPaymentAmount = Math.round(this.findDownPaymentAmount(this.downPayment = 30, this.futureValueOfCar));
+      this.downPaymentAmount = Math.round(this.findDownPaymentAmount(this.goalInputValueJson['downPayment'], this.futureValueOfCar));
       console.log(this.downPaymentAmount)
       this.sipNoLumpsum = Math.round(this.PMT(this.goalInputValueJson['expectedReturnsOnInvestment'] / 12, this.goalInputValueJson['enterNumberOfYears'] * 12, 0, -this.downPaymentAmount, 1));
       console.log("This is calculation for sip with no lumpsum", this.sipNoLumpsum);
@@ -2648,12 +2689,12 @@ export class GoalsComponent implements OnInit {
 
       if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
         this.desc = `Hi <span style="color:red !important">${this.userName}</span> after <span style="color:red !important">
-        ${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Car'}</span> will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfCar}</span>. As you are funding 	<span style="color:red !important">${'30%'}</span> of the down payment i.e. <span style="color:red !important">
+        ${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Car'}</span> will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfCar}</span>. As you are funding 	<span style="color:red !important">${this.goalInputValueJson['downPayment']}%</span> of the down payment i.e. <span style="color:red !important">
         <span>${'₹'}</span>${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">
         <span>${'₹'}</span>${this.sipNoLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">	<span>${'₹'}</span>${this.lifeInsurance}</span> at no additional cost.`;
       }
       else{
-        this.desc = `Hi <span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Car'}</span> will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfCar}</span>. As you are funding <span style="color:red !important">${'30%'}</span> of the down payment i.e. <span style="color:red !important">
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Car'}</span> will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfCar}</span>. As you are funding <span style="color:red !important">${this.goalInputValueJson['downPayment']}%</span> of the down payment i.e. <span style="color:red !important">
         <span>${'₹'}</span>${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">
         <span>${'₹'}</span>${this.sipNoLumpsum}</span>. As you are investing <span style="color:red !important">
         <span>${'₹'}</span>${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important"><span>${'₹'}</span>${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">	
@@ -2670,11 +2711,11 @@ export class GoalsComponent implements OnInit {
       console.log("This is calculation for Dream Home", this.futureValueOfDreamHome);
 
       //Calculating vehicle loan amount
-      this.dreamHomeLoanAmount = Math.round(this.findLoanAmount(this.downPayment = 20, this.futureValueOfDreamHome));
+      this.dreamHomeLoanAmount = Math.round(this.findLoanAmount(this.goalInputValueJson['downPayment'], this.futureValueOfDreamHome));
       console.log(this.dreamHomeLoanAmount);
 
       //Calculating Down Payment Amount
-      this.downPaymentAmount = Math.round(this.findDownPaymentAmount(this.downPayment = 20, this.futureValueOfDreamHome));
+      this.downPaymentAmount = Math.round(this.findDownPaymentAmount(this.goalInputValueJson['downPayment'], this.futureValueOfDreamHome));
       console.log(this.downPaymentAmount)
 
       this.sipNoLumpsum = Math.round(this.PMT(this.goalInputValueJson['expectedReturnsOnInvestment'] / 12, this.goalInputValueJson['enterNumberOfYears'] * 12, 0, -this.downPaymentAmount, 1));
@@ -2710,15 +2751,15 @@ export class GoalsComponent implements OnInit {
       this.lifeInsurance = this.convertNumberToCommaSeperatedNumber(this.lifeInsurance);
 
       if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
-        this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Dream Home'}</span>  will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfDreamHome}</span>. As you are funding 	<span style="color:red !important">${'20%'}</span> of the down payment i.e. <span style="color:red !important">
+        this.desc = `Hi 	<span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Dream Home'}</span>  will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfDreamHome}</span>. As you are funding 	<span style="color:red !important">${this.goalInputValueJson['downPayment']}%</span> of the down payment i.e. <span style="color:red !important">
         <span>${'₹'}</span>${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">
         <span>${'₹'}</span>${this.sipNoLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important"><span>${'₹'}</span>${this.lifeInsurance}</span> at no additional cost.`;
       }
       else{
-        this.desc = `Hi <span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Dream Home'}</span>  will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfDreamHome}</span>. As you are funding 	<span style="color:red !important">${'20%'}</span> of the down payment i.e. <span style="color:red !important">
+        this.desc = `Hi <span style="color:red !important">${this.userName}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years the <span style="color:red !important">${'Dream Home'}</span>  will cost you <span style="color:red !important"><span>${'₹'}</span>${this.futureValueOfDreamHome}</span>. As you are funding 	<span style="color:red !important">${this.goalInputValueJson['downPayment']}%</span> of the down payment i.e. <span style="color:red !important">
         <span>${'₹'}</span>${this.downPaymentAmount}</span> you would need to start a monthly SIP of <span style="color:red !important">
         <span>${'₹'}</span>${this.sipNoLumpsum}</span>. As you are investing <span style="color:red !important">
-        <span>${'₹'}</span>${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important"><span>${'₹'}</span>${this.sipWithLumpsum}</span> What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">
+        <span>${'₹'}</span>${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span> as lumpsum amount today, you can achieve your goal by starting a monthly SIP of <span style="color:red !important"><span>${'₹'}</span>${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">
         <span>${'₹'}</span>${this.lifeInsurance}</span> at no additional cost.`;
       }
 
@@ -2808,11 +2849,11 @@ export class GoalsComponent implements OnInit {
 
       if(this.goalInputValueJson['enterLumpsumInvestmentAmount'] == 0){
         this.desc = `Hi <span style="color:red !important">${this.userName}</span> for <span style="color:red !important">${this.goalInputValueJson['enterChildName']}${"'s Marriage"}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you would require<span style="color:red !important">
-        <span>${'₹'}</span>${this.futureValueOfChildMarriage}</span> To fund the same, you need to start a monthly SIP of	<span style="color:red !important"><span>${'₹'}</span>${this.sipNoLumpsum}</span> over next	<span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span>	years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important"><span>${'₹'}</span>${this.lifeInsurance}</span> at no additional cost.`;
+        <span>${'₹'}</span>${this.futureValueOfChildMarriage}</span>. To fund the same, you need to start a monthly SIP of	<span style="color:red !important"><span>${'₹'}</span>${this.sipNoLumpsum}</span> over next	<span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span>	years. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important"><span>${'₹'}</span>${this.lifeInsurance}</span> at no additional cost.`;
       }
       else{
         this.desc = `Hi <span style="color:red !important">${this.userName}</span> for <span style="color:red !important">${this.goalInputValueJson['enterChildName']}${"'s Marriage"}</span> after <span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span> years you would require<span style="color:red !important">
-        <span>${'₹'}</span>${this.futureValueOfChildMarriage}</span> To fund the same, you need to start a monthly SIP of	<span style="color:red !important"><span>${'₹'}</span>${this.sipNoLumpsum}</span> over next	<span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span>	years. As you are investing <span style="color:red !important"><span>${'₹'}</span>${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span>	as lumpsum amount today, you can achieve your goal by starting a monthly SIP of	<span style="color:red !important"><span>${'₹'}</span>${this.sipWithLumpsum}</span> What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">
+        <span>${'₹'}</span>${this.futureValueOfChildMarriage}</span>. To fund the same, you need to start a monthly SIP of	<span style="color:red !important"><span>${'₹'}</span>${this.sipNoLumpsum}</span> over next	<span style="color:red !important">${this.goalInputValueJson['enterNumberOfYears']}</span>	years. As you are investing <span style="color:red !important"><span>${'₹'}</span>${this.goalInputValueJson['enterLumpsumInvestmentAmount']}</span>	as lumpsum amount today, you can achieve your goal by starting a monthly SIP of	<span style="color:red !important"><span>${'₹'}</span>${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important">
         <span>${'₹'}</span>${this.lifeInsurance}</span> at no additional cost.`;
       }
 
@@ -2918,9 +2959,10 @@ export class GoalsComponent implements OnInit {
        <span>${'₹'}</span>${this.sipWithLumpsum}</span>. What's more, if you opt for the CSIP* facility, you can get a life insurance cover of upto <span style="color:red !important"><span>${'₹'}</span>${this.lifeInsurance}</span>  at no additional cost.	`;
       }
     }
+    this.csip = `<span style="color:red !important">Note</span> : *Century SIP (CSIP) is a free insurance cover option that you can opt for when starting a Systematic Investment Plan. It gives you Free Life Insurance Cover up to 100 times your monthly SIP commitment subject to a maximum value of 50 Lakhs.`
   }
 
-
+  
 
   //Method to caculate Future Value
   futureValue(i, n, PV) {
