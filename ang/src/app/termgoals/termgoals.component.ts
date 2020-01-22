@@ -24,34 +24,35 @@ export class TermgoalsComponent implements OnInit {
   constructor(private router: Router,private abs : AdityaBirlaServices) { }
 
   ngOnInit() {
+    
     this.abs.getdata(localStorage.getItem('id')).subscribe(res => {
       console.log("response for username = >",res)
       this.username = res[0].name;
     });
 
     this.abs.getAnswer(localStorage.getItem('id')).subscribe(res => {
-      console.log(res);
-      // console.log("res=>",res);
-      this.finalGoal = res['result'];
-      console.log("rsult",this.finalGoal);
-
-      this.shortGoal = this.finalGoal.shortGoals;
-      console.log("shortgoal",this.shortGoal);
-
-      this.midGoal = this.finalGoal.midGoal;
-      console.log("midgoal",this.midGoal);
-
-      this.longGoal = this.finalGoal.longGoals;
-      console.log("longoal",this.longGoal);
-
-      this.amount = this.commaSeparateNumber(this.finalGoal.totalAmount);
       
-      this.setImages();
-
-      if(!this.amount){
-        this.router.navigateByUrl("/selectgoals"); 
+      if(res['success'] == false){
+        this.router.navigateByUrl("/calculatorgoal");
       }
-
+      else{
+        console.log("res=>",res);
+        this.finalGoal = res['result'];
+        console.log("rsult",this.finalGoal);
+  
+        this.shortGoal = this.finalGoal.shortGoals;
+        console.log("shortgoal",this.shortGoal);
+  
+        this.midGoal = this.finalGoal.midGoal;
+        console.log("midgoal",this.midGoal);
+  
+        this.longGoal = this.finalGoal.longGoals;
+        console.log("longoal",this.longGoal);
+  
+        this.amount = this.commaSeparateNumber(this.finalGoal.totalAmount);
+        
+        this.setImages();
+      }
     });
   }
 
@@ -98,7 +99,6 @@ export class TermgoalsComponent implements OnInit {
 goalTypes = ["Self Development", "Starting Business", "Bike", "Marriage", "Honeymoon", "Wealth Creation", "Holiday",
   "Car", "Childs Education", "Childs Marriage", "Follow Passion", "World Tour", "Dream Home", "Retirement",
   "Philanthropy"];
-
 
 setImages(){
   this.shortGoalImages = [];

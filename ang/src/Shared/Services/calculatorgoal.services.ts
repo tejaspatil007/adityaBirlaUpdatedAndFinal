@@ -6,15 +6,13 @@ import { Igoal } from '../Interfaces(Structure)/goal';
 import { Location } from '@angular/common';
 import {Router} from '@angular/router';
 
-
 @Injectable({providedIn:'root'})
 
 export class AdityaBirlaServices{
-    // public url="http://localhost:8000/";
+    public url="http://localhost:8000/";
     
-    public url="https://0e583676.ngrok.io/"
+    // public url="https://f17ce88c.ngrok.io/"
     
-
     public setselectedgoals:any;
     public headers:HttpHeaders;
     constructor( private http:HttpClient, private location: Location, private router : Router ){
